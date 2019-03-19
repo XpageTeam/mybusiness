@@ -2,6 +2,7 @@
 	position: relative
 	z-index: 10
 	border-bottom: 1px solid transparent
+	margin-bottom: 65px
 
 
 	&.js__scrolled
@@ -28,9 +29,50 @@
 		justify-content: space-between
 		align-items: center
 
+		&-cont 
+			padding: 20px 0
+
+	&-bot
+		&-cont
+			background-image: url('../img/soti-bg.png')
+			background-repeat: no-repeat
+			background-position: center
+			background-color: var(--mainColor)
+			color: #fff
+
 	&-contacts
 		&__item
+			display: flex
 			padding-left: 30px
+
+			span 
+				margin-right: 13px
+
+			svg
+				fill: var(--mainColor)
+
+			&.ico
+				&-location
+					svg
+						size: 14px
+
+				&-email, &-phone
+					svg 
+						size: 13px
+
+				&-email
+					color: var(--mainColor)
+					text-decoration: underline
+
+				&-phone
+					font-weight: 500
+					font-size: rem(16)
+
+				&-special
+					color: var(--mainColor)
+					text-decoration: underline
+					svg 
+						size: 16px
 
 
 
@@ -45,112 +87,68 @@
 		&__item
 			position: relative
 
-			ul
-				position: absolute
-				top: calc(100% + 30px)
-				left: -40px
-				opacity: 0
-				pointer-events: none
-				padding-top: 15px
-				background: #fff
-				padding: 25px 40px
-				box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.05)
-				z-index: 1000
+			a 
+				position: relative
 
-				&:before 
+				&:after 
 					content: ''
 					position: absolute
-					top: -9px
-					left: 45px
-					display: block
-					size: 18px 
-					transform: rotate(45deg)
+					bottom: -10px
+					left: calc(50% - 10px)
+					size: 20px
 					background: #fff
+					transform: rotate(45deg)
+					opacity: 0
+					transition: opacity .3s ease
+			&:hover
+				> a
+					background: #7C523F
+					&:after 
+						opacity: 1
 
-				li 
-					margin-left: 0 !important
-					border-bottom: 1px solid transparent
-					display: inline-block
-
-					&.active 
-						border-bottom-color: #fff 
-						&:before
-							display: none
-
-						a 
-							color: #000
-
-
-
-					a 
-						padding: 0
-						color: #000 !important
-
-					&:hover
-
-						a 
-							color: #99a0aa !important
-
-
-					&:not(:last-child)
-						margin-bottom: 10px !important
-
-			&:not(:first-child)
-				margin-left: 30px
-
-			&:hover, &:focus
-				ul 
-					opacity: 1 !important
-					pointer-events: all !important
-			
-			&.active
-				&:before
-					content: ''
-					position: absolute
-					left: -35px
-					top: 50%
-					width: 20px
-					height: 1px
-					background: #000
-					display: block
-					
-
-				.head-menu__link
-					color: #000
-
-			
-
-
+				.submenu
+					opacity: 1
+					pointer-events: all
 
 		&__link
-			padding: 52px 0
-			letter-spacing: .01em
 			white-space: nowrap
-			color: #000
+			color: currentColor
+			display: inline-block
+			padding: 27px 48px
 
+.submenu
+	position: absolute
+	left: 0
+	top: 100%
+	background: #fff
+	color: #000
+	opacity: 0
+	pointer-events: none
+	transition: opacity .3s ease
 
+	&__list
+		padding: 30px 50px
+		display: flex
+		box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15)
 
-			&:hover 
-				color: #b4bac3
+	&__item
 
-.ico
-	&-location
-		background: url('../img/ico-location.svg') no-repeat left center
+		&:not(:last-child)
+			margin-right: 80px
 
-	&-email
-		background: url('../img/ico-mail.svg') no-repeat left center
-		text-decoration: underline
-		color: var(--mainColor)
+		&-link
+			color: currentColor
 
-	&-phone
-		background: url('../img/ico-phone.svg') no-repeat left center
-		font-size: rem(16)
-		font-weight: 600
+		&-top
+			margin-bottom: 10px
 
-	&-special
-		background: url('../img/ico-eye.svg') no-repeat left center	
-		color: var(--mainColor)
-		text-decoration: underline
+			a 
+				font-weight: 600
+				white-space: nowrap
+		&-bot
+			color: #9BAABB
+			.submenu__item-link
+				display: block
 
 
 .burger

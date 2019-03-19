@@ -1,53 +1,73 @@
 header.head
-	.wrapper
-		.head-top
-			.head-logo
-				a.logo(href="#")
-					img(src="img/logo.svg")
-			address.head-contacts-el
-				.head-contacts__item.ico-location г. Улан-Удэ, ул. Смолина, 65
-				a(href="mailto: start@msp03.ru").head-contacts__item.ico-email start@msp03.ru
-			address.head-contacts-el
-				a(href="tel: 8-800-30-30-123 ").head-contacts__item.ico-phone 8-800-30-30-123
-				.head-contacts__item.ico-special Версия для слабовидящих
+	.head-top-cont
+		.wrapper
+			.head-top
+				.head-logo
+					a.logo(href="#")
+						img(src="img/logo.svg")
+				address.head-contacts-el
+					.head-contacts__item.ico-location
+						span
+							svg.ico
+								use(xlink:href="#ico-location")
+						| г. Улан-Удэ, ул. Смолина, 65
+					a(href="mailto: start@msp03.ru").head-contacts__item.ico-email 
+						span
+							svg.ico
+								use(xlink:href="#ico-mail")
+						| start@msp03.ru
+				address.head-contacts-el
+					a(href="tel: 8-800-30-30-123 ").head-contacts__item.ico-phone 
+						span
+							svg.ico
+								use(xlink:href="#ico-phone")
+						| 8-800-30-30-123
+					.head-contacts__item.ico-special 
+						span
+							svg.ico
+								use(xlink:href="#ico-eye")
+						| Версия для слабовидящих
 
-			a(href="#").btn Оставить заявку
-			.head-soc
-				.soc
-					a.soc__link(href="#") 
-						img(src="img/ico-facebook.svg")
-					a.soc__link(href="#") 
-						img(src="img/ico-inst.svg")
-					a.soc__link(href="#") 
-						img(src="img/ico-vk.svg")
+				a(href="#").btn Оставить заявку
+				.head-soc
+					.soc
+						a.soc__link(href="#") 
+							img(src="img/ico-facebook.svg")
+						a.soc__link(href="#") 
+							img(src="img/ico-inst.svg")
+						a.soc__link(href="#") 
+							img(src="img/ico-vk.svg")
+						a.soc__link(href="#") 
+							img(src="img/ico-wifi.svg")
 
-			.burger
-				span
-
-		.head-bot
-			nav.head-menu
-				ul.head-menu__list
-					li.head-menu__item.active
-						a(href="#").head-menu__link Получить поддержку
+				.burger
+					span
+	.head-bot-cont
+		.wrapper
+			.head-bot
+				nav.head-menu
+					ul.head-menu__list
+						li.head-menu__item.active
+							a(href="#").head-menu__link Получить поддержку
 							.submenu
 								.submenu__list
 									.submenu__item
 										.submenu__item-top
-											a(href="#") Поручительство по кредитам
+											a(href="#").submenu__item-link Поручительство по кредитам
 										.submenu__item-bot
-											a(href="") Документы
-											a(href="#") Отчеты
+											a(href="").submenu__item-link Документы
+											a(href="#").submenu__item-link Отчеты
 									.submenu__item
 										.submenu__item-top
-											a(href="#") Микрофинансирование
+											a(href="#").submenu__item-link Микрофинансирование
 										.submenu__item-bot
-											a(href="") Документы
+											a(href="").submenu__item-link Документы
 									.submenu__item
 										.submenu__item-top
-											a(href="#") Инжиниринговые услуги
+											a(href="#").submenu__item-link Инжиниринговые услуги
 										.submenu__item-bot
-											a(href="") Документы
-											a(href="") Конкурсы
+											a(href="").submenu__item-link Документы
+											a(href="").submenu__item-link Конкурсы
 
 
 						each title in ['Онлайн-запись', 'Календарь мероприятий', 'Новости', 'Документы', 'Контакты']

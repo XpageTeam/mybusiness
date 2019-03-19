@@ -1,63 +1,68 @@
 .calendar
-						.calendar__title Календарь мероприятий
-							.calendar-body-cont
-								.calendar-filter
-									select#month_sel.calendar-filter__select.calendar-filter__select--month(onchange='b_result()', name='MONTH_SELECT')
-										option(value='1') Январь
-										option(value='2') Февраль
-										option(value='3', selected='') Март
-										option(value='4') Апрель
-										option(value='5') Май
-										option(value='6') Июнь
-										option(value='7') Июль
-										option(value='8') Август
-										option(value='9') Сентябрь
-										option(value='10') Октябрь
-										option(value='11') Ноябрь
-										option(value='12') Декабрь
-									select#year_sel.calendar-filter__select.calendar-filter__select--year(onchange='b_resultYear()', name='YEAR_SELECT')
-										option(value='13') 2017
-										option(value='14') 2018
-										option(value='15', selected='') 2019
-								.calendar-body__padding
-									.calendar-body
-										.calendar-row
-											span.calendar__cell.calendar__cell--another 25
-											span.calendar__cell.calendar__cell--another 26
-											span.calendar__cell.calendar__cell--another 27
-											span.calendar__cell.calendar__cell--another 28
-											a.calendar__cell.calendar__cell--link(title='Количество событий в этот день: 3', href='javascript:void(0);', onclick="location.href = '/kalendar-meropriyatiy/?month=3&year=2019&day=1'")  1 
-											span.calendar__cell 2
-											span.calendar__cell 3
-										.calendar-row
-											a.calendar__cell.calendar__cell--link(title='Количество событий в этот день: 3', href='javascript:void(0);', onclick="location.href = '/kalendar-meropriyatiy/?month=3&year=2019&day=4'")  4 
-											a.calendar__cell.calendar__cell--link(title='Количество событий в этот день: 2', href='javascript:void(0);', onclick="location.href = '/kalendar-meropriyatiy/?month=3&year=2019&day=5'")  5 
-											a.calendar__cell.calendar__cell--link(title='Количество событий в этот день: 3', href='javascript:void(0);', onclick="location.href = '/kalendar-meropriyatiy/?month=3&year=2019&day=6'")  6 
-											span.calendar__cell 7
-											span.calendar__cell 8
-											span.calendar__cell 9
-											span.calendar__cell 10
-										.calendar-row
-											a.calendar__cell.calendar__cell--link(title='Количество событий в этот день: 1', href='javascript:void(0);', onclick="location.href = '/kalendar-meropriyatiy/?month=3&year=2019&day=11'")  11 
-											a.calendar__cell.calendar__cell--link(title='Количество событий в этот день: 4', href='javascript:void(0);', onclick="location.href = '/kalendar-meropriyatiy/?month=3&year=2019&day=12'")  12 
-											a.calendar__cell.calendar__cell--link(title='Количество событий в этот день: 4', href='javascript:void(0);', onclick="location.href = '/kalendar-meropriyatiy/?month=3&year=2019&day=13'")  13 
-											a.calendar__cell.calendar__cell--link(title='Количество событий в этот день: 5', href='javascript:void(0);', onclick="location.href = '/kalendar-meropriyatiy/?month=3&year=2019&day=14'")  14 
-											a.calendar__cell.calendar__cell--link(title='Количество событий в этот день: 3', href='javascript:void(0);', onclick="location.href = '/kalendar-meropriyatiy/?month=3&year=2019&day=15'")  15 
-											span.calendar__cell 16
-											span.calendar__cell 17
-										.calendar-row
-											a.calendar__cell.calendar__cell--link(title='Количество событий в этот день: 1', href='javascript:void(0);', onclick="location.href = '/kalendar-meropriyatiy/?month=3&year=2019&day=18'")  18 
-											a.calendar__cell.calendar__cell--link(title='Количество событий в этот день: 1', href='javascript:void(0);', onclick="location.href = '/kalendar-meropriyatiy/?month=3&year=2019&day=19'")  19 
-											a.calendar__cell.calendar__cell--link(title='Количество событий в этот день: 5', href='javascript:void(0);', onclick="location.href = '/kalendar-meropriyatiy/?month=3&year=2019&day=20'")  20 
-											a.calendar__cell.calendar__cell--link(title='Количество событий в этот день: 3', href='javascript:void(0);', onclick="location.href = '/kalendar-meropriyatiy/?month=3&year=2019&day=21'")  21 
-											a.calendar__cell.calendar__cell--link(title='Количество событий в этот день: 2', href='javascript:void(0);', onclick="location.href = '/kalendar-meropriyatiy/?month=3&year=2019&day=22'")  22 
-											span.calendar__cell 23
-											span.calendar__cell 24
-										.calendar-row
-											a.calendar__cell.calendar__cell--link(title='Количество событий в этот день: 1', href='javascript:void(0);', onclick="location.href = '/kalendar-meropriyatiy/?month=3&year=2019&day=25'")  25 
-											a.calendar__cell.calendar__cell--link(title='Количество событий в этот день: 3', href='javascript:void(0);', onclick="location.href = '/kalendar-meropriyatiy/?month=3&year=2019&day=26'")  26 
-											a.calendar__cell.calendar__cell--link(title='Количество событий в этот день: 2', href='javascript:void(0);', onclick="location.href = '/kalendar-meropriyatiy/?month=3&year=2019&day=27'")  27 
-											a.calendar__cell.calendar__cell--link(title='Количество событий в этот день: 2', href='javascript:void(0);', onclick="location.href = '/kalendar-meropriyatiy/?month=3&year=2019&day=28'")  28 
-											span.calendar__cell 29
-											span.calendar__cell 30
-											span.calendar__cell 31
+	.calendar-top
+		.calendar__title Календарь мероприятий
+		.calendar-top__filter
+			.calendar-filter
+				.calendar-filter__select
+					select
+						option(value='1') Январь
+						option(value='2') Февраль
+						option(value='3', selected='') Март
+						option(value='4') Апрель
+						option(value='5') Май
+						option(value='6') Июнь
+						option(value='7') Июль
+						option(value='8') Август
+						option(value='9') Сентябрь
+						option(value='10') Октябрь
+						option(value='11') Ноябрь
+						option(value='12') Декабрь
+				.calendar-filter__select
+					select
+						option(value='13') 2017
+						option(value='14') 2018
+						option(value='15', selected='') 2019
+			.calendar-top__link
+				a(href="#") Все меороприятия этого месяца
+	.calendar-body-cont
+		.calendar-body
+			.calendar-row
+				span.calendar__cell.calendar__cell--another 25
+				span.calendar__cell.calendar__cell--another 26
+				span.calendar__cell.calendar__cell--another 27
+				span.calendar__cell.calendar__cell--another 28
+				a.calendar__cell.calendar__cell--link  1 
+				span.calendar__cell 2
+				span.calendar__cell 3
+			.calendar-row
+				a.calendar__cell.calendar__cell--link 4 
+				a.calendar__cell.calendar__cell--link 5 
+				a.calendar__cell.calendar__cell--link.active 6 
+				span.calendar__cell 7
+				span.calendar__cell 8
+				span.calendar__cell 9
+				span.calendar__cell 10
+			.calendar-row
+				a.calendar__cell.calendar__cell--link 11 
+				a.calendar__cell.calendar__cell--link 12 
+				a.calendar__cell.calendar__cell--link 13 
+				a.calendar__cell.calendar__cell--link 14 
+				a.calendar__cell.calendar__cell--link 15 
+				span.calendar__cell 16
+				span.calendar__cell 17
+			.calendar-row
+				a.calendar__cell.calendar__cell--link 18 
+				a.calendar__cell.calendar__cell--link 19 
+				a.calendar__cell.calendar__cell--link 20 
+				a.calendar__cell.calendar__cell--link 21 
+				a.calendar__cell.calendar__cell--link 22 
+				span.calendar__cell 23
+				span.calendar__cell 24
+			.calendar-row
+				a.calendar__cell.calendar__cell--link 25 
+				a.calendar__cell.calendar__cell--link 26 
+				a.calendar__cell.calendar__cell--link 27 
+				a.calendar__cell.calendar__cell--link 28 
+				span.calendar__cell 29
+				span.calendar__cell 30
+				span.calendar__cell 31

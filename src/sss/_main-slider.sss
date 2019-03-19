@@ -1,0 +1,52 @@
+.main-slider
+	width: calc(100% - 480px)
+
+	+ .calendar 
+		margin-left: 40px
+
+	&-container
+		display: flex
+
+	&__item
+		position: relative
+		color: #fff
+
+		img 
+			display: block
+
+		&:before 
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			display: block
+			background: url('../img/photos/main-banner-bg.png') no-repeat center
+
+		&-cont
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			display: flex 
+			flex-direction: column
+			align-items: flex-start
+			padding: 55px 70px
+
+	&__title
+		font-size: rem(22)
+		font-weight: 500
+		margin-top: auto
+
+	&__label
+		padding: 15px
+		border-radius: 25px
+		background: var(--backgroundColor)
+		line-height: 1
+		color: #000
+
+	&__date
+		font-weight: 300
+		margin-top: 15px

@@ -11,6 +11,10 @@
 
 
 @import "_header.sss"
+@import "_main-slider.sss"
+@import "_calendar.sss"
+@import "_scope.sss"
+@import "__support-variant.sss"
 
 
 .btn
@@ -25,3 +29,20 @@
 	&:hover 
 		background: #cc3d29
 
+.selectize-control.single 
+	.selectize-input
+		&:after
+			content: " "
+			display: block
+			position: absolute
+			top: calc(50% - 3px)
+			right: 15px
+			margin-top: 0 !important
+			width: 6px
+			height: 6px
+			border-color: none !important
+			border: 0 !important
+			transform: rotate(45deg)
+			border-right: 1px solid #000 !important
+			border-bottom: 1px solid #000 !important
+			pointer-events: none 

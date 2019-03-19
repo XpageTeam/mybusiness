@@ -6,6 +6,7 @@ const $ = require("gulp-load-plugins")(),
 	gutil = require("gulp-util"),
 	sourcemaps = require("gulp-sourcemaps"),
 	postcss = require("gulp-postcss"),
+	svgstore = require('gulp-svgstore'),
 	ftp = require("vinyl-ftp");
 
 let process = require("child_process"),
@@ -56,13 +57,13 @@ gulp.task("svg", e =>
 		}))
 		.pipe($.cheerio({
 			run($){
-				//$("[fill]").removeAttr("fill")
+				$("[fill]").removeAttr("fill");
+				$("[height]").removeAttr("height");
 
 				//$("[stroke]").removeAttr("stroke")
 
-				$("[style]").removeAttr("style")
-				$("[width]").removeAttr("width")
-				$("[height]").removeAttr("height")
+				// $("[style]").removeAttr("style")
+				// $("[width]").removeAttr("width")
 			},
 			parserOptions: {
 				xmlMode: true

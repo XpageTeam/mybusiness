@@ -1,18 +1,11 @@
 import $ from "jquery";
 import  is from "is_js"
-import "slick-carousel";
-import "slick-carousel/slick/slick.css";
 import "selectize/dist/js/selectize.min.js";
 import Swiper from "swiper";
 import "./main-sliders.js";
-import "./vinery.js";
-import "./faq.js";
-// import "./timeline.js";
-// import "./tovar.js";
-// import "./range.js";
+
 import "./tabs.js";
-// import "./lc.js";
-// import mobileMenu from "./mobile-menu.js";
+
 import "./standart-page.js"
 import Sticky from "./x-widgets.js";
 
@@ -20,81 +13,15 @@ window.$ = $;
 window.jQuery = $;
 window.is = is;
 
-const WOW = require("wowjs").WOW;
+// const WOW = require("wowjs").WOW;
 
 require("./countTo.js");
 require("./jquery.fancybox.js");
 require("../css/jquery.fancybox.css");
 
 
-// window.onload = function() {
-// }
 
 document.addEventListener("DOMContentLoaded", e => {
-
-	if ($('.title, .title-block h1').length) {
-		$('.title, .title-block h1').each(function(){
-			var article_text = $(this).html().replace(/-/ig,'<span>-</span>');
-			$(this).html(article_text);
-		});
-	}
-
-	var elements = document.getElementsByClassName("catalog-two__item-img");
-	var i;
-	for (i = 0; i < elements.length; i++) {
-	    var offset = elements[i].clientHeight * 0.7;   //.5 = 50%
-	    elements[i].setAttribute("data-wow-offset", offset);
-	}
-
-	new WOW({
-		boxClass:     'wow',      // default
-		animateClass: 'animated', // default
-		offset:       0,          // default
-		mobile:       true,       // default
-		live:         false,       // default
-
-	}).init();
-
-
-	new WOW({
-		boxClass:     'catalog-one__item-img',      // default
-		animateClass: 'animated', // default
-		offset:       50,          // default
-		mobile:       true,       // default
-		live:         false        // default
-	}).init();
-
-
-
-	if(is.ios()){
-		$('body').addClass('js__ios');
-	}
-
-
-
-
-	$('.filter-panel').click(function(){
-		var $this = $(this);
-
-		$this.next('form').slideToggle();
-	})
-
-
-
-	let mobileMenu = $('.head-menu__list').clone(),
-		mobileSoc = $('footer .soc').clone();
-
-
-	$('.mobile-menu').append(mobileMenu);
-	$('.mobile-menu').append(mobileSoc);
-
-
-	// $('.mobile-menu a[href="/about/karta-vinogradnikov/"]').closest('li').remove()
-
-
-
-
-
 
 
 	$("body").click(function(e){
@@ -109,9 +36,6 @@ document.addEventListener("DOMContentLoaded", e => {
 		
 	
 	  
-
-	
-
 	let swiper = new Swiper(".main-slider .swiper-container", {
 
 		effect: "fade",
@@ -622,43 +546,43 @@ $(window).on("load scroll resize touchmove", e => {
 
 
 
-	if($(window).width() > 660 && $('body').hasClass('main')){
+	// if($(window).width() > 660 && $('body').hasClass('main')){
 
-		if ($(window).scrollTop() >= 250){
-			$(".head").addClass("js__scrolled");
-			$("body").addClass("js__scroll");
+	// 	if ($(window).scrollTop() >= 250){
+	// 		$(".head").addClass("js__scrolled");
+	// 		$("body").addClass("js__scroll");
 			
-			setTimeout(e => {
-				$(".head").addClass("js__show")
-			}, 200);
+	// 		setTimeout(e => {
+	// 			$(".head").addClass("js__show")
+	// 		}, 200);
 
-		} else {
-			$(".head").removeClass("js__scrolled").removeClass("js__show");
-			$("body").removeClass("js__scroll");
+	// 	} else {
+	// 		$(".head").removeClass("js__scrolled").removeClass("js__show");
+	// 		$("body").removeClass("js__scroll");
 
-		}
+	// 	}
 		
-	} else if($('body').hasClass('main')) {
+	// } else if($('body').hasClass('main')) {
 
-		if($('body').hasClass('js__menu--open')){
-			return false
-		}
+	// 	if($('body').hasClass('js__menu--open')){
+	// 		return false
+	// 	}
 
-		if ($(window).scrollTop() <= 0){
-			$(".head").removeClass("js__scrolled").removeClass("js__show");
-			$("body").removeClass("js__scroll");
+	// 	if ($(window).scrollTop() <= 0){
+	// 		$(".head").removeClass("js__scrolled").removeClass("js__show");
+	// 		$("body").removeClass("js__scroll");
 
-		} else {
-			$(".head").addClass("js__scrolled");
-			$("body").addClass("js__scroll");
+	// 	} else {
+	// 		$(".head").addClass("js__scrolled");
+	// 		$("body").addClass("js__scroll");
 			
-			setTimeout(e => {
-				$(".head").addClass("js__show")
-			}, 200);
+	// 		setTimeout(e => {
+	// 			$(".head").addClass("js__show")
+	// 		}, 200);
 
-		}
+	// 	}
 
-	}
+	// }
 
 
 

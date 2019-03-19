@@ -13,14 +13,14 @@ module.exports = {
 					},
 					400: {
 						url: {
-							woff: "../fonts/Montserrat/montserrat-medium.woff",
-							woff: "../fonts/Montserrat/montserrat-medium.woff2",
+							woff: "../fonts/Montserrat/montserrat-regular.woff",
+							woff: "../fonts/Montserrat/montserrat-regular.woff2",
 						}
 					},
 					500: {
 						url: {
-							woff: "../fonts/Montserrat/montserrat-regular.woff",
-							woff: "../fonts/Montserrat/montserrat-regular.woff2",
+							woff: "../fonts/Montserrat/montserrat-medium.woff",
+							woff: "../fonts/Montserrat/montserrat-medium.woff2",
 						}
 					},
 					600: {

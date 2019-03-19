@@ -1,0 +1,43 @@
+.scope
+	position: relative
+	z-index: 10
+	color: #fff
+	padding: 75px 0
+
+	&-title 
+		font-size: rem(26)
+		font-weight: 600
+		margin-bottom: 40px
+
+	&-cont
+		position: relative
+		background: url('../img/photos/scope-bg.jpg') no-repeat center
+		background-size: cover
+		margin-top: 75px
+
+		&:before 
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			display: block
+			background: #623B2A
+			opacity: 0.9
+
+	&__list
+		display: flex 
+		flex-wrap: wrap
+		margin: 0 0 -55px -80px
+
+	&__item
+		display: flex
+		align-items: center
+		width: calc((100% - 80px * 3) / 3)
+		margin: 0 0 55px 80px
+
+		&-img
+			width: 55px
+			flex: none
+			margin-right: 30px

@@ -9,64 +9,71 @@ html(lang="ru")
 		include inc/header.pug
 		main#content
 			.content
-				section.main-banner-cont
-					.main-banner
-						.swiper-container
-							.swiper-wrapper
-								a(href="#").main-banner__item.swiper-slide
-									img(src="img/photos/security.jpg", alt="")
-									.main-banner__item-cont
-										.main-banner__label Региональные новости
-										.main-banner__title Вадим Живулин: Средства, выделяемые<br> на сектор МСП до 2024 года - беспрецедентны.
-										.main-banner__date 05.02.2019
+				section.main-slider-cont
+					.wrapper
+						.main-slider-container
+							.main-slider
+								.swiper-container
+									.swiper-wrapper
+										a(href="#").main-slider__item.swiper-slide
+											img(src="img/photos/main-banner.jpg", alt="")
+											.main-slider__item-cont
+												.main-slider__label Региональные новости
+												.main-slider__title Вадим Живулин: Средства, выделяемые<br> на сектор МСП до 2024 года - беспрецедентны.
+												.main-slider__date 05.02.2019
 
 
-						.security-slider__nav
-							.swiper-arrow.swiper-button-prev
-							.swiper-arrow.swiper-button-next
-					include inc/calendar.pug
+								.security-slider__nav
+									.swiper-arrow.swiper-button-prev
+									.swiper-arrow.swiper-button-next
+							include inc/calendar.pug
 
-				section.scope
-					.scope-title Возможности для Вас и Вашего бизнеса
-					.scope__list
-						each title, i in ['Возможности для Вас и Вашего бизнеса', 'Составление бизнес-плана', 'Составление бизнес-плана', 'Тренинги, семинары, мастер-классы', 'Выставки, бизнес миссии', 'Оборудованный офис для начинающих предпринимателей', 'Поручительства по банковским кредитам при недостаточности залога', 'Получение микрозаймов на льготных условиях', 'Вывод компаний на международный рынок', 'Модернизация производственных мероприятий', 'МФЦ для бизнеса']
-							.scope__item
-								figure.scope__item-img
-									img(src="img/scope-"+i+".svg", alt="")
-								.scope__item-text=title
+				section.scope-cont
+					.wrapper
+						.scope
+							.scope-title Возможности для Вас и Вашего бизнеса
+							.scope__list
+								each title, i in ['Возможности для Вас и Вашего бизнеса', 'Составление бизнес-плана', 'Составление бизнес-плана', 'Тренинги, семинары, мастер-классы', 'Выставки, бизнес миссии', 'Оборудованный офис для начинающих предпринимателей', 'Поручительства по банковским кредитам при недостаточности залога', 'Получение микрозаймов на льготных условиях', 'Вывод компаний на международный рынок', 'Модернизация производственных мероприятий', 'МФЦ для бизнеса']
+									.scope__item
+										figure.scope__item-img
+											img(src="img/scope-"+i+".svg", alt="")
+										.scope__item-text=title
 
-				section.support-variant
-					.support-title Узнайте о вариантах поддержки вашего бизнеса по ИНН
-					.support-variant-cont
-						.support-variant--left
-							.support-variant__title Какой вид государственной поддержки доступен для вашего бизнеса?
-							.support-variant__text Льготные микрозаймы, поручительства, модернизирование производства, выход на международные рынки, поиск инвесторов, обучение персонала и многое другое. 
-							.support-variant__input
-								input.input(type="text" placeholder="Введите Ваш ИНН")
-								input.submit(type="submit" value="Найти")
-								label.label Введите ИНН и узнайте о вариантах поддержки вашего бизнеса:
-						.support-variant--right
-							.support-stat
-								.support-stat__item
-									figure
-										img(src="img/stat-1.svg", alt="")
-									.support-stat__item-num(data-from="0" data-to="8310") 0
-									.support-stat__item-text участников<br> мероприятий
-								.support-stat__item
-									figure
-										img(src="img/stat-2.svg", alt="")
-									.support-stat__item-num(data-from="0" data-to="12808") 0
-									.support-stat__item-text получателей<br> консультаций								
-								.support-stat__item
-									figure
-										img(src="img/stat-3.svg", alt="")
-									.support-stat__item-num(data-from="0" data-to="294") 0
-									.support-stat__item-text млн. руб. выдано<br> микрозаймов
-								.support-stat__item
-									figure
-										img(src="img/stat-3.svg", alt="")
-									.support-stat__item-num(data-from="0" data-to="264") 0
-									.support-stat__item-text млн. руб. выдано<br> поручительств
+				section.support-variant__cont
+					.wrapper
+						.support-variant
+							.support-title Узнайте о вариантах поддержки вашего бизнеса по ИНН
+							.support-variant-cont
+								.support-variant--left
+									.support-variant__title Какой вид государственной поддержки доступен для вашего бизнеса?
+									.support-variant__text Льготные микрозаймы, поручительства, модернизирование производства, выход на международные рынки, поиск инвесторов, обучение персонала и многое другое. 
+									.support-variant__input-cont
+										label.label Введите ИНН и узнайте о вариантах поддержки вашего бизнеса:
+										.support-variant__input
+											input.input(type="text" placeholder="Введите Ваш ИНН")
+											input.submit.btn(type="submit" value="Найти")
+								.support-variant--right
+									.support-stat
+										.support-stat__item
+											figure
+												img(src="img/stat-1.svg", alt="")
+											.support-stat__item-num(data-from="0" data-to="8310") 0
+											.support-stat__item-text участников<br> мероприятий
+										.support-stat__item
+											figure
+												img(src="img/stat-2.svg", alt="")
+											.support-stat__item-num(data-from="0" data-to="12808") 0
+											.support-stat__item-text получателей<br> консультаций								
+										.support-stat__item
+											figure
+												img(src="img/stat-3.svg", alt="")
+											.support-stat__item-num(data-from="0" data-to="294") 0
+											.support-stat__item-text млн. руб. выдано<br> микрозаймов
+										.support-stat__item
+											figure
+												img(src="img/stat-3.svg", alt="")
+											.support-stat__item-num(data-from="0" data-to="264") 0
+											.support-stat__item-text млн. руб. выдано<br> поручительств
 
 				section.task
 					.task-title Какая задача для Вас актуальна?
