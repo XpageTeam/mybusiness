@@ -1,0 +1,342 @@
+.fancybox
+	&-is-open 
+		.fancybox-bg
+			opacity: 0.98 !important
+
+
+.popup-form
+	display: none
+	padding: rem(38) rem(47) rem(44) !important
+	background: #fff
+	color: #000
+	font-family: "Cormorant" !important
+	font-weight: bold
+	padding: 65px 78px 80px 78px !important
+
+	.forms__input-cont
+		margin-left: 0 !important
+		margin-bottom: 0 !important
+	
+
+
+	&__title
+		position: relative
+		
+		margin-bottom: rem(24)
+		color: #000
+
+		.title 
+			line-height: 1
+			font-size: rem(50)
+			text-align: center
+			position: relative
+			z-index: 0
+
+			&-bg
+				position: absolute
+				bottom: -47px
+				left: 50%
+				font-size: rem(87)
+				color: #f6f7f9
+				text-transform: uppercase
+				z-index: 0
+				transform: translateX(-50%)
+				
+
+
+
+	&__text 
+		text-align-last: auto
+		color: #000
+
+	textarea
+		width: 100%
+		min-width: 100%
+		max-width: 100%
+
+		padding-top: 10px
+		padding-bottom: 10px
+		min-height: 100px !important
+
+	
+
+	&__content
+		margin-top: 50px
+
+	.button 
+		span 
+			padding: 0
+		input 
+			padding: 0.6em 2em
+			background-color: transparent
+			border: 0
+			font-size: rem(16)
+			font-family: "GothamPro" !important
+			font-weight: 300
+			position: relative
+			z-index: 1000
+
+		&:hover 
+			input 
+				color: #fff
+
+
+
+.checkbox
+	position: relative
+
+	&__input
+		// position: absolute 0 * * 0
+		position: absolute
+		left: 0
+		opacity: 0
+		pointer-events: none
+
+		&:checked
+
+			~ label
+
+				&:after
+					opacity: 1
+
+	&__label
+		cursor: pointer
+		display: flex
+		position: relative
+		user-select: none
+
+		&:before, &:after
+			content: ""
+			display: inline-block
+
+		&:before
+			flex: none
+			background: var(--secondColor)
+			border: 1px solid var(--secondColor)
+			margin: 0 15px 0 0
+			size: 28px
+
+		&:after
+			border: 1px solid var(--mainColor)
+			border-top: none
+			border-left: none
+			size: 6px 10px
+			transform: rotateZ(45deg)
+			position: absolute 7px * * 11px
+			transition: opacity .1s ease
+			opacity: 0
+
+.forms-wrap
+	display: flex
+	flex-wrap: wrap
+	align-items: flex-start
+	margin: 0 0 -35px -70px 
+
+	.forms__input-cont
+		width: calc((100% - 70px * 2) / 2)
+		margin: 0 0 35px 70px 
+
+	&--column
+		flex-direction: column
+		margin: 0 !important
+
+		.forms
+
+			&__input-cont
+
+				&:not(:first-child)
+					margin: 32px 0 0
+
+
+		input[type="hidden"] + .forms__input-cont
+			margin-top: 0 !important
+
+
+	&--middle
+		margin-top: 20px
+
+.forms
+
+
+	&__input
+		padding: 0 30px
+		min-height: 62px
+		border: 1px solid transparent
+		transition: border-color .3s ease
+		background: var(--secondColor)
+		font-size: rem(16)
+		font-family: "GothamPro" !important
+		font-weight: 300 !important
+		color: #000
+
+		&_error
+			border: 1px solid var(--mainColor)
+			transition: border-color .3s ease
+		&:focus
+			border-color: var(--mainColor)
+
+
+		&--file
+			display: none
+
+			&-support 
+				pointer-events: none
+
+
+
+		&-cont
+			position: relative
+			display: flex
+			flex-direction: column-reverse
+
+			&.js__input-full
+				.forms__label
+					top: -15px
+
+		&[required] ~ label
+
+			&:after
+				content: "*"
+				display: inline-block
+				color: red
+
+		&--textarea
+			max-width: 100%
+			resize: none
+
+	&__label
+		margin-bottom: 14px
+		flex: none
+		color: #666666
+		transition: top .3s ease
+		pointer-events: none
+
+		&--file
+			&:before
+				content: attr(data-btn-text)
+				position: absolute
+				pointer-events: all
+				background: url('../img/ico-clip.png') center no-repeat, #f4f4f4
+				right: 0
+				bottom: 0
+				cursor: pointer
+				height: 62px
+				width: 60px
+				text-align: right
+				line-height: 49px
+				box-sizing: border-box
+				padding-right: 0.83333vw
+
+	&__error-message
+		position: absolute
+		top: 0
+		right: 0
+
+
+.forms-bot
+	margin: 40px 0 0
+	display: flex
+	justify-content: center
+
+	&__links
+		text-align: left
+
+
+
+
+	
+
+.form-links
+	color: #666
+
+	a 
+		color: var(--mainColor)
+
+
+	&__link
+		color: var(--mainColor)
+		border-bottom: 1px solid #d4e3f6
+
+
+
+
+.fancybox
+	&-close-small 
+		color: #fff !important
+		height: 47px !important
+		right: 32px !important
+		top: -13px !important
+		width: 47px !important
+		svg
+			stroke-width: 2.4 !important
+
+	&-bg
+		background: rgba(30, 30, 30, 0.22) !important
+
+.auth
+	max-width: 470px !important
+	width: 100%
+
+	.forms__input-cont
+		width: 100%
+		margin: 0
+
+.fancybox-close-small
+	top: 0 !important
+	right: 0 !important
+	color: #000 !important
+
+
+.notetext
+	color: #000 !important
+
+.form_result
+	text-align: center !important
+
+
+@media screen and (max-width: 1200px)
+	
+	.popup-form
+		padding: 50px !important
+
+		.title-bg
+			left: 50% !important
+			bottom: -32px
+			transform: translateX(-50%)
+
+@media screen and (max-width: 660px)
+	
+	.popup-form
+		padding: 2rem 1.4rem !important
+
+	.fancy-active, .fancybox-active
+		#content, .head, .footer, .fancybox-bg
+			display: none 
+
+		.fancybox-slide--html
+			padding: 0 !important
+
+	.forms
+		&__input
+			padding: 0 20px
+			min-height: 45px
+
+		&__label
+			margin-bottom: 7px
+
+	.popup-form 
+		.button input
+			padding: 0.4em 1em
+
+	.fancybox-close-small
+		position: fixed !important
+		top: 0 !important
+		right: 0 !important
+		z-index: 100
+
+	.forms-wrap--column .forms__input-cont:not(:first-child)
+		margin: 15px 0 0
+
+
+
+

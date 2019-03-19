@@ -1,0 +1,58 @@
+header.head
+	.wrapper
+		.head-top
+			.head-logo
+				a.logo(href="#")
+					img(src="img/logo.svg")
+			address.head-contacts-el
+				.head-contacts__item.ico-location г. Улан-Удэ, ул. Смолина, 65
+				a(href="mailto: start@msp03.ru").head-contacts__item.ico-email start@msp03.ru
+			address.head-contacts-el
+				a(href="tel: 8-800-30-30-123 ").head-contacts__item.ico-phone 8-800-30-30-123
+				.head-contacts__item.ico-special Версия для слабовидящих
+
+			a(href="#").btn Оставить заявку
+			.head-soc
+				.soc
+					a.soc__link(href="#") 
+						img(src="img/ico-facebook.svg")
+					a.soc__link(href="#") 
+						img(src="img/ico-inst.svg")
+					a.soc__link(href="#") 
+						img(src="img/ico-vk.svg")
+
+			.burger
+				span
+
+		.head-bot
+			nav.head-menu
+				ul.head-menu__list
+					li.head-menu__item.active
+						a(href="#").head-menu__link Получить поддержку
+							.submenu
+								.submenu__list
+									.submenu__item
+										.submenu__item-top
+											a(href="#") Поручительство по кредитам
+										.submenu__item-bot
+											a(href="") Документы
+											a(href="#") Отчеты
+									.submenu__item
+										.submenu__item-top
+											a(href="#") Микрофинансирование
+										.submenu__item-bot
+											a(href="") Документы
+									.submenu__item
+										.submenu__item-top
+											a(href="#") Инжиниринговые услуги
+										.submenu__item-bot
+											a(href="") Документы
+											a(href="") Конкурсы
+
+
+						each title in ['Онлайн-запись', 'Календарь мероприятий', 'Новости', 'Документы', 'Контакты']
+							li.head-menu__item
+								a(href="#").head-menu__link=title
+
+			
+			

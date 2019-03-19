@@ -1,0 +1,351 @@
+.head
+	position: relative
+	z-index: 10
+	border-bottom: 1px solid transparent
+
+
+	&.js__scrolled
+		position: fixed
+		pointer-events: all !important
+		transform: translate3d(0, -100%, 0)
+		z-index: 17
+		top: 0
+		left: 0
+		right: 0
+		opacity: 0
+		border-bottom: 1px solid #eee
+
+
+
+		&.js__show
+			transition: transform .5s ease
+			transform: translate3d(0, 0, 0)
+			opacity: 1
+
+
+	&-top
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+	&-contacts
+		&__item
+			padding-left: 30px
+
+
+
+	&-menu
+		display: flex 
+		flex: 1 1 auto
+		&__list
+			display: flex
+			flex: 1 1 auto
+			justify-content: space-between
+
+		&__item
+			position: relative
+
+			ul
+				position: absolute
+				top: calc(100% + 30px)
+				left: -40px
+				opacity: 0
+				pointer-events: none
+				padding-top: 15px
+				background: #fff
+				padding: 25px 40px
+				box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.05)
+				z-index: 1000
+
+				&:before 
+					content: ''
+					position: absolute
+					top: -9px
+					left: 45px
+					display: block
+					size: 18px 
+					transform: rotate(45deg)
+					background: #fff
+
+				li 
+					margin-left: 0 !important
+					border-bottom: 1px solid transparent
+					display: inline-block
+
+					&.active 
+						border-bottom-color: #fff 
+						&:before
+							display: none
+
+						a 
+							color: #000
+
+
+
+					a 
+						padding: 0
+						color: #000 !important
+
+					&:hover
+
+						a 
+							color: #99a0aa !important
+
+
+					&:not(:last-child)
+						margin-bottom: 10px !important
+
+			&:not(:first-child)
+				margin-left: 30px
+
+			&:hover, &:focus
+				ul 
+					opacity: 1 !important
+					pointer-events: all !important
+			
+			&.active
+				&:before
+					content: ''
+					position: absolute
+					left: -35px
+					top: 50%
+					width: 20px
+					height: 1px
+					background: #000
+					display: block
+					
+
+				.head-menu__link
+					color: #000
+
+			
+
+
+
+		&__link
+			padding: 52px 0
+			letter-spacing: .01em
+			white-space: nowrap
+			color: #000
+
+
+
+			&:hover 
+				color: #b4bac3
+
+.ico
+	&-location
+		background: url('../img/ico-location.svg') no-repeat left center
+
+	&-email
+		background: url('../img/ico-mail.svg') no-repeat left center
+		text-decoration: underline
+		color: var(--mainColor)
+
+	&-phone
+		background: url('../img/ico-phone.svg') no-repeat left center
+		font-size: rem(16)
+		font-weight: 600
+
+	&-special
+		background: url('../img/ico-eye.svg') no-repeat left center	
+		color: var(--mainColor)
+		text-decoration: underline
+
+
+.burger
+	z-index: 9999
+	display: none
+	justify-content: center
+	align-items: center
+	box-sizing: content-box
+	width: 30px
+	height: 30px
+	padding: 15px
+	background: 0 0
+	border: 0
+	user-select: none
+	margin: -15px
+	margin-left: auto
+	cursor: pointer
+	pointer-events: auto
+	
+	&:before 
+		display: none
+	span
+		position: relative
+		display: inline-block
+		width: 30px
+		height: 2px
+		border-radius: 5px
+		vertical-align: bottom
+		background: #fff
+		transition: background .2s .4s
+		&:before
+			border-radius: 5px
+			transform: none
+			content: ""
+			position: absolute
+			left: 0
+			top: 10px
+			width: 100%
+			height: 2px
+			background: #fff
+			transform-origin: 50% 50%
+			transition: top .3s .3s,transform .3s
+		&:after
+			border-radius: 5px
+			content: ""
+			position: absolute
+			left: 0
+			top: -10px
+			width: 100%
+			height: 2px
+			background: #fff
+			transform-origin: 50% 50%
+			transition: top .3s .3s,transform .3s
+
+
+.main-nav--open
+
+
+	footer 
+		transform: translate3d(-250px, 0, 0)
+	.menu-mobile
+		// overflow-y: scroll
+		overflow-x: hidden
+	.submenu
+		display: block
+		height: 100vh !important
+	.burger>span
+		background: 0 0
+	.burger>span::before
+		transform: rotate3d(0,0,1,45deg)
+		top: 0
+		transition: top .3s,transform .3s .5s
+	.burger>span::after 
+		transform: rotate3d(0,0,1,-45deg)
+		top: 0
+		transition: top .3s,transform .3s .5s
+	.menu
+		transform: translate3d(0,0,0)
+
+		&__item 
+			transform: translate3d(0,0,0)
+
+@media screen and (max-width: 1500px)
+
+	.inner 
+		.head-logo
+			max-width: 150px
+
+		.logo
+			padding: 1.4rem
+
+		
+@media screen and (max-width: 1200px)
+
+	.head-logo
+		margin-right: 0
+
+	.inner 
+		.head-logo
+			max-width: 105px
+			
+		.logo 
+			padding-left: 0
+
+
+
+	.head-menu__item.active:before
+		left: -15px
+		width: 10px
+
+	.head-menu
+		display: none
+
+	.burger 
+		display: flex
+
+@media screen and (max-width: 1000px)
+
+	.logo
+		padding: 1.4rem
+	
+@media screen and (max-width: 667px)
+
+	.logo
+		padding: 10px 10px 3px !important
+
+		img 
+			width: 55px 
+
+	.main
+		&.js__scroll
+			margin-top: 0 !important
+
+
+
+
+
+		.head
+			position: fixed !important
+			top: 0
+			left: 0
+			right: 0
+			background: transparent
+			transition: background .3s ease, opacity .3s ease
+			transform: none !important
+
+			&-cont 
+				align-items: flex-start
+
+			&-logo
+				margin-bottom: 0
+
+
+
+			&.js__scrolled
+				pointer-events: all !important
+				z-index: 17
+				background: #fff
+				transform: none !important
+				opacity: 0
+
+				.burger
+					span 
+						background: #000
+
+						&:before, &:after 
+							background: #000
+
+
+				.head-logo
+					margin-bottom: -7px 
+
+				.logo
+
+					img 
+						width: 55px
+
+
+				&.js__show
+					transition: transform .5s ease
+					transform: none !important
+					opacity: 1
+
+
+		.burger 
+			margin-top: 0
+			padding-top: 1.4rem
+
+			span 
+				background: #fff
+
+				&:before, &:after 
+					background: #fff
+
+
+
+
+		

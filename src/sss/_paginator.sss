@@ -1,0 +1,59 @@
+.paginator
+	display: flex 
+	justify-content: center
+	padding: 73px 0
+
+	li 
+		&:not(:first-child)
+			margin-left: 10px
+
+	a
+		position: relative
+		size: 32px
+		font-size: rem(14)
+		display: block
+		text-align: center
+		line-height: 32px
+		
+
+		&:before 
+			content: ''
+			position: absolute
+			top: calc(50% - 16px)
+			left: calc(50% - 16px)
+			display: block
+			size: 100%
+			background-color: transparent
+			transform: rotate(-45deg)
+			z-index: -1
+
+
+		&.active
+			color: #fff
+
+			&:before 
+				background: var(--mainColor)
+
+	&__arrow
+		a
+
+			&:before 
+				content: ''
+				size: 6px
+				display: block
+				position: absolute
+				top: calc(50% - 3px)
+				left: calc(50% - 3px)
+				border-right: 1px solid #000
+				border-bottom: 1px solid #000
+
+		&:first-child
+			a
+
+				&:before 
+					transform: rotate(-225deg)
+
+
+
+
+

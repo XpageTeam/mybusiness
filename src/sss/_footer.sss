@@ -1,0 +1,79 @@
+.footer
+	background: url('../img/photos/footer-bg.png') no-repeat center
+	background-color: var(--mainColor)
+	color: #fff
+	padding: 30px 0
+	background-size: cover
+
+	&__cont
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+	&__devaloper
+		max-width: 210px
+		display: flex
+		flex: 1 1 auto
+		justify-content: flex-end
+
+		&__img
+			display: flex 
+
+			svg 
+				display: block
+
+	.soc__link, svg
+		color: #fff
+
+		span
+			display: flex 
+			justify-content: center
+			align-items: center
+
+		object
+
+			svg 
+				// color: var(--secondColor)
+				transition: color .3s ease
+
+		&:hover
+			svg 
+				color: var(--mainColor)
+.developer__img
+	display: flex
+
+
+
+.main 
+	.footer 
+		margin-top: 135px
+				
+
+@media screen and (max-width: 667px)
+	.footer
+		padding: 25px 0 20px
+
+		&__cont
+			flex-direction: column
+			align-items: center
+			flex-direction: row
+			align-items: flex-start
+			flex-wrap: wrap
+
+		&__copy
+			text-align: left
+			margin-bottom: 10px
+			order: 1
+			font-size: rem(15)
+			line-height: 1.5
+
+		&__devaloper
+			margin-top: 0
+			order: 2
+
+		&__soc 
+			order: 3
+			margin-left: -12px
+
+
+			

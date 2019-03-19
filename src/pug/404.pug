@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title 404
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading.page-404
+		include inc/header.pug
+		
+		main#content
+			.content
+				.page-error
+					.page-error__title 
+						.title 404
+						.title--bg Error
+					.page-error__info
+						.page-error__info-top Ой, что-то пошло не так :(
+						.page-error__info-bot Страница не найдена
+
+					a(href="").button
+						span Вернуться назад
+
+
+
+
+
+					
+
+				
+
+											
+
+					
+		include inc/footer.pug
+		include inc/scripts.pug
