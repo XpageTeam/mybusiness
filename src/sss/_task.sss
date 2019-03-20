@@ -1,0 +1,72 @@
+.task
+	&-cont 
+		background: var(--backgroundColor)
+		padding: 70px 0 80px
+
+	&-title 
+		font-size: rem(26)
+		font-weight: 600
+		margin-bottom: 40px
+
+	&__item
+		background: #fff
+
+		&-arrow
+			position: relative
+			size: 54px
+			border-radius: 50%
+			background: var(--mainColor)
+			margin-left: auto
+			transition: transform .3s ease
+
+			&:before 
+				content: ''
+				display: block
+				size: 6px
+				position: absolute
+				top: calc(50% - 3px)
+				left: calc(50% - 3px)
+				border-right: 1px solid #fff
+				border-bottom: 1px solid #fff
+				transform: rotate(45deg)
+
+
+		&:not(:last-child)
+			margin-bottom: 20px
+
+		&-top
+			padding: 25px 50px
+			border-bottom: 1px solid var(--backgroundColor)
+			display: flex
+			align-items: center
+			cursor: pointer
+
+			figure
+				margin-right: 45px
+				width: 55px
+				flex: none
+
+			&.js__animate
+
+				.task__item-arrow
+					transform: rotate(180deg)
+
+		&-title
+			font-size: rem(22)
+			font-weight: 600
+
+		&-subtitle
+			color: #9BAABB
+
+		&-bot
+			padding: 40px 150px
+			display: none
+
+			.text-page 
+				max-width: 900px
+
+				ul 
+					margin-top: 5px
+
+		&-btn
+			margin-top: 40px

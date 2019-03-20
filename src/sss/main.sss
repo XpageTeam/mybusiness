@@ -14,7 +14,9 @@
 @import "_main-slider.sss"
 @import "_calendar.sss"
 @import "_scope.sss"
-@import "__support-variant.sss"
+@import "_support-variant.sss"
+@import "_task.sss"
+@import "_stock-slider.sss"
 
 
 .btn
@@ -28,6 +30,13 @@
 
 	&:hover 
 		background: #cc3d29
+
+	&--color
+		background: var(--mainColor)
+
+		&:hover 
+			background: #865641
+
 
 .selectize-control.single 
 	.selectize-input
@@ -46,3 +55,28 @@
 			border-right: 1px solid #000 !important
 			border-bottom: 1px solid #000 !important
 			pointer-events: none 
+
+.swiper
+	&-arrow
+		size: 45px
+		border-radius: 50%
+		background: #fff
+		position: relative
+		margin: 0
+		left: initial
+		right: initial
+
+		&:before 
+			content: ''
+			display: block
+			position: absolute
+			top: calc(50% - 4px)
+			left: calc(50% - 4px)
+			size: 8px
+			transform: rotate(45deg)
+			border-right: 1px solid #000
+			border-top: 1px solid #000
+
+	&-button
+		&-prev
+			transform: rotate(180deg)

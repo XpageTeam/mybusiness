@@ -1,8 +1,8 @@
 import $ from "jquery";
 import  is from "is_js"
+import Swiper from "swiper/dist/js/swiper.js";
+import "./stock-sliders.js";
 import "selectize/dist/js/selectize.min.js";
-import Swiper from "swiper";
-import "./main-sliders.js";
 
 import "./tabs.js";
 
@@ -84,51 +84,93 @@ document.addEventListener("DOMContentLoaded", e => {
 
 	});
 
-	let swiperFranshizaReviews = new Swiper(".franshiza-reviews__list .swiper-container", {
-		// effect: "fade",
-		slidesPerView: 1,
-		loop: true,
-		roundLengths: true,
-		spaceBetween: 3,
-		// freeMode: true,
-		autoHeight: true,
-		
-		navigation: {
-	        nextEl: '.franshiza-reviews__arrow .swiper-button-next',
-	        prevEl: '.franshiza-reviews__arrow .swiper-button-prev',
-	      },
-	});
+	if ($(".support-stat__item-num").length){
+		$(".support-stat__item-num").countTo();
+	}
 
-	let swiperFranshizaEvents = new Swiper(".franshiza-events__list .swiper-container", {
-		// effect: "fade",
-		slidesPerView: 3,
-		loop: true,
-		roundLengths: true,
-		spaceBetween: 45,
-		// freeMode: true,
-		
-		navigation: {
-	        nextEl: '.franshiza-events__arrow .swiper-button-next',
-	        prevEl: '.franshiza-events__arrow .swiper-button-prev',
-	      },
-	});
+	$(window).on('scroll', function(){
+		if ($(".support-stat__item-num").length)
+			if ($(".support-stat__item-num").offset().top + 50 <=
+				$(window).scrollTop() + $(window).height()){
+					$(".support-stat__item-num:not(.countered)").each((i, el) => {
+						let $this = $(el),
+							speed = 0;
 
-	let swiperTestemonials = new Swiper(".account-testemonials__slider .swiper-container", {
-		effect: "fade",
-		// slidesPerView: 1,
-		// loop: true,
-		// roundLengths: true,
-		// spaceBetween: 45,
-		// freeMode: true,
-		// autoplay: {
-		// 	delay: 2000,
-		// },
-		
-		navigation: {
-	        nextEl: '.account-testemonials__arrow .swiper-button-next',
-	        prevEl: '.account-testemonials__arrow .swiper-button-prev',
-	      },
-	});
+						switch (i){
+							case 0:
+								speed = 4000;
+							break;
+							case 1:
+								speed = 2000;
+							break;
+
+							default:
+								speed = 3000;
+						}
+
+						$this.countTo({
+							speed: speed,
+						});
+
+						$this.addClass("countered");
+					});
+			}
+
+	})
+
+
+	$('.task__item-top').click(function(){
+
+		var $this = $(this);
+
+		$('.task__item-top').removeClass('js__animate');
+
+		if ($this.next('.task__item-bot').hasClass("js__open")){
+			$('.task__item-bot').slideUp(300).removeClass('js__open');
+		}else{
+			$('.task__item-bot').slideUp(300).removeClass('js__open');
+			$this.next('.task__item-bot').slideDown(300).addClass('js__open');
+			$this.addClass('js__animate');
+		}
+
+		setTimeout(function(){
+			$('html,body').animate({
+				scrollTop: $('.task__item-top.js__animate').offset().top}, 1000);
+		}, 300)
+
+
+	})
+
+	
+	$('.history-item__btn').click(function(){
+		let $this = $(this);
+
+		$this.closest('.history-item').toggleClass('js__open');
+		$this.closest('.history-item').find('.history-item__text-continuation').slideToggle();
+
+
+	})
+
+	// if ($(".main-sliders__title-wrapper").length){
+
+	//     $(".main-sliders__title-wrapper").prepend('<span class="sort-new__label"></span>')
+
+	//     $(".sort-new__label").css({
+	//         width: $(".main-sliders__title.active + div").outerWidth(),
+	//         left: $(".main-sliders__title.active + div").position().left,
+	//     })
+
+	//     $(".main-sliders__title-wrapper").addClass("js__have-label")
+
+	//     $(".main-sliders__title").addClass("js__visible")
+
+	//     $(".main-sliders__title").css({
+	//         width: $(".main-sliders__title.active + div").outerWidth(),
+	//         left: $(".main-sliders__title.active + div").position().left,
+	//     })
+
+	// }
+	
 
 
 	$('.burger').click(function(){

@@ -1,32 +1,44 @@
 footer.footer
 	.wrapper
 		.footer__cont
-			.footer__copy © ООО «АПК Мильстрим-<br> Черноморские вина»
+			.footer__top
+				.footer-logo
+					img(src="img/logo-footer.svg", alt="")
+				.footer-menu
+					a.footer__link О центре
+					a.footer__link Реестр получателей поддержки
+					a.footer__link Полезные ссылки
+				.foote-btn
+					a(href="#").btn Оставить заявку
+			.footer-middle
+				.footer-middle__item.ico-phone
+					a(href="tel: 8-800-30-30-123") 8-800-30-30-123
+				.footer-middle__item.ico-email
+					a(href="mailto: start@msp03.ru") start@msp03.ru
+				.footer-middle__item.ico-clock
+					span 8:30 - 17:30
+			.footer-bot
+				.footer__copy 
+					span © Мой бизнес, 2019
+					span 
+						a(href="#") Политика конфиденциальности
 
-			.footer__soc
-				.soc
-					.soc__item
-						a(href="").soc__link
-							object(type="image/svg+xml" data="img/ico-facebook.svg" width="20" height="20")
-								img(src="img/ico-facebook.svg" width="20" height="20" alt="")
-					.soc__item
-						a(href="").soc__link
-							object(type="image/svg+xml" data="img/ico-vk.svg" width="20" height="20")
-								img(src="img/ico-vk.svg" width="20" height="20" alt="")
-					.soc__item
-						a(href="").soc__link
-							object(type="image/svg+xml" data="img/ico-inst.svg" width="20" height="20")
-								img(src="img/ico-inst.svg" width="20" height="20" alt="")
-					.soc__item
-						a(href="").soc__link
-							object(type="image/svg+xml" data="img/ico-ok.svg" width="20" height="20")
-								img(src="img/ico-ok.svg" width="20" height="20" alt="")
+				.footer__soc
+					.soc
+						a.soc__link(href="#") 
+							img(src="img/ico-facebook.svg")
+						a.soc__link(href="#") 
+							img(src="img/ico-inst.svg")
+						a.soc__link(href="#") 
+							img(src="img/ico-vk.svg")
+						a.soc__link(href="#") 
+							img(src="img/ico-wifi.svg")
 
 
-			.footer__devaloper
-				a.developer(href="#")
-					span.developer__img
-						include ../../img/ico-dev.svg
+				.footer__dev
+					a.developer(href="#")
+						span.developer__img
+							include ../../img/ico-dev.svg
 
 #sprite(style="display: none")
 	<!-- Эту свг нужно вставлять инклюдом, т.к. она может меняться -->

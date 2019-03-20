@@ -1,5 +1,17 @@
 .main-slider
 	width: calc(100% - 480px)
+	position: relative
+
+	&__nav 
+		position: absolute
+		top: 0
+		right: 0
+		display: flex
+		right: 70px
+		top: 45px
+
+	.swiper-button-next
+		margin-left: 20px
 
 	+ .calendar 
 		margin-left: 40px

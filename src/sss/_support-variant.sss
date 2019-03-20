@@ -1,0 +1,113 @@
+.support
+	&-variant
+		&-cont
+			display: flex
+
+		&__cont 
+			margin: 70px 0 80px
+
+
+		&--left
+			color: #fff
+			background-image: url('../img/soti-bg.png')
+			background-repeat: no-repeat
+			background-position: center
+			background-color: var(--mainColor)
+			padding: 65px 65px 85px 85px
+			width: calc(100% - 480px)
+			border: 8px solid #58301E
+			margin-right: 95px
+
+		&--right 
+			display: flex
+			flex-direction: column
+			justify-content: center
+
+		&__title
+			font-size: rem(26)
+			font-weight: 600
+			margin-bottom: 20px
+
+		&__input
+			&-cont
+				position: relative
+				margin-top: 70px
+
+		.label
+			font-size: rem(18)
+			font-weight: 600
+
+		.input
+			max-width: 490px
+			width: 100%
+			border-radius: 50px
+			height: 45px
+			border: 0
+			padding: 0 25px
+			margin-right: 43px
+
+		.submit
+			border-radius: 25px
+			border: 0
+			line-height: 1
+
+
+	&-title
+		font-size: rem(26)
+		font-weight: 600
+		margin-bottom: 40px
+
+
+	&-stat
+		display: flex 
+		flex-direction: column
+		flex: 1 1 auto
+		justify-content: space-between
+		padding: 20px 0
+
+
+
+		&__item
+			display: flex 
+			align-items: center
+
+			&:nth-child(1)
+				.support-stat
+					&__icon
+						background-image: url('../img/stat-1.svg')
+					&__item-num
+						width: 125px
+
+			&:nth-child(2)
+				.support-stat
+					&__icon
+						background-image: url('../img/stat-2.svg')
+
+					&__item-num
+						width: 157px
+			&:nth-child(3)
+				.support-stat
+					&__icon
+						background-image: url('../img/stat-3.svg')
+					&__item-num
+						width: 92px
+			&:nth-child(4)
+				.support-stat
+					&__icon
+						background-image: url('../img/stat-4.svg')
+					&__item-num
+						width: 92px
+
+			&-num
+				font-size: rem(50)
+				color: var(--mainColor)
+				margin-right: 30px
+				line-height: 1
+				white-space: nowrap
+		&__icon
+			size: 57px
+			background: var(--mainColor)
+			border-radius: 50%
+			background-repeat: no-repeat
+			background-position: center
+			margin-right: 40px
