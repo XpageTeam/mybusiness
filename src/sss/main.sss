@@ -13,16 +13,18 @@
 @import "_stock-slider.sss"
 @import "_partners-slider.sss"
 @import "_footer.sss"
-@import "_support-banner.sss"
+@import "_support.sss"
 @import "_title-block.sss"
 @import "_services.sss"
+@import "_accordion.sss"
 
 .btn
 	display: inline-block
 	padding: 15px 25px
-	line-height: 1
+	line-height: 1 !important
 	background: var(--secondColor)
-	border-radius: 25px
+	border-radius: 25px !important
+	border: 0 !important
 	color: #fff
 	transition: background .3s ease
 
@@ -102,9 +104,16 @@
 	.ico
 		size: 23px 43px
 
-.inner
-	#content
-		display: flex
+.content-aside
+	margin-left: auto
+	max-width: 440px
 
-	.content
-		width: calc(100% - 480px)
+	> *
+		margin-bottom: 40px
+
+
+.content-main--left
+	width: calc(100% - 480px)
+
+.content-main
+	display: flex

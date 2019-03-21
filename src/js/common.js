@@ -5,6 +5,7 @@ import "./stock-sliders.js";
 import "selectize/dist/js/selectize.min.js";
 
 import "./tabs.js";
+import "./accordion.js";
 
 import "./standart-page.js"
 import Sticky from "./x-widgets.js";
@@ -65,6 +66,25 @@ document.addEventListener("DOMContentLoaded", e => {
 	        prevEl: '.partners .swiper-button-prev',
 	      },
 	});
+
+	let swiperStorySuccess = new Swiper(".story-success .swiper-container", {
+		slidesPerView: 1,
+		loop: true,
+		roundLengths: true,
+		autoplay: true,
+		navigation: {
+	        nextEl: '.story-success .swiper-button-next',
+	        prevEl: '.story-success .swiper-button-prev',
+	      },
+	});
+
+
+	$('.story-success__btn').click(function(){
+		let $this = $(this);
+
+		$this.closest('.story-success__slide').find('.text-page > span:not(:first-child)').slideToggle();
+
+	})
 
 
 	if ($(".support-stat__item-num").length){
