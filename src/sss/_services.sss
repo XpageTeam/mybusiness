@@ -1,0 +1,35 @@
+.services
+	margin: 80px 0 70px
+
+	&__item
+		display: flex
+		align-items: center
+		background: var(--backgroundColor)
+		padding: 25px 40px
+		font-size: rem(18)
+		font-weight: 600
+
+		&:not(:first-child)
+			margin-top: 20px
+
+		&-img
+			flex: none
+			margin-right: 40px
+
+	&-arrow
+		position: relative
+		size: 54px
+		border-radius: 50%
+		background: #fff
+		margin-left: auto
+
+		&:before 
+			content: ''
+			display: block
+			size: 6px
+			position: absolute
+			top: calc(50% - 3px)
+			left: calc(50% - 3px)
+			border-right: 1px solid #000
+			border-top: 1px solid #000
+			transform: rotate(45deg)

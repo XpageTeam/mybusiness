@@ -1,15 +1,9 @@
 @import "../css/common.css"
-
 @import "_vars.sss"
 @import "_base.sss"
 @import "_form-elements.sss"
-
 @import "../css/swiper.css"
 @import "selectize/dist/css/selectize.default.css"
-
-
-
-
 @import "_header.sss"
 @import "_main-slider.sss"
 @import "_calendar.sss"
@@ -17,7 +11,11 @@
 @import "_support-variant.sss"
 @import "_task.sss"
 @import "_stock-slider.sss"
-
+@import "_partners-slider.sss"
+@import "_footer.sss"
+@import "_support-banner.sss"
+@import "_title-block.sss"
+@import "_services.sss"
 
 .btn
 	display: inline-block
@@ -80,3 +78,33 @@
 	&-button
 		&-prev
 			transform: rotate(180deg)
+
+.scroll-top
+	position: fixed
+	right: 107px
+	bottom: 100px
+	size: 88px
+	border-radius: 50%
+	background-color: #fff
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	color: #000
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1)
+	z-index: 10
+	cursor: pointer
+	display: none
+
+	span
+		flex: none
+		font-size: 9px
+	.ico
+		size: 23px 43px
+
+.inner
+	#content
+		display: flex
+
+	.content
+		width: calc(100% - 480px)

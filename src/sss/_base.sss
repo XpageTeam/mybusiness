@@ -96,8 +96,6 @@ select
 .head, .footer
 	flex: none
 
-.footer
-	z-index: 0
 
 #content
 	flex: 1 1 auto
@@ -110,9 +108,13 @@ a
 	color: #000
 	font-weight: inherit
 	text-decoration: none
+	transition: color .3s ease
 
 	&[href^="tel"], &[href^="mail"]
 		white-space: nowrap
+
+		&:hover, &:active
+			color: var(--secondColor)
 
 
 .wrapper
@@ -274,8 +276,14 @@ li
 			display: inline-block
 
 		ul, ol
-			margin-bottom: 20px
 			margin-top: 0
+			margin-left: 10px
+
+		ul
+			li
+				&:before
+					content: ''
+
 
 		li
 			padding-left: 10px

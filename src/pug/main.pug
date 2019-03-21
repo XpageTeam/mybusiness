@@ -8,371 +8,369 @@ html(lang="ru")
 	body.main.loading
 		include inc/header.pug
 		main#content
-			.content
-				section.main-slider-cont
-					.wrapper
-						.main-slider-container
-							.main-slider
-								.swiper-container
-									.swiper-wrapper
-										a(href="#").main-slider__item.swiper-slide
-											img(src="img/photos/main-banner.jpg", alt="")
-											.main-slider__item-cont
-												.main-slider__label Региональные новости
-												.main-slider__title Вадим Живулин: Средства, выделяемые<br> на сектор МСП до 2024 года - беспрецедентны.
-												.main-slider__date 05.02.2019
-										a(href="#").main-slider__item.swiper-slide
-											img(src="img/photos/main-banner.jpg", alt="")
-											.main-slider__item-cont
-												.main-slider__label Региональные новости
-												.main-slider__title Вадим Живулин: Средства, выделяемые<br> на сектор МСП до 2024 года - беспрецедентны.
-												.main-slider__date 06.02.2019
-										a(href="#").main-slider__item.swiper-slide
-											img(src="img/photos/main-banner.jpg", alt="")
-											.main-slider__item-cont
-												.main-slider__label Региональные новости
-												.main-slider__title Вадим Живулин: Средства, выделяемые<br> на сектор МСП до 2024 года - беспрецедентны.
-												.main-slider__date 07.02.2019
-
-
-								.main-slider__nav
-									.swiper-arrow.swiper-button-prev
-									.swiper-arrow.swiper-button-next
-							include inc/calendar.pug
-
-				section.scope-cont
-					.wrapper
-						.scope
-							.scope-title Возможности для Вас и Вашего бизнеса
-							.scope__list
-								each title, i in ['Возможности для Вас и Вашего бизнеса', 'Составление бизнес-плана', 'Составление бизнес-плана', 'Тренинги, семинары, мастер-классы', 'Выставки, бизнес миссии', 'Оборудованный офис для начинающих предпринимателей', 'Поручительства по банковским кредитам при недостаточности залога', 'Получение микрозаймов на льготных условиях', 'Вывод компаний на международный рынок', 'Модернизация производственных мероприятий', 'МФЦ для бизнеса']
-									.scope__item
-										figure.scope__item-img
-											img(src="img/scope-"+i+".svg", alt="")
-										.scope__item-text=title
-
-				section.support-variant__cont
-					.wrapper
-						.support-variant
-							.support-title Узнайте о вариантах поддержки вашего бизнеса по ИНН
-							.support-variant-cont
-								.support-variant--left
-									.support-variant__title Какой вид государственной поддержки доступен для вашего бизнеса?
-									.support-variant__text Льготные микрозаймы, поручительства, модернизирование производства, выход на международные рынки, поиск инвесторов, обучение персонала и многое другое. 
-									.support-variant__input-cont
-										label.label Введите ИНН и узнайте о вариантах поддержки вашего бизнеса:
-										.support-variant__input
-											input.input(type="text" placeholder="Введите Ваш ИНН")
-											input.submit.btn(type="submit" value="Найти")
-								.support-variant--right
-									.support-stat
-										.support-stat__item
-											.support-stat__icon
-											.support-stat__item-num(data-from="0" data-to="8310") 0
-											.support-stat__item-text участников<br> мероприятий
-										.support-stat__item
-											.support-stat__icon
-											.support-stat__item-num(data-from="0" data-to="12808") 0
-											.support-stat__item-text получателей<br> консультаций								
-										.support-stat__item
-											.support-stat__icon
-											.support-stat__item-num(data-from="0" data-to="294") 0
-											.support-stat__item-text млн. руб. выдано<br> микрозаймов
-										.support-stat__item
-											.support-stat__icon
-											.support-stat__item-num(data-from="0" data-to="264") 0
-											.support-stat__item-text млн. руб. выдано<br> поручительств
-
-				section.task-cont
-					.wrapper
-						.task
-							.task-title Какая задача для Вас актуальна?
-							.task__list
-								.task__item
-									.task__item-top
-										figure
-											img(src="img/task-1.svg", alt="")
-										.task__item-info
-											.task__item-title Открывай
-											.task__item-subtitle Возможность открыть бизнес легко и без ошибок
-										.task__item-arrow
-									.task__item-bot
-										.text-page
-											p <b>Консультации:</b>
-											ul
-												li по вопросам выбора формы собственности и системы налогообложения
-												li по вопросам подготовки учредительных документов
-												li помощь в расчетах финансово-экономического обоснования
-												li экспертиза бизнес-проекта
-
-											p <b>Обучение:</b>
-											ul
-												li программа Корпорации развития МСП «Азбука предпринимательства»
-
-											p <b>Прием заявлений:</b>
-											ul
-												li на регистрацию ИП или ООО
-												li на открытие расчетного счета
-												li на составление бизнес-плана
-												li на оказание маркетинговых услуг (позиционирование и продвижение МСП на рынке, разработка фирменного стиля, брендирование, рекламные услуги и др.)
-										.task__item-btn
-											a(href="").btn.btn--color Оставить заявку
-								.task__item
-									.task__item-top
-										figure
-											img(src="img/task-2.svg", alt="")
-										.task__item-info
-											.task__item-title Развивай
-											.task__item-subtitle Инструментарий развития действующего бизнеса
-										.task__item-arrow
-									.task__item-bot
-										.text-page
-											p Консультации:
-											ul
-												li по вопросам выбора формы собственности и системы налогообложения
-												li по вопросам подготовки учредительных документов
-												li помощь в расчетах финансово-экономического обоснования
-												li экспертиза бизнес-проекта
-
-											p Обучение:
-											ul
-												li программа Корпорации развития МСП «Азбука предпринимательства»
-
-											p Прием заявлений:
-											ul
-												li на регистрацию ИП или ООО
-												li на открытие расчетного счета
-												li на составление бизнес-плана
-												li на оказание маркетинговых услуг (позиционирование и продвижение МСП на рынке, разработка фирменного стиля, брендирование, рекламные услуги и др.)
-										.task__item-btn
-											a(href="").btn.btn--color Оставить заявку
-
-								.task__item
-									.task__item-top
-										figure
-											img(src="img/task-3.svg", alt="")
-										.task__item-info
-											.task__item-title Сопровождай
-											.task__item-subtitle Сопровождение бизнеса по принципу «Одного окна»
-										.task__item-arrow
-									.task__item-bot
-										.text-page
-											p Консультации:
-											ul
-												li по вопросам выбора формы собственности и системы налогообложения
-												li по вопросам подготовки учредительных документов
-												li помощь в расчетах финансово-экономического обоснования
-												li экспертиза бизнес-проекта
-
-											p Обучение:
-											ul
-												li программа Корпорации развития МСП «Азбука предпринимательства»
-
-											p Прием заявлений:
-											ul
-												li на регистрацию ИП или ООО
-												li на открытие расчетного счета
-												li на составление бизнес-плана
-												li на оказание маркетинговых услуг (позиционирование и продвижение МСП на рынке, разработка фирменного стиля, брендирование, рекламные услуги и др.)
-										.task__item-btn
-											a(href="").btn.btn--color Оставить заявку
-								.task__item
-									.task__item-top
-										figure
-											img(src="img/task-4.svg", alt="")
-										.task__item-info
-											.task__item-title Инвестируй
-											.task__item-subtitle Инвестируй в развитие своего бизнеса
-										.task__item-arrow
-									.task__item-bot
-										.text-page
-											p Консультации:
-											ul
-												li по вопросам выбора формы собственности и системы налогообложения
-												li по вопросам подготовки учредительных документов
-												li помощь в расчетах финансово-экономического обоснования
-												li экспертиза бизнес-проекта
-
-											p Обучение:
-											ul
-												li программа Корпорации развития МСП «Азбука предпринимательства»
-
-											p Прием заявлений:
-											ul
-												li на регистрацию ИП или ООО
-												li на открытие расчетного счета
-												li на составление бизнес-плана
-												li на оказание маркетинговых услуг (позиционирование и продвижение МСП на рынке, разработка фирменного стиля, брендирование, рекламные услуги и др.)
-										.task__item-btn
-											a(href="").btn.btn--color Оставить заявку
-								.task__item
-									.task__item-top
-										figure
-											img(src="img/task-5.svg", alt="")
-										.task__item-info
-											.task__item-title Производи
-											.task__item-subtitle Приоритетная поддержка для производственных компаний
-										.task__item-arrow
-									.task__item-bot
-										.text-page
-											p Консультации:
-											ul
-												li по вопросам выбора формы собственности и системы налогообложения
-												li по вопросам подготовки учредительных документов
-												li помощь в расчетах финансово-экономического обоснования
-												li экспертиза бизнес-проекта
-
-											p Обучение:
-											ul
-												li программа Корпорации развития МСП «Азбука предпринимательства»
-
-											p Прием заявлений:
-											ul
-												li на регистрацию ИП или ООО
-												li на открытие расчетного счета
-												li на составление бизнес-плана
-												li на оказание маркетинговых услуг (позиционирование и продвижение МСП на рынке, разработка фирменного стиля, брендирование, рекламные услуги и др.)
-										.task__item-btn
-											a(href="").btn.btn--color Оставить заявку			
-								.task__item
-									.task__item-top
-										figure
-											img(src="img/task-6.svg", alt="")
-										.task__item-info
-											.task__item-title Экспортируй
-											.task__item-subtitle Поддержка экспортноориентированного бизнеса
-										.task__item-arrow
-									.task__item-bot
-										.text-page
-											p Консультации:
-											ul
-												li по вопросам выбора формы собственности и системы налогообложения
-												li по вопросам подготовки учредительных документов
-												li помощь в расчетах финансово-экономического обоснования
-												li экспертиза бизнес-проекта
-
-											p Обучение:
-											ul
-												li программа Корпорации развития МСП «Азбука предпринимательства»
-
-											p Прием заявлений:
-											ul
-												li на регистрацию ИП или ООО
-												li на открытие расчетного счета
-												li на составление бизнес-плана
-												li на оказание маркетинговых услуг (позиционирование и продвижение МСП на рынке, разработка фирменного стиля, брендирование, рекламные услуги и др.)
-										.task__item-btn
-											a(href="").btn.btn--color Оставить заявку
-				section.main-sliders__cont
-					.wrapper
-						.main-sliders
-							.main-sliders__title-cont
-								.main-sliders__title-wrapper
-									.main-sliders__title.active(data-id="news") Новости
-									.main-sliders__title(data-id="video") Видео
-									.main-sliders__title(data-id="history") История успеха
-									.main-sliders__title(data-id="events") События
-								
-							.main-sliders__sliders
-								.stock-slider.news#news.active
-									.main-sliders-arrow
-										a(href="").btn.btn--color Все новости
-										button.slick-prev.slick-arrow
-										button.slick-next.slick-arrow
-									.swiper-list
-										.swiper-wrapper
-											- for (let i = 0; i < 2; i++)
-												each title, i in ["IV Акселерационная программа Фонда по поддержке социальных проектов", "IV Акселерационная программа Фонда по поддержке социальных проектов", "IV Акселерационная программа Фонда по поддержке социальных проектов"]
-													.swiper-slide
-														.stock-slider__slide
-															a(href="#").event-item
-																.event-item__info
-																	.event-item__label Региональные новости
-																	.event-item__title=title
-																	.event-item__text=title
-																	.event-item__date 05.02.2019
-								.stock-slider.video#video
-									.main-sliders-arrow
-										a(href="").btn.btn--color Все видео
-										button.slick-prev.slick-arrow
-										button.slick-next.slick-arrow
-									.swiper-list
-										.swiper-wrapper
-											- for (let i = 0; i < 2; i++)
-												each title, i in ["IV Акселерационная программа Фонда по поддержке социальных проектов", "IV Акселерационная программа Фонда по поддержке социальных проектов", "IV Акселерационная программа Фонда по поддержке социальных проектов"]
-													.swiper-slide
-														.stock-slider__slide
-															.video-item
-																a.video-item__img.fancybox(href="https://www.youtube.com/embed/mMyt0XYGfYc")
-																	.video-item__label
-																		.label--date 05.02.2019
-																	img(src="img/photos/video-img-"+i+".jpg", alt=title)
-																a(href="#").video-item__title=title							
-								.stock-slider.history#history
-									.main-sliders-arrow
-										a(href="").btn.btn--color Все истории усеха
-										button.slick-prev.slick-arrow
-										button.slick-next.slick-arrow
-									.swiper-list
-										.swiper-wrapper
-											- for (let i = 0; i < 2; i++)
-												each title, i in ["Пробная история успеха", "Пробная история успеха 2", "Пробная история успеха 3"]
-													.swiper-slide
-														.stock-slider__slide
-															.history-item 
-																a.history-item__img(href="#")
-																	img(src="img/photos/video-img-0.jpg", alt=title)
-																.history-item__info
-																	.history-item__info-cont
-																		.history-item__title
-																			a(href="#")=title
-																		.history-item__date 05.02.2019
-																		.history-item__text
-																			.history-item__text-preview
-																				.text-page
-																					p Широта ищет параллакс. После того как тема сформулирована, рефракция параллельна. Земная группа формировалась ближе к Солнцу, однако соединение решает часовой угол, об этом в минувшую субботу сообщил заместитель администратора NASA...
-																			.history-item__text-continuation
-																				.text-page
-																					p Широта ищет параллакс. После того как тема сформулирована, рефракция параллельна. Земная группа формировалась ближе к Солнцу, однако соединение решает часовой угол, об этом в минувшую субботу сообщил заместитель администратора NASA.
-																					p Мероприятие соберет более 500 участников из 85 регионов России, среди которых будут представители органов исполнительной власти, ответственные за развитие малого и среднего в регионах Российской Федерации, а также руководители организаций инфраструктуры поддержки бизнеса
-																					p Мероприятие соберет более 500 участников из 85 регионов России, среди которых будут представители органов исполнительной власти, ответственные за развитие малого и среднего в регионах Российской Федерации, а также руководители организаций инфраструктуры поддержки бизнеса
-																	.history-item__btn
-								.stock-slider.events#events
-									.main-sliders-arrow
-										a(href="").btn.btn--color Все события
-										button.slick-prev.slick-arrow
-										button.slick-next.slick-arrow
-									.swiper-list
-										.swiper-wrapper
-											- for (let i = 0; i < 2; i++)
-												each title, i in ["IV Акселерационная программа Фонда по поддержке социальных проектов", "IV Акселерационная программа Фонда по поддержке социальных проектов", "IV Акселерационная программа Фонда по поддержке социальных проектов"]
-													.swiper-slide
-														.stock-slider__slide
-															a(href="#").event-item
-																.event-item__img
-																	img(src="img/event.jpg", alt=title)
-																.event-item__info
-																	.event-item__title=title
-																	.event-item__text=title
-																	.event-item__date 05.02.2019
-				section.partners-cont
-					.wrapper
-						.partners
-							.partners-top
-								.partners-title Партнеры
-								.partners-arrow
-									.swiper-arrow.swiper-button-prev
-									.swiper-arrow.swiper-button-next
-							.swiper-list
+			section.main-slider-cont
+				.wrapper
+					.main-slider-container
+						.main-slider
+							.swiper-container
 								.swiper-wrapper
-									- for (let i = 0; i < 2; i++)
-										each title, i in ["Правительство Республики Бурятия", "Правительство Республики Бурятия", "Правительство Республики Бурятия"]
-											.swiper-slide
-												.stock-slider__slide
-													a(href="#").partners-item
-														.partners-item__img
-															img(src="img/event.jpg", alt=title)
-														.partners-item__title=title
+									a(href="#").main-slider__item.swiper-slide
+										img(src="img/photos/main-banner.jpg", alt="")
+										.main-slider__item-cont
+											.main-slider__label Региональные новости
+											.main-slider__title Вадим Живулин: Средства, выделяемые<br> на сектор МСП до 2024 года - беспрецедентны.
+											.main-slider__date 05.02.2019
+									a(href="#").main-slider__item.swiper-slide
+										img(src="img/photos/main-banner.jpg", alt="")
+										.main-slider__item-cont
+											.main-slider__label Региональные новости
+											.main-slider__title Вадим Живулин: Средства, выделяемые<br> на сектор МСП до 2024 года - беспрецедентны.
+											.main-slider__date 06.02.2019
+									a(href="#").main-slider__item.swiper-slide
+										img(src="img/photos/main-banner.jpg", alt="")
+										.main-slider__item-cont
+											.main-slider__label Региональные новости
+											.main-slider__title Вадим Живулин: Средства, выделяемые<br> на сектор МСП до 2024 года - беспрецедентны.
+											.main-slider__date 07.02.2019
+
+
+							.main-slider__nav
+								.swiper-arrow.swiper-button-prev
+								.swiper-arrow.swiper-button-next
+						include inc/calendar.pug
+
+			section.scope-cont
+				.wrapper
+					.scope
+						.scope-title Возможности для Вас и Вашего бизнеса
+						.scope__list
+							each title, i in ['Возможности для Вас и Вашего бизнеса', 'Составление бизнес-плана', 'Составление бизнес-плана', 'Тренинги, семинары, мастер-классы', 'Выставки, бизнес миссии', 'Оборудованный офис для начинающих предпринимателей', 'Поручительства по банковским кредитам при недостаточности залога', 'Получение микрозаймов на льготных условиях', 'Вывод компаний на международный рынок', 'Модернизация производственных мероприятий', 'МФЦ для бизнеса']
+								.scope__item
+									figure.scope__item-img
+										img(src="img/scope-"+i+".svg", alt="")
+									.scope__item-text=title
+
+			section.support-variant__cont
+				.wrapper
+					.support-variant
+						.support-title Узнайте о вариантах поддержки вашего бизнеса по ИНН
+						.support-variant-cont
+							.support-variant--left
+								.support-variant__title Какой вид государственной поддержки доступен для вашего бизнеса?
+								.support-variant__text Льготные микрозаймы, поручительства, модернизирование производства, выход на международные рынки, поиск инвесторов, обучение персонала и многое другое. 
+								.support-variant__input-cont
+									label.label Введите ИНН и узнайте о вариантах поддержки вашего бизнеса:
+									.support-variant__input
+										input.input(type="text" placeholder="Введите Ваш ИНН")
+										input.submit.btn(type="submit" value="Найти")
+							.support-variant--right
+								.support-stat
+									.support-stat__item
+										.support-stat__icon
+										.support-stat__item-num(data-from="0" data-to="8310") 0
+										.support-stat__item-text участников<br> мероприятий
+									.support-stat__item
+										.support-stat__icon
+										.support-stat__item-num(data-from="0" data-to="12808") 0
+										.support-stat__item-text получателей<br> консультаций								
+									.support-stat__item
+										.support-stat__icon
+										.support-stat__item-num(data-from="0" data-to="294") 0
+										.support-stat__item-text млн. руб. выдано<br> микрозаймов
+									.support-stat__item
+										.support-stat__icon
+										.support-stat__item-num(data-from="0" data-to="264") 0
+										.support-stat__item-text млн. руб. выдано<br> поручительств
+
+			section.task-cont
+				.wrapper
+					.task
+						.task-title Какая задача для Вас актуальна?
+						.task__list
+							.task__item
+								.task__item-top
+									figure
+										img(src="img/task-1.svg", alt="")
+									.task__item-info
+										.task__item-title Открывай
+										.task__item-subtitle Возможность открыть бизнес легко и без ошибок
+									.task__item-arrow
+								.task__item-bot
+									.text-page
+										p <b>Консультации:</b>
+										ul
+											li по вопросам выбора формы собственности и системы налогообложения
+											li по вопросам подготовки учредительных документов
+											li помощь в расчетах финансово-экономического обоснования
+											li экспертиза бизнес-проекта
+
+										p <b>Обучение:</b>
+										ul
+											li программа Корпорации развития МСП «Азбука предпринимательства»
+
+										p <b>Прием заявлений:</b>
+										ul
+											li на регистрацию ИП или ООО
+											li на открытие расчетного счета
+											li на составление бизнес-плана
+											li на оказание маркетинговых услуг (позиционирование и продвижение МСП на рынке, разработка фирменного стиля, брендирование, рекламные услуги и др.)
+									.task__item-btn
+										a(href="").btn.btn--color Оставить заявку
+							.task__item
+								.task__item-top
+									figure
+										img(src="img/task-2.svg", alt="")
+									.task__item-info
+										.task__item-title Развивай
+										.task__item-subtitle Инструментарий развития действующего бизнеса
+									.task__item-arrow
+								.task__item-bot
+									.text-page
+										p Консультации:
+										ul
+											li по вопросам выбора формы собственности и системы налогообложения
+											li по вопросам подготовки учредительных документов
+											li помощь в расчетах финансово-экономического обоснования
+											li экспертиза бизнес-проекта
+
+										p Обучение:
+										ul
+											li программа Корпорации развития МСП «Азбука предпринимательства»
+
+										p Прием заявлений:
+										ul
+											li на регистрацию ИП или ООО
+											li на открытие расчетного счета
+											li на составление бизнес-плана
+											li на оказание маркетинговых услуг (позиционирование и продвижение МСП на рынке, разработка фирменного стиля, брендирование, рекламные услуги и др.)
+									.task__item-btn
+										a(href="").btn.btn--color Оставить заявку
+
+							.task__item
+								.task__item-top
+									figure
+										img(src="img/task-3.svg", alt="")
+									.task__item-info
+										.task__item-title Сопровождай
+										.task__item-subtitle Сопровождение бизнеса по принципу «Одного окна»
+									.task__item-arrow
+								.task__item-bot
+									.text-page
+										p Консультации:
+										ul
+											li по вопросам выбора формы собственности и системы налогообложения
+											li по вопросам подготовки учредительных документов
+											li помощь в расчетах финансово-экономического обоснования
+											li экспертиза бизнес-проекта
+
+										p Обучение:
+										ul
+											li программа Корпорации развития МСП «Азбука предпринимательства»
+
+										p Прием заявлений:
+										ul
+											li на регистрацию ИП или ООО
+											li на открытие расчетного счета
+											li на составление бизнес-плана
+											li на оказание маркетинговых услуг (позиционирование и продвижение МСП на рынке, разработка фирменного стиля, брендирование, рекламные услуги и др.)
+									.task__item-btn
+										a(href="").btn.btn--color Оставить заявку
+							.task__item
+								.task__item-top
+									figure
+										img(src="img/task-4.svg", alt="")
+									.task__item-info
+										.task__item-title Инвестируй
+										.task__item-subtitle Инвестируй в развитие своего бизнеса
+									.task__item-arrow
+								.task__item-bot
+									.text-page
+										p Консультации:
+										ul
+											li по вопросам выбора формы собственности и системы налогообложения
+											li по вопросам подготовки учредительных документов
+											li помощь в расчетах финансово-экономического обоснования
+											li экспертиза бизнес-проекта
+
+										p Обучение:
+										ul
+											li программа Корпорации развития МСП «Азбука предпринимательства»
+
+										p Прием заявлений:
+										ul
+											li на регистрацию ИП или ООО
+											li на открытие расчетного счета
+											li на составление бизнес-плана
+											li на оказание маркетинговых услуг (позиционирование и продвижение МСП на рынке, разработка фирменного стиля, брендирование, рекламные услуги и др.)
+									.task__item-btn
+										a(href="").btn.btn--color Оставить заявку
+							.task__item
+								.task__item-top
+									figure
+										img(src="img/task-5.svg", alt="")
+									.task__item-info
+										.task__item-title Производи
+										.task__item-subtitle Приоритетная поддержка для производственных компаний
+									.task__item-arrow
+								.task__item-bot
+									.text-page
+										p Консультации:
+										ul
+											li по вопросам выбора формы собственности и системы налогообложения
+											li по вопросам подготовки учредительных документов
+											li помощь в расчетах финансово-экономического обоснования
+											li экспертиза бизнес-проекта
+
+										p Обучение:
+										ul
+											li программа Корпорации развития МСП «Азбука предпринимательства»
+
+										p Прием заявлений:
+										ul
+											li на регистрацию ИП или ООО
+											li на открытие расчетного счета
+											li на составление бизнес-плана
+											li на оказание маркетинговых услуг (позиционирование и продвижение МСП на рынке, разработка фирменного стиля, брендирование, рекламные услуги и др.)
+									.task__item-btn
+										a(href="").btn.btn--color Оставить заявку			
+							.task__item
+								.task__item-top
+									figure
+										img(src="img/task-6.svg", alt="")
+									.task__item-info
+										.task__item-title Экспортируй
+										.task__item-subtitle Поддержка экспортноориентированного бизнеса
+									.task__item-arrow
+								.task__item-bot
+									.text-page
+										p Консультации:
+										ul
+											li по вопросам выбора формы собственности и системы налогообложения
+											li по вопросам подготовки учредительных документов
+											li помощь в расчетах финансово-экономического обоснования
+											li экспертиза бизнес-проекта
+
+										p Обучение:
+										ul
+											li программа Корпорации развития МСП «Азбука предпринимательства»
+
+										p Прием заявлений:
+										ul
+											li на регистрацию ИП или ООО
+											li на открытие расчетного счета
+											li на составление бизнес-плана
+											li на оказание маркетинговых услуг (позиционирование и продвижение МСП на рынке, разработка фирменного стиля, брендирование, рекламные услуги и др.)
+									.task__item-btn
+										a(href="").btn.btn--color Оставить заявку
+			section.main-sliders__cont
+				.wrapper
+					.main-sliders
+						.main-sliders__title-cont
+							.main-sliders__title-wrapper
+								.main-sliders__title.active(data-id="news") Новости
+								.main-sliders__title(data-id="video") Видео
+								.main-sliders__title(data-id="history") История успеха
+								.main-sliders__title(data-id="events") События
+							
+						.main-sliders__sliders
+							.stock-slider.news#news.active
+								.main-sliders-arrow
+									a(href="").btn.btn--color Все новости
+									button.slick-prev.slick-arrow
+									button.slick-next.slick-arrow
+								.swiper-list
+									.swiper-wrapper
+										- for (let i = 0; i < 2; i++)
+											each title, i in ["IV Акселерационная программа Фонда по поддержке социальных проектов", "IV Акселерационная программа Фонда по поддержке социальных проектов", "IV Акселерационная программа Фонда по поддержке социальных проектов"]
+												.swiper-slide
+													.stock-slider__slide
+														a(href="#").event-item
+															.event-item__info
+																.event-item__label Региональные новости
+																.event-item__title=title
+																.event-item__text=title
+																.event-item__date 05.02.2019
+							.stock-slider.video#video
+								.main-sliders-arrow
+									a(href="").btn.btn--color Все видео
+									button.slick-prev.slick-arrow
+									button.slick-next.slick-arrow
+								.swiper-list
+									.swiper-wrapper
+										- for (let i = 0; i < 2; i++)
+											each title, i in ["IV Акселерационная программа Фонда по поддержке социальных проектов", "IV Акселерационная программа Фонда по поддержке социальных проектов", "IV Акселерационная программа Фонда по поддержке социальных проектов"]
+												.swiper-slide
+													.stock-slider__slide
+														.video-item
+															a.video-item__img.fancybox(href="https://www.youtube.com/embed/mMyt0XYGfYc")
+																.video-item__label
+																	.label--date 05.02.2019
+																img(src="img/photos/video-img-"+i+".jpg", alt=title)
+															a(href="#").video-item__title=title							
+							.stock-slider.history#history
+								.main-sliders-arrow
+									a(href="").btn.btn--color Все истории усеха
+									button.slick-prev.slick-arrow
+									button.slick-next.slick-arrow
+								.swiper-list
+									.swiper-wrapper
+										- for (let i = 0; i < 2; i++)
+											each title, i in ["Пробная история успеха", "Пробная история успеха 2", "Пробная история успеха 3"]
+												.swiper-slide
+													.stock-slider__slide
+														.history-item 
+															a.history-item__img(href="#")
+																img(src="img/photos/video-img-0.jpg", alt=title)
+															.history-item__info
+																.history-item__info-cont
+																	.history-item__title
+																		a(href="#")=title
+																	.history-item__date 05.02.2019
+																	.history-item__text
+																		.history-item__text-preview
+																			.text-page
+																				p Широта ищет параллакс. После того как тема сформулирована, рефракция параллельна. Земная группа формировалась ближе к Солнцу, однако соединение решает часовой угол, об этом в минувшую субботу сообщил заместитель администратора NASA...
+																		.history-item__text-continuation
+																			.text-page
+																				p Широта ищет параллакс. После того как тема сформулирована, рефракция параллельна. Земная группа формировалась ближе к Солнцу, однако соединение решает часовой угол, об этом в минувшую субботу сообщил заместитель администратора NASA.
+																				p Мероприятие соберет более 500 участников из 85 регионов России, среди которых будут представители органов исполнительной власти, ответственные за развитие малого и среднего в регионах Российской Федерации, а также руководители организаций инфраструктуры поддержки бизнеса
+																				p Мероприятие соберет более 500 участников из 85 регионов России, среди которых будут представители органов исполнительной власти, ответственные за развитие малого и среднего в регионах Российской Федерации, а также руководители организаций инфраструктуры поддержки бизнеса
+																.history-item__btn
+							.stock-slider.events#events
+								.main-sliders-arrow
+									a(href="").btn.btn--color Все события
+									button.slick-prev.slick-arrow
+									button.slick-next.slick-arrow
+								.swiper-list
+									.swiper-wrapper
+										- for (let i = 0; i < 2; i++)
+											each title, i in ["IV Акселерационная программа Фонда по поддержке социальных проектов", "IV Акселерационная программа Фонда по поддержке социальных проектов", "IV Акселерационная программа Фонда по поддержке социальных проектов"]
+												.swiper-slide
+													.stock-slider__slide
+														a(href="#").event-item
+															.event-item__img
+																img(src="img/event.jpg", alt=title)
+															.event-item__info
+																.event-item__title=title
+																.event-item__text=title
+																.event-item__date 05.02.2019
+			section.partners-cont
+				.wrapper
+					.partners
+						.partners-top
+							.partners-title Партнеры
+							.partners-arrow
+								.swiper-arrow.swiper-button-prev
+								.swiper-arrow.swiper-button-next
+						.swiper-container
+							.swiper-wrapper
+								- for (let i = 0; i < 2; i++)
+									each title, i in ["Правительство Республики Бурятия", "Правительство Республики Бурятия", "Правительство Республики Бурятия"]
+										.swiper-slide
+											a(href="#").partners-item
+												.partners-item__img
+													img(src="img/partners.png", alt=title)
+												.partners-item__title=title
 
 
 

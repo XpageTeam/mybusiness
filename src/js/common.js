@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", e => {
 		
 	
 	  
-	let swiper = new Swiper(".main-slider .swiper-container", {
+	let swiperMainbanner = new Swiper(".main-slider .swiper-container", {
 
 		effect: "fade",
 		slidesPerView: 1,
@@ -54,35 +54,18 @@ document.addEventListener("DOMContentLoaded", e => {
 	      },
 	});
 
-	let swiperFranshizaProduct = new Swiper(".franshiza-product__slider .swiper-container", {
-		// effect: "fade",
+	let swiperPartners = new Swiper(".partners .swiper-container", {
 		slidesPerView: 3,
 		loop: true,
 		roundLengths: true,
-		spaceBetween: 3,
-		// freeMode: true,
-		a11y: false,
-	    breakpoints: {
-		    320: {
-		      slidesPerView: 1,
-		      spaceBetween: 0
-		    },
-		    660: {
-		      slidesPerView: 1,
-		      spaceBetween: 3
-		    },
-		    1200: {
-		      slidesPerView: 2,
-		      spaceBetween: 3
-		    }
-		  },
-		
+		autoplay: true,
+		spaceBetween: 40,
 		navigation: {
-	        nextEl: '.franshiza-product__arrow .swiper-button-next',
-	        prevEl: '.franshiza-product__arrow .swiper-button-prev',
+	        nextEl: '.partners .swiper-button-next',
+	        prevEl: '.partners .swiper-button-prev',
 	      },
-
 	});
+
 
 	if ($(".support-stat__item-num").length){
 		$(".support-stat__item-num").countTo();
@@ -151,25 +134,6 @@ document.addEventListener("DOMContentLoaded", e => {
 
 	})
 
-	// if ($(".main-sliders__title-wrapper").length){
-
-	//     $(".main-sliders__title-wrapper").prepend('<span class="sort-new__label"></span>')
-
-	//     $(".sort-new__label").css({
-	//         width: $(".main-sliders__title.active + div").outerWidth(),
-	//         left: $(".main-sliders__title.active + div").position().left,
-	//     })
-
-	//     $(".main-sliders__title-wrapper").addClass("js__have-label")
-
-	//     $(".main-sliders__title").addClass("js__visible")
-
-	//     $(".main-sliders__title").css({
-	//         width: $(".main-sliders__title.active + div").outerWidth(),
-	//         left: $(".main-sliders__title.active + div").position().left,
-	//     })
-
-	// }
 	
 
 
@@ -296,66 +260,19 @@ document.addEventListener("DOMContentLoaded", e => {
 
 
 		$("body").on("click", ".js__input-del, .input-del", function(){
-
 			var $this = $(this);
-
 			$this.closest('.forms__input-cont').remove();
 			
 		})
+
+
 
 	};
 
 
 
-	
 
 
-	$('.reviews__item .btn').click(function(){
-		let $this = $(this);
-		$this.closest('.reviews__item').toggleClass('js__reviews-open');
-	})
-
-	$('.reviews__item').each((i,el) => {
-		let $this = $(el);
-
-		let itemHeight = $this.find('.reviews__item-text').height();
-
-		console.log(itemHeight);
-		if(itemHeight < 150){
-			$this.find('.btn').remove();
-		}
-	})
-
-
-
-
-	$('body').on('click', '.account-testemonials__item--right .btn', function() {
-		let $this = $(this);
-
-		$this.closest('.account-testemonials__item').toggleClass('js__open-text');
-		$this.closest('.account-testemonials__item').find('.answer').slideToggle();
-
-	})
-
-
-	// $(window).on("load scroll touchmove", function(){
-	// 	if ($(window).scrollTop() > 800){
-	// 		$(".scroll-top").fadeIn(300);
-	// 	}else{
-	// 		$(".scroll-top").fadeOut(300);
-	// 	};
-
-	// 	if($(window).width() > 1000) {
-
-	// 		if($(window).scrollTop() > 10){
-	// 				$('.inner .head').addClass('js__scroll');
-	// 			}else {
-	// 				$('.inner .head').removeClass('js__scroll');
-	// 			}
-	// 	}
-
-		
-	// });
 
 	$('.submenu').each((i,el) => {
 		let $this = $(el);
@@ -365,39 +282,7 @@ document.addEventListener("DOMContentLoaded", e => {
 
 
 
-	if ($(".statistic__num").length){
-		$(".statistic__num").countTo();
-	}
 
-	$(window).on('scroll', function(){
-		if ($(".statistic__num").length)
-			if ($(".statistic__num").offset().top + 50 <=
-				$(window).scrollTop() + $(window).height()){
-					$(".statistic__num:not(.countered)").each((i, el) => {
-						let $this = $(el),
-							speed = 0;
-
-						switch (i){
-							case 0:
-								speed = 4000;
-							break;
-							case 1:
-								speed = 2000;
-							break;
-
-							default:
-								speed = 3000;
-						}
-
-						$this.countTo({
-							speed: speed,
-						});
-
-						$this.addClass("countered");
-					});
-			}
-		
-	})
 
 
 
@@ -407,78 +292,9 @@ document.addEventListener("DOMContentLoaded", e => {
 		
 	});
 
-	// if(!is.touchDevice())
+
 	
 
-
-
-
-
-	function injector(t, splitter, klass, after) {
-		var a = t.text().split(splitter), inject = '';
-		if (a.length) {
-			$(a).each(function(i, item) {
-				if($('div').hasClass('intro-bg__text')){
-					// inject += '<span class="'+klass+'" \
-					// style="transition-delay: '+(0.12 * i)+'s; transform: translate3d(0, '+(0.30 * i)+'%, 0);">'+item+'</span>'+after;
-					inject += '<span class="'+klass+(i+1)+'" \
-					style="transition-delay: '+(0.05 * i)+'s; transform: translate3d(0, '+(15.30 * i)+'%, 0);">'+item+'</span>'+after;
-				} 
-	
-				// let deleayCounter = a.length - i;
-				// inject += '<span class="'+klass+(i+1)+'" \
-				// style="transition-delay: '+(0.12 * deleayCounter)+'s; transform: translate3d('+(0.30 * i)+'%, 0, 0);">'+item+'</span>'+after;
-
-			});	
-			t.empty().append(inject);
-		}
-	}
-	
-	var methods = {
-		init : function() {
-
-			return this.each(function() {
-				injector($(this), '', 'char', '');
-			});
-
-		},
-
-		words : function() {
-
-			return this.each(function() {
-				injector($(this), ' ', 'word', ' ');
-			});
-
-		},
-		
-		lines : function() {
-
-			return this.each(function() {
-				var r = "eefec303079ad17405c889e092e105b0";
-				// Because it's hard to split a <br/> tag consistently across browsers,
-				// (*ahem* IE *ahem*), we replaces all <br/> instances with an md5 hash 
-				// (of the word "split").  If you're trying to use this plugin on that 
-				// md5 hash string, it will fail because you're being ridiculous.
-				injector($(this).children("br").replaceWith(r).end(), r, 'line', '');
-			});
-
-		}
-	};
-
-	$.fn.lettering = function( method ) {
-		// Method calling logic
-		if ( method && methods[method] ) {
-			return methods[ method ].apply( this, [].slice.call( arguments, 1 ));
-		} else if ( method === 'letters' || ! method ) {
-			return methods.init.apply( this, [].slice.call( arguments, 0 ) ); // always pass an array
-		}
-		$.error( 'Method ' +  method + ' does not exist on jQuery.lettering' );
-		return this;
-	};
-
-
-	 $(".intro-bg__text").lettering();
-	 // $(".error-bg__text").lettering();
 
 
 
@@ -540,6 +356,11 @@ document.addEventListener("DOMContentLoaded", e => {
 	    	})
 	    }
 
+	$("body").on("click", ".scroll-top", function(){
+        var scrollTop = $(window).scrollTop();
+        $("html, body").animate({"scrollTop": 0}, "slow")
+    });
+
 
 
 	selectizeInit();
@@ -586,6 +407,17 @@ $(window).on("load scroll resize touchmove", e => {
 
 	}
 
+	if ($(window).scrollTop() > 800){
+		$(".scroll-top").fadeIn(300);
+		$(".scroll-top").css({
+			'display': 'flex',
+		})
+
+	}else{
+		$(".scroll-top").fadeOut(300);
+		$(".scroll-top").removeClass('js__scrolled');
+	};
+
 
 
 	// if($(window).width() > 660 && $('body').hasClass('main')){
@@ -630,6 +462,7 @@ $(window).on("load scroll resize touchmove", e => {
 
 	
 });
+
 
 
 
