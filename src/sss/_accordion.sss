@@ -1,0 +1,43 @@
+.accordion
+	&__item
+
+		&:not(:first-child)
+			margin-top: 20px
+
+		&.js__open
+			.accordion__item-arrow
+				transform: rotate(180deg)
+
+		&-bot
+			display: none
+			padding: 30px 50px 20px
+			border: 1px solid var(--backgroundColor) 
+			
+		&-top
+			background: var(--backgroundColor)
+			padding: 25px 50px
+			font-size: rem(18)
+			font-weight: 600
+			cursor: pointer
+			display: flex 
+			justify-content: space-between
+			
+		&-arrow
+			position: relative
+			size: 54px
+			border-radius: 50%
+			background: #fff
+			margin-left: 20px
+			flex: none
+			transition: transform .3s ease
+
+			&:before 
+				content: ''
+				position: absolute
+				top: calc(50% - 3px)
+				left: calc(50% - 3px)
+				size: 6px 
+				border-right: 1px solid #000
+				border-bottom: 1px solid #000
+				transform: rotate(45deg)
+
