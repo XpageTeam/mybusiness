@@ -36,15 +36,15 @@ const server_conn = ftp.create({
 gulp.task('browser-sync', () =>  {
 	browserSync.init({
 		server: {
-			baseDir: 'dist'
+			baseDir: 'docs'
 		},
 		notify: false
 	});
 
 	browserSync.watch([
-		"dist/css/*.css",
-		"dist/js/*.js",
-		"dist/*.html",
+		"docs/css/*.css",
+		"docs/js/*.js",
+		"docs/*.html",
 	]).on("change", browserSync.reload);
 })
 
@@ -106,7 +106,7 @@ gulp.task("postcss", _ =>
 			path.extname = path.extname == ".sss" ? ".css" : path.extname;
 		}))
 		.pipe(sourcemaps.write("."))
-		.pipe(gulp.dest("dist/css"))
+		.pipe(gulp.dest("docs/css"))
 );
 
 gulp.task("pug", _ => 
@@ -121,12 +121,12 @@ gulp.task("pug", _ =>
 			indentSize: 4,
 			indent_with_tabs: true,
 		}))
-		.pipe(gulp.dest("dist"))
+		.pipe(gulp.dest("docs"))
 );
 
 gulp.task("move:fonts", _ => 
 	gulp.src("src/fonts/**/*")
-		.pipe(gulp.dest("dist/fonts"))
+		.pipe(gulp.dest("docs/fonts"))
 );
 
 gulp.task('imagemin', () =>  
@@ -150,33 +150,33 @@ gulp.task('imagemin', () =>
 		],{
      		verbose: true
     	})))
-		.pipe(gulp.dest('dist/img'))
+		.pipe(gulp.dest('docs/img'))
 );
 
 
-gulp.task("remove:base64", callback => {del.sync("dist/css/base64.css"); callback()});
+gulp.task("remove:base64", callback => {del.sync("docs/css/base64.css"); callback()});
 
 gulp.task("deploy:css", () => 
-	gulp.src("dist/css/*.*", {since: gulp.lastRun("postcss")})
+	gulp.src("docs/css/*.*", {since: gulp.lastRun("postcss")})
 		.pipe(server_conn.dest(remotePathCss))
 );
 
 gulp.task("deploy:js", () => 
-	gulp.src("dist/js/*.js", {since: gulp.lastRun("deploy:js")})
+	gulp.src("docs/js/*.js", {since: gulp.lastRun("deploy:js")})
 		.pipe(server_conn.dest(remotePathJs))
 );
 
 gulp.task("deploy:img", () => 
-	gulp.src("dist/img/**/*", {since: gulp.lastRun("deploy:img")})
+	gulp.src("docs/img/**/*", {since: gulp.lastRun("deploy:img")})
 		.pipe(server_conn.dest(remotePathImg))
 );
 
-gulp.task("deploy:dist", _ => 
-	gulp.src("dist/**/*.*", {buffer: false})
+gulp.task("deploy:docs", _ => 
+	gulp.src("docs/**/*.*", {buffer: false})
 		.pipe(xpager_conn.dest(connectionSettings.xpager.dirName))
 );
 
-gulp.task("deploy", gulp.series(gulp.parallel("postcss", "pug", "imagemin"), "deploy:dist"));
+gulp.task("deploy", gulp.series(gulp.parallel("postcss", "pug", "imagemin"), "deploy:docs"));
 
 
 
@@ -188,9 +188,9 @@ const local = _ => {
 	gulp.watch("src/img/**/*.svg", gulp.series("svg"))
 },
 watch = _ => {
-	gulp.watch("dist/css/**/*", gulp.series("deploy:css"))
-	gulp.watch("dist/js/*.js", gulp.series("deploy:js"))
-	gulp.watch("dist/img/**/*", gulp.series("deploy:img"))
+	gulp.watch("docs/css/**/*", gulp.series("deploy:css"))
+	gulp.watch("docs/js/*.js", gulp.series("deploy:js"))
+	gulp.watch("docs/img/**/*", gulp.series("deploy:img"))
 };
 
 gulp.task("deploy-to-server", gulp.series(gulp.parallel("postcss", "pug", "imagemin"), gulp.parallel(local, watch)));
