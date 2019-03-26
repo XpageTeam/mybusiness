@@ -171,12 +171,12 @@ gulp.task("deploy:img", () =>
 		.pipe(server_conn.dest(remotePathImg))
 );
 
-gulp.task("deploy:docs", _ => 
+gulp.task("deploy:dist", _ => 
 	gulp.src("docs/**/*.*", {buffer: false})
 		.pipe(xpager_conn.dest(connectionSettings.xpager.dirName))
 );
 
-gulp.task("deploy", gulp.series(gulp.parallel("postcss", "pug", "imagemin"), "deploy:docs"));
+gulp.task("deploy", gulp.series(gulp.parallel("postcss", "pug", "imagemin"), "deploy:dist"));
 
 
 
