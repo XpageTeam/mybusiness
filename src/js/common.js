@@ -24,7 +24,6 @@ require("../css/jquery.fancybox.css");
 
 document.addEventListener("DOMContentLoaded", e => {
 
-
 	$("body").click(function(e){
 		if (!$(e.target).is($(".mobile-menu"))
 			&& !$(".mobile-menu").has(e.target).length

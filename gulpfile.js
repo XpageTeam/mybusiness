@@ -6,7 +6,6 @@ const $ = require("gulp-load-plugins")(),
 	gutil = require("gulp-util"),
 	sourcemaps = require("gulp-sourcemaps"),
 	postcss = require("gulp-postcss"),
-	svgstore = require('gulp-svgstore'),
 	ftp = require("vinyl-ftp");
 
 let process = require("child_process"),
@@ -24,6 +23,7 @@ const xpager_conn = ftp.create({
 	parallel: 4,
 	log: gutil.log
 });
+
 
 const server_conn = ftp.create({
 	host:      connectionSettings.server.host,
@@ -57,13 +57,13 @@ gulp.task("svg", e =>
 		}))
 		.pipe($.cheerio({
 			run($){
-				$("[fill]").removeAttr("fill");
-				$("[height]").removeAttr("height");
+				//$("[fill]").removeAttr("fill")
 
 				//$("[stroke]").removeAttr("stroke")
 
-				// $("[style]").removeAttr("style")
-				// $("[width]").removeAttr("width")
+				$("[style]").removeAttr("style")
+				$("[width]").removeAttr("width")
+				$("[height]").removeAttr("height")
 			},
 			parserOptions: {
 				xmlMode: true
