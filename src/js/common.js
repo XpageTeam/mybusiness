@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", e => {
 	});
 		
 	
-	  
+
 	let swiperMainbanner = new Swiper(".main-slider .swiper-container", {
 
 		effect: "fade",
