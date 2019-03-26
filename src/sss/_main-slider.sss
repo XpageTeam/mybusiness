@@ -1,6 +1,7 @@
 .main-slider
 	width: calc(100% - 480px)
 	position: relative
+	display: flex
 
 	&__nav 
 		position: absolute
@@ -25,6 +26,9 @@
 
 		img 
 			display: block
+			size: 100%
+			object-fit: cover
+			object-position: center
 
 		&:before 
 			content: ''
@@ -35,6 +39,7 @@
 			height: 100%
 			display: block
 			background: url('../img/photos/main-banner-bg.png') no-repeat center
+			background-size: cover
 
 		&-cont
 			position: absolute
@@ -62,3 +67,70 @@
 	&__date
 		font-weight: 300
 		margin-top: 15px
+
+
+@media screen and (max-width: 1500px)
+
+	.main-slider
+		&__item-cont
+			padding: 30px
+
+		&__nav
+			top: 30px
+			right: 30px
+
+@media screen and (max-width: 1400px)
+
+
+	.main-slider
+		width: calc(100% - 445px)
+
+		+ .calendar
+			margin-left: auto
+
+@media screen and (max-width: 1300px)
+
+	.main-slider
+		width: calc(100% - 415px)
+
+
+
+
+@media screen and (max-width: 1200px)
+	.main-slider
+		width: calc(100% - 300px)
+
+		+ .calendar
+			margin-left: 20px
+
+	.main-slider
+		&__item-cont
+			padding: 20px
+
+		&__nav 
+			top: 20px
+			right: 20px
+
+		&__title
+			font-size: 1.3rem
+			line-height: 1.4
+
+		&__label
+			padding: 10px
+
+@media screen and (max-width: 1000px)
+
+	.main-slider
+		width: 100%
+		margin: 0 0 30px 0
+
+		&-container
+			flex-direction: column
+
+		+ .calendar 
+			margin-left: 0
+
+@media screen and (max-width: 667px)
+
+	.main-slider .swiper-button-next
+		margin-left: 10px

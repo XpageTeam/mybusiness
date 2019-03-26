@@ -64,7 +64,18 @@ document.addEventListener("DOMContentLoaded", e => {
 		navigation: {
 	        nextEl: '.partners .swiper-button-next',
 	        prevEl: '.partners .swiper-button-prev',
-	      },
+	    },
+	    breakpoints: {
+			1000: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			660: {
+				slidesPerView: 1,
+				spaceBetween: 20,
+			},
+			
+		}
 	});
 
 	let swiperStorySuccess = new Swiper(".story-success .swiper-container", {

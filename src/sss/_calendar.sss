@@ -106,3 +106,36 @@
 			color: #fff !important
 			background: #e9eff4
 			background: var(--mainColor)
+
+
+@media screen and (max-width: 1200px)
+
+	.calendar
+		&-top
+			padding: 15px
+
+			&__link
+				margin-top: 10px
+
+		&__title
+			font-size: 1.1rem
+			margin-bottom: 12px
+
+@media screen and (max-width: 1000px)
+
+	.calendar-filter__select
+		select 
+			border: 0
+			height: 45px
+			padding: 0 20px
+			width: 100%
+
+@media screen and (max-width: 667px)
+
+	.calendar
+		&-filter
+			margin: 0 0 0 -20px
+
+			&__select
+				width: calc((100% - 20px * 2) / 2)
+				margin: 0 0 0 20px

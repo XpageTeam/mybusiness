@@ -158,7 +158,7 @@
 	justify-content: center
 	align-items: center
 	box-sizing: content-box
-	width: 30px
+	width: 40px
 	height: 30px
 	padding: 15px
 	background: 0 0
@@ -174,11 +174,11 @@
 	span
 		position: relative
 		display: inline-block
-		width: 30px
+		width: 40px
 		height: 2px
 		border-radius: 5px
 		vertical-align: bottom
-		background: #fff
+		background: var(--mainColor)
 		transition: background .2s .4s
 		&:before
 			border-radius: 5px
@@ -189,7 +189,7 @@
 			top: 10px
 			width: 100%
 			height: 2px
-			background: #fff
+			background: var(--mainColor)
 			transform-origin: 50% 50%
 			transition: top .3s .3s,transform .3s
 		&:after
@@ -200,12 +200,12 @@
 			top: -10px
 			width: 100%
 			height: 2px
-			background: #fff
+			background: var(--mainColor)
 			transform-origin: 50% 50%
 			transition: top .3s .3s,transform .3s
 
 
-.main-nav--open
+.js__menu--open
 
 
 	footer 
@@ -234,115 +234,45 @@
 
 @media screen and (max-width: 1500px)
 
-	.inner 
-		.head-logo
-			max-width: 150px
+	
+	.head-menu
+		&__link
+			padding: 20px 30px
 
-		.logo
-			padding: 1.4rem
+	.main 
+		.head
+			margin-bottom: 30px
 
-		
 @media screen and (max-width: 1200px)
 
-	.head-logo
-		margin-right: 0
+	.head-menu__link
+		padding: 20px
 
-	.inner 
-		.head-logo
-			max-width: 105px
-			
-		.logo 
-			padding-left: 0
+	.head
+		&-soc
+			display: none
 
+		&-bot-cont
+			display: none
 
+		&-contacts-el
+			display: none
 
-	.head-menu__item.active:before
-		left: -15px
-		width: 10px
+		.btn 
+			display: none
 
-	.head-menu
-		display: none
-
-	.burger 
+	.burger
 		display: flex
 
-@media screen and (max-width: 1000px)
+@media screen and (max-width: 660px)
 
-	.logo
-		padding: 1.4rem
-	
-@media screen and (max-width: 667px)
-
-	.logo
-		padding: 10px 10px 3px !important
-
-		img 
-			width: 55px 
-
-	.main
-		&.js__scroll
-			margin-top: 0 !important
-
-
-
-
-
+	.main 
 		.head
-			position: fixed !important
-			top: 0
-			left: 0
-			right: 0
-			background: transparent
-			transition: background .3s ease, opacity .3s ease
-			transform: none !important
+			margin-bottom: 0
 
-			&-cont 
-				align-items: flex-start
+	.head-top
+		align-items: flex-start
 
-			&-logo
-				margin-bottom: 0
-
-
-
-			&.js__scrolled
-				pointer-events: all !important
-				z-index: 17
-				background: #fff
-				transform: none !important
-				opacity: 0
-
-				.burger
-					span 
-						background: #000
-
-						&:before, &:after 
-							background: #000
-
-
-				.head-logo
-					margin-bottom: -7px 
-
-				.logo
-
-					img 
-						width: 55px
-
-
-				&.js__show
-					transition: transform .5s ease
-					transform: none !important
-					opacity: 1
-
-
-		.burger 
-			margin-top: 0
-			padding-top: 1.4rem
-
-			span 
-				background: #fff
-
-				&:before, &:after 
-					background: #fff
 
 
 
