@@ -6,7 +6,6 @@ import "selectize/dist/js/selectize.min.js";
 
 import "./tabs.js";
 import "./accordion.js";
-
 import "./standart-page.js"
 import Sticky from "./x-widgets.js";
 
@@ -20,8 +19,6 @@ require("./countTo.js");
 require("./jquery.fancybox.js");
 require("../css/jquery.fancybox.css");
 
-
-
 document.addEventListener("DOMContentLoaded", e => {
 
 	$("body").click(function(e){
@@ -34,8 +31,6 @@ document.addEventListener("DOMContentLoaded", e => {
 		}
 	});
 		
-	
-
 	let swiperMainbanner = new Swiper(".main-slider .swiper-container", {
 
 		effect: "fade",
