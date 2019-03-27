@@ -14,7 +14,6 @@ window.$ = $;
 window.jQuery = $;
 window.is = is;
 
-// const WOW = require("wowjs").WOW;
 
 require("./countTo.js");
 require("./jquery.fancybox.js");

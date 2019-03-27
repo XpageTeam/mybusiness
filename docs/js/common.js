@@ -19534,8 +19534,6 @@ window.$ = _jquery2.default;
 window.jQuery = _jquery2.default;
 window.is = _is_js2.default;
 
-// const WOW = require("wowjs").WOW;
-
 __webpack_require__(343);
 __webpack_require__(344);
 __webpack_require__(345);

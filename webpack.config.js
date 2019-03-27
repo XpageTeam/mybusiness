@@ -47,7 +47,7 @@ module.exports = [{
 	],
 	output: {
 		filename: "common.js",
-		path: path.resolve(__dirname, "./dist/js/"),
+		path: path.resolve(__dirname, "./docs/js/"),
 	},
 	watch: watch,
 	devtool: devtool,
