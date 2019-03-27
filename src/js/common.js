@@ -20,8 +20,6 @@ require("./countTo.js");
 require("./jquery.fancybox.js");
 require("../css/jquery.fancybox.css");
 
-
-
 document.addEventListener("DOMContentLoaded", e => {
 
 	$("body").click(function(e){
@@ -35,7 +33,6 @@ document.addEventListener("DOMContentLoaded", e => {
 	});
 		
 	
-
 	let swiperMainbanner = new Swiper(".main-slider .swiper-container", {
 
 		effect: "fade",
@@ -160,7 +157,6 @@ document.addEventListener("DOMContentLoaded", e => {
 
 		$this.closest('.history-item').toggleClass('js__open');
 		$this.closest('.history-item').find('.history-item__text-continuation').slideToggle();
-
 
 	})
 
