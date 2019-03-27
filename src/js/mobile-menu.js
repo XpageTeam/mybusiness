@@ -1,162 +1,64 @@
-export default class mobileMenu{
-	set burger(selector){
-		this._burger = document.querySelectorAll(selector)[0]
-	}
-	get burger(){
-		return this._burger
-	}
+import $ from "jquery";
 
-	set menu(selector){
-		this._menu = document.querySelectorAll(selector)[0]
-	}
-	get menu(){
-		return this._menu;
-	}
+$(_ => {
 
-	set error(message){
-		if (this.settings.ignoreWarnings)
-			return
+	$('.burger').click(function(){
+		$('body').toggleClass("js__menu--open");
+		$('body').removeClass("js__submenu--open");
+	});
 
-		this._error = true;
-		this.errorMessage(message + " Меню не работает.");
-	}
-
-	set subTitles(selector){
-		this._titles = document.querySelectorAll(selector)
-	}
-	get subTitles(){
-		return this._titles
-	}
-
-	set subMenu(selector){
-		this._subMenu = document.querySelectorAll(selector)
-	}
-	get subMenu(){
-		return this._subMenu
-	}
-
-
-	constructor(settings = {
-		burger: ".burger",
-		menu: ".mobile-menu",
-		submenu: {
-			titleSelector: ".mobile-menu__sub-title",
-			submenuSelector: ".mobile-menu__submenu",
-		},
-		menuActiveClass: "js__opened",
-		bodyActiveClass: "js__menu-opened",
-		ignoreWarnings: false,
-		fixBody: false,
-	}){
-
-		this.settings = settings;
-
-		this.burger = settings.burger;
-		this.menu = settings.menu;
-
-		if (settings.submenu){
-			this.subTitles = settings.submenu.titleSelector;
-			this.subMenu = settings.submenu.submenuSelector;
+	$("body").click(function(e){
+		if (!$(e.target).is($(".mobile-menu"))
+			&& !$(".mobile-menu").has(e.target).length
+			&& $("body").hasClass("js__menu--open")
+			&& !$(e.target).is($(".burger"))
+			&& !$(".burger").has(e.target).length){
+				$("body").removeClass("js__menu--open")
 		}
+	});
 
-		if (!this.burger){
-			this.error = "Бургер не найден.";
-			return
-		}
+	var menuClone = $('.head-menu__list').clone();
+	var socClone = $('header .soc').clone();
 
-		if (!this.menu){
-			this.error = "Мобильное меню не найдено.";
-			return
-		}
+	$('.mobile-menu').append(menuClone);
+	$('.mobile-menu').append(socClone);
+
+	// $('.head-menu__item').find('ul').closest('li').addClass('js__has-submenu');
+
+	$('.submenu').each((i,el) => {
+		let $this = $(el);
+
+		$this.closest('li').addClass('js__has-submenu');
+	})
+
+	if($(window).width() <= 1000) {
 
 
-		this.body = document.getElementsByTagName("body")[0];
+        $('li.js__has-submenu').each(function(i,el){
+            var $this = $(el),
+            	setCloneLink = $this.find('.submenu').prev('a').clone();
 
-		this.state = false;
+            console.log(setCloneLink)
 
-		this.bindEvents();
-	}
+            $this.find('.submenu').prepend('<div class="js__link-parent"></div>');
+            $this.find('.js__link-parent').prepend(setCloneLink);
+            $this.find('.submenu').prepend('<div class="head-menu__link js__back">Назад</div>');
 
-	openMenu(){
-		if (this.settings.fixBody){
-			this.body.style.top = -window.pageYOffset + "px";
-			this.body.style.position = "fixed";
-		}
+        })
 
-		this.burger.classList.add("js__active");
-		this.menu.classList.add(this.settings.menuActiveClass);
-		this.body.classList.add(this.settings.bodyActiveClass);
+        $('li.js__has-submenu > a').removeAttr('href');
+        $('li.js__has-submenu > a').click(function(){
+            var $this = $(this);
+            $this.closest('body').addClass('js__submenu--open');
 
-		this.state = true;
-	}
-	closeMenu(){
-		let top = null;
-		
-		if (this.settings.fixBody){
-			top = Math.abs(parseInt(this.body.style.top));
+	        })
 
-			this.body.style.top = "";
-			this.body.style.position = "";
-		}
+	        $('.js__back').click(function(){
+	            var $this = $(this);
+	            $this.closest('body').removeClass('js__submenu--open');
+	        })
 
-		this.burger.classList.remove("js__active");
-		this.menu.classList.remove(this.settings.menuActiveClass);
-		this.body.classList.remove(this.settings.bodyActiveClass);
+	    }
 
-		if (this.settings.fixBody){
-			$(window).scrollTop(top);
-		}
 
-		this.state = false;
-	}
-	toggleMenu(){
-		if (this.state)
-			this.closeMenu()
-		else
-			this.openMenu()
-	}
-
-	opendSubmenu(subTitle){
-		
-	}
-	closeSubmenu(subTitle){
-
-	}
-	toggleSubmenu(subTitle){
-		$(subTitle).toggleClass("js__opened");
-
-		$(subTitle.closest("li").querySelector(".mobile-menu__submenu"))
-			.slideToggle(300)
-	}
-
-	bindEvents(){
-
-		let self = this;
-		this.burger.addEventListener("click", _ => {
-			this.toggleMenu();
-		});
-
-		if (this.settings.subMenu)
-			if (this.subTitles.length)
-				for (var subTitle of this.subTitles)
-					subTitle.addEventListener("click", function() {
-						self.toggleSubmenu(subTitle);
-					});
-
-		document.body.addEventListener("click", event => {
-			let $target = $(event.target);
-
-			if (!$target.is(this.burger)
-				&& !$(this.burger).has($target).length
-				&& !$target.is($(this.menu))
-				&& !$(this.menu).has($target).length)
-				{
-					this.closeMenu()
-			}
-		});
-	}
-
-	errorMessage(message = ""){
-		console.error(message);
-	}
-}
+});

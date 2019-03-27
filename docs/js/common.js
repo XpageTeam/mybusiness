@@ -19522,6 +19522,8 @@ __webpack_require__(339);
 
 __webpack_require__(340);
 
+__webpack_require__(350);
+
 __webpack_require__(341);
 
 var _xWidgets = __webpack_require__(342);
@@ -19539,12 +19541,6 @@ __webpack_require__(344);
 __webpack_require__(345);
 
 document.addEventListener("DOMContentLoaded", function (e) {
-
-	(0, _jquery2.default)("body").click(function (e) {
-		if (!(0, _jquery2.default)(e.target).is((0, _jquery2.default)(".mobile-menu")) && !(0, _jquery2.default)(".mobile-menu").has(e.target).length && (0, _jquery2.default)("body").hasClass("js__menu--open") && !(0, _jquery2.default)(e.target).is((0, _jquery2.default)(".burger")) && !(0, _jquery2.default)(".burger").has(e.target).length) {
-			(0, _jquery2.default)("body").removeClass("js__menu--open");
-		}
-	});
 
 	var swiperMainbanner = new _swiper2.default(".main-slider .swiper-container", {
 
@@ -19672,12 +19668,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		$this.closest('.history-item').toggleClass('js__open');
 		$this.closest('.history-item').find('.history-item__text-continuation').slideToggle();
 	});
-
-	(0, _jquery2.default)('.burger').click(function () {
-		(0, _jquery2.default)('body').toggleClass("js__menu--open");
-	});
-
-	(0, _jquery2.default)('.head-menu__item').find('ul').closest('li').addClass('js__has-submenu');
 
 	if ((0, _jquery2.default)('body').hasClass('page-personal')) {
 
@@ -43859,6 +43849,72 @@ module.exports = function (css) {
 	return fixedCss;
 };
 
+
+/***/ }),
+/* 350 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _jquery = __webpack_require__(46);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _jquery2.default)(function (_) {
+
+	(0, _jquery2.default)('.burger').click(function () {
+		(0, _jquery2.default)('body').toggleClass("js__menu--open");
+		(0, _jquery2.default)('body').removeClass("js__submenu--open");
+	});
+
+	(0, _jquery2.default)("body").click(function (e) {
+		if (!(0, _jquery2.default)(e.target).is((0, _jquery2.default)(".mobile-menu")) && !(0, _jquery2.default)(".mobile-menu").has(e.target).length && (0, _jquery2.default)("body").hasClass("js__menu--open") && !(0, _jquery2.default)(e.target).is((0, _jquery2.default)(".burger")) && !(0, _jquery2.default)(".burger").has(e.target).length) {
+			(0, _jquery2.default)("body").removeClass("js__menu--open");
+		}
+	});
+
+	var menuClone = (0, _jquery2.default)('.head-menu__list').clone();
+	var socClone = (0, _jquery2.default)('header .soc').clone();
+
+	(0, _jquery2.default)('.mobile-menu').append(menuClone);
+	(0, _jquery2.default)('.mobile-menu').append(socClone);
+
+	// $('.head-menu__item').find('ul').closest('li').addClass('js__has-submenu');
+
+	(0, _jquery2.default)('.submenu').each(function (i, el) {
+		var $this = (0, _jquery2.default)(el);
+
+		$this.closest('li').addClass('js__has-submenu');
+	});
+
+	if ((0, _jquery2.default)(window).width() <= 1000) {
+
+		(0, _jquery2.default)('li.js__has-submenu').each(function (i, el) {
+			var $this = (0, _jquery2.default)(el),
+			    setCloneLink = $this.find('.submenu').prev('a').clone();
+
+			console.log(setCloneLink);
+
+			$this.find('.submenu').prepend('<div class="js__link-parent"></div>');
+			$this.find('.js__link-parent').prepend(setCloneLink);
+			$this.find('.submenu').prepend('<div class="head-menu__link js__back">Назад</div>');
+		});
+
+		(0, _jquery2.default)('li.js__has-submenu > a').removeAttr('href');
+		(0, _jquery2.default)('li.js__has-submenu > a').click(function () {
+			var $this = (0, _jquery2.default)(this);
+			$this.closest('body').addClass('js__submenu--open');
+		});
+
+		(0, _jquery2.default)('.js__back').click(function () {
+			var $this = (0, _jquery2.default)(this);
+			$this.closest('body').removeClass('js__submenu--open');
+		});
+	}
+});
 
 /***/ })
 /******/ ]);

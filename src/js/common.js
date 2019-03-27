@@ -6,6 +6,7 @@ import "selectize/dist/js/selectize.min.js";
 
 import "./tabs.js";
 import "./accordion.js";
+import "./mobile-menu.js";
 import "./standart-page.js"
 import Sticky from "./x-widgets.js";
 
@@ -19,17 +20,6 @@ require("./jquery.fancybox.js");
 require("../css/jquery.fancybox.css");
 
 document.addEventListener("DOMContentLoaded", e => {
-
-	$("body").click(function(e){
-		if (!$(e.target).is($(".mobile-menu"))
-			&& !$(".mobile-menu").has(e.target).length
-			&& $("body").hasClass("js__menu--open")
-			&& !$(e.target).is($(".burger"))
-			&& !$(".burger").has(e.target).length){
-				$("body").removeClass("js__menu--open")
-		}
-	});
-		
 
 	let swiperMainbanner = new Swiper(".main-slider .swiper-container", {
 
@@ -171,12 +161,6 @@ document.addEventListener("DOMContentLoaded", e => {
 
 	
 
-
-	$('.burger').click(function(){
-		$('body').toggleClass("js__menu--open");
-	});
-
-	$('.head-menu__item').find('ul').closest('li').addClass('js__has-submenu');
 
 
 	if($('body').hasClass('page-personal')){
