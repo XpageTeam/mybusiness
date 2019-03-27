@@ -126,10 +126,22 @@
 		size: 70px
 
 
+@media screen and (max-width: 1300px)
+	
+	.content-main--left
+		width: calc(100% - 385px)
+		margin-right: 20px
+
 @media screen and (max-width: 1200px)
 
 	.btn
 		padding: 10px 20px
+
+	.content-aside
+		max-width: 300px
+
+	.content-main--left
+		width: calc(100% - 330px)
 
 @media screen and (max-width: 1000px)
 	.scroll-top
@@ -141,6 +153,21 @@
 		span:nth-child(2)
 			display: none
 
+	.content-main
+		flex-direction: column
+
+		&--left
+			width: 100% 
+			margin-right: 0
+
+	.content-aside
+		max-width: 100%
+		margin-top: 30px
+		margin-left: 0
+
+		> *
+			&:last-child
+				margin-bottom: 0
 
 @media screen and (max-width: 667px)
 	

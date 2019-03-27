@@ -16,12 +16,16 @@
 			flex: none
 			margin-right: 40px
 
+		&-title 
+			margin-right: 20px
+
 	&-arrow
 		position: relative
 		size: 54px
 		border-radius: 50%
 		background: #fff
 		margin-left: auto
+		flex: none
 
 		&:before 
 			content: ''
@@ -33,3 +37,30 @@
 			border-right: 1px solid #000
 			border-top: 1px solid #000
 			transform: rotate(45deg)
+
+@media screen and (max-width: 1500px)
+
+	.services
+		margin: 40px 0 50px
+
+
+@media screen and (max-width: 1200px)
+
+	.services-arrow
+		size: 44px
+
+
+@media screen and (max-width: 660px)
+
+	.services
+		&__item
+			padding: 20px
+			font-size: .9rem
+
+			&-img
+				margin-right: 15px
+				max-width: 30px
+
+		&-arrow
+			width: 35px
+			height: 35px

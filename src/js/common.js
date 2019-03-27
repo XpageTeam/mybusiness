@@ -77,7 +77,8 @@ document.addEventListener("DOMContentLoaded", e => {
 		slidesPerView: 1,
 		loop: true,
 		roundLengths: true,
-		autoplay: true,
+		// autoplay: true,
+		autoHeight: true,
 		navigation: {
 	        nextEl: '.story-success .swiper-button-next',
 	        prevEl: '.story-success .swiper-button-prev',
@@ -89,6 +90,16 @@ document.addEventListener("DOMContentLoaded", e => {
 		let $this = $(this);
 
 		$this.closest('.story-success__slide').find('.text-page > span:not(:first-child)').slideToggle();
+
+		const parentSlider = $this.closest(".swiper-container")[0].swiper;
+
+		let interval = setInterval(function(){
+			parentSlider.updateAutoHeight();
+		}, 10)
+
+		setTimeout(function(){
+			clearInterval(interval)
+		}, 300)
 
 	})
 

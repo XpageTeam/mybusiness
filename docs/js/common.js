@@ -19591,7 +19591,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		slidesPerView: 1,
 		loop: true,
 		roundLengths: true,
-		autoplay: true,
+		// autoplay: true,
+		autoHeight: true,
 		navigation: {
 			nextEl: '.story-success .swiper-button-next',
 			prevEl: '.story-success .swiper-button-prev'
@@ -19602,6 +19603,16 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		var $this = (0, _jquery2.default)(this);
 
 		$this.closest('.story-success__slide').find('.text-page > span:not(:first-child)').slideToggle();
+
+		var parentSlider = $this.closest(".swiper-container")[0].swiper;
+
+		var interval = setInterval(function () {
+			parentSlider.updateAutoHeight();
+		}, 10);
+
+		setTimeout(function () {
+			clearInterval(interval);
+		}, 300);
 	});
 
 	if ((0, _jquery2.default)(".support-stat__item-num").length) {
