@@ -1,1 +1,1 @@
-https://xpageteam.github.io/mybusiness/
+https://xpageteam.github.io/my-business/
