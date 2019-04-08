@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Новости
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.wrapper
+				.content
+					.title-block__cont
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									span.bread-crumbs__this Новости
+							.title-block__title
+								h1 Новости
+					.content-main-cont
+						.content-main
+							.tags
+								.tags__list
+									.tags__item Теги:
+									.tags__item.active Все
+									each title, i in ['МФЦ для бизнеса', 'Фонд финансирования промышленности и предпринимательства', 'Поддержка инвесторов','Предоставление поручительств','Поддержка экспорта','Обучение','Мама – предприниматель','Консультации','Услуги центра инжиниринга и сертификации','Имущественная поддержка','Фонд развития']
+										a(href="").tags__item=title
+							.news
+								.news-slider-container
+									.main-slider
+										.swiper-container
+											.swiper-wrapper
+												a(href="#").main-slider__item.swiper-slide
+													picture
+														source(srcset="img/photos/main-banner.jpg" media="screen and (min-width: 481px)" data-main="data-main")
+														source(srcset="img/main-banner-mobile.jpg" media="screen and (max-width: 480px)")
+														img
+													.main-slider__item-cont
+														.main-slider__label Региональные новости
+														.main-slider__title Вадим Живулин: Средства, выделяемые<br> на сектор МСП до 2024 года - беспрецедентны.
+														.main-slider__date 05.02.2019
+												a(href="#").main-slider__item.swiper-slide
+													picture
+														source(srcset="img/photos/main-banner.jpg" media="screen and (min-width: 481px)" data-main="data-main")
+														source(srcset="img/main-banner-mobile.jpg" media="screen and (max-width: 480px)")
+														img
+													.main-slider__item-cont
+														.main-slider__label Региональные новости
+														.main-slider__title Вадим Живулин: Средства, выделяемые<br> на сектор МСП до 2024 года - беспрецедентны.
+														.main-slider__date 06.02.2019
+												a(href="#").main-slider__item.swiper-slide
+													picture
+														source(srcset="img/photos/main-banner.jpg" media="screen and (min-width: 481px)" data-main="data-main")
+														source(srcset="img/main-banner-mobile.jpg" media="screen and (max-width: 480px)")
+														img
+													.main-slider__item-cont
+														.main-slider__label Региональные новости
+														.main-slider__title Вадим Живулин: Средства, выделяемые<br> на сектор МСП до 2024 года - беспрецедентны.
+														.main-slider__date 07.02.2019
+
+										.main-slider__nav
+											.swiper-arrow.swiper-button-prev
+											.swiper-arrow.swiper-button-next
+									
+									
+
+
+
+							
+
+
+		include inc/footer.pug
+		include inc/scripts.pug

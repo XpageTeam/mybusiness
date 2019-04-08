@@ -17,6 +17,9 @@
 @import "_title-block.sss"
 @import "_services.sss"
 @import "_accordion.sss"
+@import "_events.sss"
+@import "_tags.sss"
+@import "_contacts.sss"
 
 .btn
 	display: inline-block
@@ -112,12 +115,16 @@
 	> *
 		margin-bottom: 40px
 
-.content-aside + .content-main--left
+
+.content-aside + .content-main
 	width: calc(100% - 480px)
 
 .content-main
-	display: flex
-	flex-direction: row-reverse
+	width: 100%
+	
+	&-cont
+		display: flex
+		flex-direction: row-reverse
 
 
 .mobile-menu

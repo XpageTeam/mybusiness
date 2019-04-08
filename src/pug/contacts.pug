@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Контакты
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.wrapper
+				.content
+					.title-block__cont
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									span.bread-crumbs__this Контакты
+							.title-block__title
+								h1 Контакты
+					.content-main-cont
+						.content-main
+							.contacts
+								.contacts-title Центр предпринимательства "Мой бизнес"
+								.contacts-top
+									.contacts-info
+										.contacts-info__item
+											.contacts-info__label Адрес:
+											.contacts-info__text Республика Бурятия, г. Улан-Удэ,<br> ул. Смолина, 65
+										.contacts-info__item
+											.contacts-info__label Бесплатный звонок по России:
+											.contacts-info__text
+												a(href="tel: 8 (800) 30-30-123") 8 (800) 30-30-123
+										.contacts-info__item
+											.contacts-info__label Для юридических лиц:
+											.contacts-info__text
+												a(href="tel: 8 (800) 30-30-123") 8 (800) 30-30-123
+
+
+									.contacts-filials
+										.contacts-filials__label Выберите учреждение инфраструктуры поддержки:
+										.contacts-filials__one
+											.contacts-filials__one-title Центр предпринимательства "Мой бизнес"
+											.contacts-filials__one-info
+												.contacts-info__el
+													.contacts-info__el-label Адрес:
+													.contacts-info__el-text 670000, Республика Бурятия, г. Улан-Удэ, ул. Смолина, 65 (Бизнес-центр "Greenwich")
+												.contacts-info__el
+													.contacts-info__el-label Телефон:
+													.contacts-info__el-text 
+														a(href="tel: 8 (800) 30-30-123") 8 (800) 30-30-123
+
+								.contacts-bot
+									.contacts-map
+										img(src="img/map.jpg", alt="")
+									.contacts-action
+										figure
+											img(src="img/action-logo.svg", alt="")
+										.contacts-action-title Остались<br> вопросы?
+										a(href="#").btn Написать нам
+
+
+
+							
+
+
+		include inc/footer.pug
+		include inc/scripts.pug

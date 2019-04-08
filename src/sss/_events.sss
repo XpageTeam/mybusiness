@@ -1,0 +1,41 @@
+.calendar + .events
+	margin-top: 70px
+
+.events
+
+	&__list
+		margin-bottom: -40px
+
+	&__item
+		border: 1px solid var(--backgroundColor)
+
+		margin-bottom: 40px
+
+		&-top
+			display: flex 
+			justify-content: space-between
+			background: var(--backgroundColor)
+			align-items: center
+			padding: 30px 65px 35px 50px
+
+		&-bot 
+			padding: 40px 50px 50px 50px
+
+		&-title 
+			font-size: rem(18)
+			font-weight: 600
+
+		&-date
+			border-radius: 18px
+			padding: 10px 15px
+			background: var(--secondColor)
+			color: #fff
+			font-size: rem(13)
+			margin-left: 20px
+			line-height: 1
+
+		.text-page
+			+ .btn
+				margin-top: 30px 
+
+

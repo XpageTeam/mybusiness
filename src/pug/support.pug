@@ -28,8 +28,21 @@ html(lang="ru")
 									a.bread-crumbs__link(href="#") Главная
 									a.bread-crumbs__link(href="#") Получить поддержку
 									span.bread-crumbs__this Услуги центра инжиниринга и сертификации
-					.content-main
-						.content-main--left
+					.content-main-cont
+						aside.content-aside
+							.support-banner__links
+								a(href="").support-banner__link Документы
+								a(href="").support-banner__link Конкурсы
+							.search-support-cont
+								form(action="")
+									.search-support
+										.search-support__title Введите ИНН и узнайте о вариантах поддержки Вашего бизнеса:
+										.search-support__input
+											input(type="text" placeholder="Введите Ваш ИНН")
+										.search-support__submit
+											input(type="submit" value="Найти").btn
+							include inc/calendar.pug
+						.content-main
 							.support-for-whom
 								.support-for-whom__title Для кого?
 								.support-for-whom__text Для производственных компаний, которым необходимы инженерно-исследовательские услуги, а также экономическая и маркетинговая поддержка как часть проекта развития. Вы относитесь к малому или среднему бизнесу, зарегистрированы и работаете на территории Челябинской области.
@@ -189,19 +202,7 @@ html(lang="ru")
 									address.contacts-one__address
 										.contacts-one__label Адрес:
 										.contacts-one__link 454000, г. Челябинск, ул. Российская, 110 к.1
-						aside.content-aside
-							.support-banner__links
-								a(href="").support-banner__link Документы
-								a(href="").support-banner__link Конкурсы
-							.search-support-cont
-								form(action="")
-									.search-support
-										.search-support__title Введите ИНН и узнайте о вариантах поддержки Вашего бизнеса:
-										.search-support__input
-											input(type="text" placeholder="Введите Ваш ИНН")
-										.search-support__submit
-											input(type="submit" value="Найти").btn
-							include inc/calendar.pug
+						
 
 
 		include inc/footer.pug

@@ -1,0 +1,94 @@
+.contacts
+	&-title
+		font-size: rem(18)
+		font-weight: 600
+		color: var(--mainColor)
+		margin-bottom: 30px
+
+	&-top
+		display: flex
+		align-items: flex-end
+
+	&-bot
+		display: flex
+		margin-top: 80px
+
+
+	&-filials
+		margin-left: auto
+
+		&__label
+			color: #9BAABB
+			font-size: rem(14)
+			margin-bottom: 15px
+
+		&__one
+			border: 1px solid var(--backgroundColor)
+
+			&-title
+				position: relative
+				padding: 20px 105px 20px 50px
+				background: var(--backgroundColor)
+				font-size: rem(14)
+				font-weight: 600
+
+				&:after 
+					content: ''
+					position: absolute
+					right: 50px
+					top: calc(50% - 3px)
+					size: 6px
+					display: block
+					border-right: 1px solid #000
+					border-bottom: 1px solid #000
+					transform: rotate(45deg)
+
+			&-info
+				display: flex 
+				flex-wrap: wrap
+				padding: 30px 50px
+				margin: 0 0 -30px -30px
+
+	&-info
+		&__el
+			width: calc((100% - 30px * 2) / 2)
+			margin: 0 0 30px 30px
+
+
+	&-info
+		margin-right: 30px
+
+		&__item
+			&:not(:first-child)
+				margin-top: 30px
+
+		&__label
+			color: #9BAABB
+			margin-bottom: 10px
+
+	&-map
+		flex: none
+		width: calc(100% - 480px)
+
+	&-action
+		background-color: var(--mainColor)
+		background-image: url('../img/soti-bg.png')
+		background-position: center
+		width: 100%
+		margin-left: 40px
+		padding: 90px 80px 100px 80px
+		display: flex 
+		flex-direction: column
+		align-items: flex-start
+
+		&-title
+			font-size: rem(30)
+			font-weight: 600
+			color: #fff
+			line-height: 1.4
+
+		.btn
+			margin-top: 40px
+
+		figure
+			margin-bottom: auto
