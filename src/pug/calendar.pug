@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Одна поддержка
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.wrapper
+				.content
+					.title-block__cont
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									a.bread-crumbs__link(href="#") Получить поддержку
+									span.bread-crumbs__this Услуги центра инжиниринга и сертификации
+					.content-main
+						.content-main--left
+							.tags
+								.tags__list
+									.tags__item Теги:
+									each title, i in ['Все', 'МФЦ для бизнеса', 'Фонд финансирования промышленности и предпринимательства', 'Поддержка инвесторов','Предоставление поручительств','Поддержка экспорта','Обучение','Мама – предприниматель','Консультации','Услуги центра инжиниринга и сертификации','Имущественная поддержка','Фонд развития']
+										a(href="").tags__item=title
+
+
+							include inc/calendar.pug
+							
+
+
+		include inc/footer.pug
+		include inc/scripts.pug
