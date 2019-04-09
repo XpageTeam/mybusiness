@@ -23,9 +23,30 @@
 		width: calc(100% - 480px) 
 
 		&-title
-			font-size: rem(22)
-			font-weight: 600
+			display: flex
+			justify-content: space-between
 			margin-bottom: 35px
+
+			span
+				font-size: rem(22)
+				font-weight: 600
+
+			.convert
+				position: relative
+				line-height: 1
+				display: flex
+				align-items: center
+
+				&:before 
+					content: ''
+					display: inline-block
+					margin-right: 15px
+					size: 24px
+					background-color: var(--secondColor)
+					border-radius: 50%
+					background-image: url('../img/ico-group.svg')
+					background-position: center
+					background-repeat: no-repeat
 
 	&-treatment
 		&__list
@@ -202,7 +223,25 @@
 
 	.forms__input-cont
 		width: calc((100% - 40px * 3) / 3)
-		margin: 0 0 25px 40px 
+		margin: 0 0 25px 40px
+
+	&-pass
+		margin-top: 50px
+
+		.forms
+			&__title
+				font-size: rem(22)
+				font-weight: 600
+				margin-bottom: 20px
+
+			&__text 
+				color: #9BAABB
+				font-size: rem(14)
+				max-width: 600px
+				margin-bottom: 20px
+
+			&-submit-cont
+				margin-top: 50px
 
 
 .personal-user
@@ -210,57 +249,177 @@
 
 	&__top
 		margin-bottom: 45px
+		display: flex
+		justify-content: space-between
 
 	.title
-		font-size: rem(20)
-		line-height: rem(22)
-		font-weight: bold
-		color: var(--mainColor)
-		display: inline-block
+		font-size: rem(22)
+		font-weight: 600
 
 	.add-user__link
-		float: right
-		border-bottom: 1px solid var(--mainColor)
+		position: relative
+		display: flex
+		align-items: center
+		line-height: 1
+
+		&:before 
+			content: ''
+			display: inline-block
+			size: 24px
+			border-radius: 50%
+			background-color: var(--secondColor)
+			background-image: url('../img/ico-plus.svg')
+			background-position: center
+			background-repeat: no-repeat
+			margin-right: 15px
 
 	&__info
-		float: left
-
+		display: flex
+		flex-direction: column
+		flex: 1 1 auto
 
 	&__photo
-		float: left
+		flex: none
 		margin-right: 32px
 
 	&__close
 		display: block
 		size: 16px
-		background: url('../img/ico-close.png') no-repeat center
+		background: url('../img/ico-cross.svg') no-repeat center
 		background-size: contain !important
-		float: right
 		flex: none
+		margin-left: 80px
+
+		.ico
+			size: 10px
 
 	&__item
 		display: flex
 
-
 		&:not(:first-child)
 			margin-top: 40px
 
+	.bot
+		display: flex
+		flex: 1 1 auto
+		justify-content: space-between
+
 	.user-name
-		font-size: rem(20)
-		line-height: rem(22)
+		font-size: rem(16)
 		font-weight: 600
 
 	.label
-		font-size: rem(16)
-		line-height: rem(22)
-		color: red
+		font-size: rem(14)
+		color: #9BAABB
 		margin-bottom: 10px
 
 	.item
-		float: left
-		margin-right: rem(80)
+		&:not(:last-child)
+			margin-right: rem(80)
 
 		a, span
+			font-size: rem(14)
+
+.support
+	&-search
+		color: #fff
+		background-image: url('../img/soti-bg.png')
+		background-repeat: no-repeat
+		background-position: center
+		background-color: var(--mainColor)
+		padding: 65px 65px 85px 85px
+		border: 8px solid #58301E
+
+		&__title
+			font-size: rem(22)
+			font-weight: 600
+			margin-bottom: 20px
+
+			+ .support-search__title
+				margin-top: 50px
+
+		&__input
+			&-cont
+				position: relative
+				margin-top: 70px
+
+		.label
+			font-size: rem(18)
+			font-weight: 600
+			margin-bottom: 25px
+			display: block
+
+		.input
+			max-width: 490px
+			width: 100%
+			border-radius: 50px
+			height: 45px
+			border: 0
+			padding: 0 25px
+			margin-right: 43px
+
+		.submit
+			border-radius: 25px
+			border: 0
+			line-height: 1
+
+
+	&-title
+		font-size: rem(26)
+		font-weight: 600
+		margin-bottom: 40px
+
+
+
+.lk-events
+	&__item
+		border: 1px solid var(--backgroundColor)
+		&-top
+			background: var(--backgroundColor)
+			padding: 20px 50px
+			display: flex
+			justify-content: space-between
+			align-items: center
+
+		&-title
 			font-size: rem(16)
-		a
-			color: #5475ce
+			font-weight: 600
+
+		&-date
+			padding: 10px 15px
+			border-radius: 18px
+			background: #E5EBF0
+			color: #9BAABB
+			font-size: rem(13)
+			line-height: 1
+			margin-left: 20px
+
+			&.active
+				background: var(--secondColor)
+				color: #fff
+
+		&-next
+			display: none
+
+		&-info
+			padding: 30px 50px
+
+		&-btn
+			position: relative
+			display: flex 
+			align-items: center
+			line-height: 1
+			cursor: pointer
+			margin-top: 20px
+
+			&:before 
+				content: ''
+				display: inline-block
+				margin-right: 15px
+				size: 30px
+				border-radius: 50%
+				background-color: var(--secondColor)
+				flex: none
+				background-image: url('../img/ico-arrow.svg')
+				background-repeat: no-repeat
+				background-position: center

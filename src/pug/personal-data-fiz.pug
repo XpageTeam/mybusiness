@@ -2,7 +2,7 @@
 html(lang="ru")
 	head
 		meta(charset="utf-8")
-		title Личны кабинет - Личные данные (Юр. лица)
+		title Личны кабинет - Личные данные (Физ. лица)
 		include inc/head.pug
 		include inc/css.pug
 	body.inner.loading
@@ -31,6 +31,7 @@ html(lang="ru")
 								.lk-cont
 									.lk-cont-title 
 										span Личные данные
+										a(href="#").convert Преобразовать в компанию
 									.lk-personal-data
 										.personal-data
 											form(action="")
@@ -38,62 +39,34 @@ html(lang="ru")
 													.forms-wrap
 														.forms__input-cont
 															input(placeholder="" type="text").forms__input
-															label.forms__label ИНН
+															label.forms__label Имя
 															.forms__error-message
 																i.forms__error-message-icon
 														.forms__input-cont
 															input(placeholder="" type="text").forms__input
-															label.forms__label КПП
+															label.forms__label Фамилия
 															.forms__error-message
 																i.forms__error-message-icon
 														.forms__input-cont
 															input(placeholder="" type="text").forms__input
-															label.forms__label ОГРН
+															label.forms__label Отчество
 															.forms__error-message
 																i.forms__error-message-icon
 														.forms__input-cont
 															input(placeholder="" type="text").forms__input
-															label.forms__label Расчетный счет
-															.forms__error-message
-																i.forms__error-message-icon
-														.forms__input-cont
-															input(placeholder="" type="text").forms__input
-															label.forms__label Наименование банка
-															.forms__error-message
-																i.forms__error-message-icon
-														.forms__input-cont
-															input(placeholder="" type="text").forms__input
-															label.forms__label Корреспондентский счет
-															.forms__error-message
-																i.forms__error-message-icon
-														.forms__input-cont
-															input(placeholder="" type="text").forms__input
-															label.forms__label БИК
-															.forms__error-message
-																i.forms__error-message-icon
-
-														.forms__input-cont
-															input(placeholder="" type="text").forms__input
-															label.forms__label ИНН/КПП банка
-															.forms__error-message
-																i.forms__error-message-icon
-														.forms__input-cont
-															input(placeholder="" type="text").forms__input
-															label.forms__label Вид деятельности
-															.forms__error-message
-																i.forms__error-message-icon
-														
-														.forms__input-cont
-															input(placeholder="" type="tel").forms__input
-															label.forms__label Номер телефона
-															.forms__error-message
-																i.forms__error-message-icon
-														.forms__input-cont
-															input(placeholder="" type="mail").forms__input
 															label.forms__label E-mail
 															.forms__error-message
 																i.forms__error-message-icon
-												
+														.forms__input-cont
+															input(placeholder="" type="text").forms__input
+															label.forms__label Телефон
+															.forms__error-message
+																i.forms__error-message-icon
+														.forms__input-cont
+															input(placeholder="" type="text").forms__input
+															label.forms__label ИНН
+															.forms__error-message
+																i.forms__error-message-icon
 												.personal-data-pass
 													.forms__title Смена пароля
 													.forms__text Введите свой текущий пароль, новый пароль и повторите ввод нового пароля, что бы исключить возможность опечатки
@@ -117,53 +90,7 @@ html(lang="ru")
 													.forms-submit-cont
 														input(type="submit" value="Сохранить изменения").forms__submit.btn
 
-										.personal-user
-											.personal-user__top
-												.title Сотрудники
-												a(href="#").add-user__link Добавить сотрудника
-											.personal-user__list
-												.personal-user__item
-													figure.personal-user__photo
-														img(src="img/user-no-photo.jpg", alt="").user-img
-													.personal-user__info
-														.top
-															.user-name Степанов Владимир Александрович
-														.bot 
-															.item
-																.label Телефон
-																a(href="tel: +7 351 226 03 10") +7 351 226 03 10
-															.item 
-																.label E-mail
-																a(href="mailto: stepanov@mail.ru") stepanov@mail.ru
-															.item 
-																.label ИНН 
-																span 124568793125
-													a(href="#").personal-user__close
-														span
-															svg.ico
-																use(xlink:href="#ico-cross")
-
-												.personal-user__item
-													figure.personal-user__photo
-														img(src="img/user-no-photo.jpg", alt="").user-img
-													.personal-user__info
-														.top
-															.user-name Степанов Владимир Александрович
-														.bot 
-															.item
-																.label Телефон
-																a(href="tel: +7 351 226 03 10") +7 351 226 03 10
-															.item 
-																.label E-mail
-																a(href="mailto: stepanov@mail.ru") stepanov@mail.ru
-															.item 
-																.label ИНН 
-																span 124568793125
-													a(href="#").personal-user__close
-														span
-															svg.ico
-																use(xlink:href="#ico-cross")
-
+										
 										
 								
 

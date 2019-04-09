@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Личны кабинет - Обращения</title>
+	<title>Личны кабинет - Личные данные (Физ. лица)</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;amp;subset=cyrillic" />
@@ -79,7 +79,7 @@
 				<div class="title-block__cont">
 					<div class="title-block">
 						<div class="title-block__crumbs">
-							<div class="bread-crumbs"><a class="bread-crumbs__link" href="#">Главная</a><a class="bread-crumbs__link" href="#">Личный кабинет</a><span class="bread-crumbs__this">Обращения</span></div>
+							<div class="bread-crumbs"><a class="bread-crumbs__link" href="#">Главная</a><a class="bread-crumbs__link" href="#">Личный кабинет</a><span class="bread-crumbs__this">Личные данные</span></div>
 						</div>
 						<div class="title-block__title">
 							<h1>Личный кабинет</h1>
@@ -90,25 +90,52 @@
 					<div class="content-main">
 						<div class="lk">
 							<aside class="lk-aside">
-								<div class="lk-aside__links"><a class="lk-aside__link active" href="">Обращения</a><a class="lk-aside__link" href="">Доступные виды поддержки</a><a class="lk-aside__link" href="">Личные данные</a><a class="lk-aside__link" href="">Мероприятия</a></div>
+								<div class="lk-aside__links"><a class="lk-aside__link" href="">Обращения</a><a class="lk-aside__link" href="">Доступные виды поддержки</a><a class="lk-aside__link active" href="">Личные данные</a><a class="lk-aside__link" href="">Мероприятия</a></div>
 							</aside>
 							<div class="lk-cont">
-								<div class="lk-cont-title">Обращения</div>
-								<div class="lk-treatment">
-									<div class="lk-treatment-no">
-										<div class="lk-treatment-no__title">Нет обращений :(</div>
-										<div class="lk-treatment-no__text">
-											<div class="text-page">
-												<p>Cписок заявок не может быть запрошен.</p>
-												<p>Возможные причины:</p>
-												<ul>
-													<li>Заявок не было</li>
-													<li>В вашем профиле не указан номер телефона</li>
-													<li>Не удалось получить данные с внешнего сервера (попробуйте позже)</li>
-												</ul>
+								<div class="lk-cont-title"> <span>Личные данные</span><a class="convert" href="#">Преобразовать в компанию</a></div>
+								<div class="lk-personal-data">
+									<div class="personal-data">
+										<form action="">
+											<div class="personal-data-info">
+												<div class="forms-wrap">
+													<div class="forms__input-cont"><input class="forms__input" placeholder="" type="text" /><label class="forms__label">Имя</label>
+														<div class="forms__error-message"><i class="forms__error-message-icon"></i></div>
+													</div>
+													<div class="forms__input-cont"><input class="forms__input" placeholder="" type="text" /><label class="forms__label">Фамилия</label>
+														<div class="forms__error-message"><i class="forms__error-message-icon"></i></div>
+													</div>
+													<div class="forms__input-cont"><input class="forms__input" placeholder="" type="text" /><label class="forms__label">Отчество</label>
+														<div class="forms__error-message"><i class="forms__error-message-icon"></i></div>
+													</div>
+													<div class="forms__input-cont"><input class="forms__input" placeholder="" type="text" /><label class="forms__label">E-mail</label>
+														<div class="forms__error-message"><i class="forms__error-message-icon"></i></div>
+													</div>
+													<div class="forms__input-cont"><input class="forms__input" placeholder="" type="text" /><label class="forms__label">Телефон</label>
+														<div class="forms__error-message"><i class="forms__error-message-icon"></i></div>
+													</div>
+													<div class="forms__input-cont"><input class="forms__input" placeholder="" type="text" /><label class="forms__label">ИНН</label>
+														<div class="forms__error-message"><i class="forms__error-message-icon"></i></div>
+													</div>
+												</div>
 											</div>
-										</div>
-										<div class="lk-treatment-no__btn"><a class="btn" href="">Добавить новое обращение</a></div>
+											<div class="personal-data-pass">
+												<div class="forms__title">Смена пароля</div>
+												<div class="forms__text">Введите свой текущий пароль, новый пароль и повторите ввод нового пароля, что бы исключить возможность опечатки</div>
+												<div class="forms-wrap">
+													<div class="forms__input-cont"><input class="forms__input" placeholder="" type="text" /><label class="forms__label">Текущий пароль</label>
+														<div class="forms__error-message"><i class="forms__error-message-icon"></i></div>
+													</div>
+													<div class="forms__input-cont"><input class="forms__input" placeholder="" type="text" /><label class="forms__label">Новый пароль</label>
+														<div class="forms__error-message"><i class="forms__error-message-icon"></i></div>
+													</div>
+													<div class="forms__input-cont"><input class="forms__input" placeholder="" type="text" /><label class="forms__label">Повторить пароль</label>
+														<div class="forms__error-message"><i class="forms__error-message-icon"></i></div>
+													</div>
+												</div>
+												<div class="forms-submit-cont"><input class="forms__submit btn" type="submit" value="Сохранить изменения" /></div>
+											</div>
+										</form>
 									</div>
 								</div>
 							</div>

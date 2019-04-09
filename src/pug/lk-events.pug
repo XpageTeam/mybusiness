@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Личны кабинет - Мероприятия
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.wrapper
+				.content
+					.title-block__cont
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									a.bread-crumbs__link(href="#") Личный кабинет
+									span.bread-crumbs__this Мероприятия
+							.title-block__title
+								h1 Личный кабинет
+					.content-main-cont
+						.content-main
+							.lk
+								aside.lk-aside
+									.lk-aside__links
+										a(href="").lk-aside__link Обращения
+										a(href="").lk-aside__link Доступные виды поддержки
+										a(href="").lk-aside__link Личные данные
+										a(href="").lk-aside__link.active Мероприятия
+								.lk-cont
+									.lk-cont-title 
+										span Мероприятия
+									.tags
+										.tags__list
+											.tags__item Теги:
+											.tags__item.active Все
+											each title, i in ['МФЦ для бизнеса', 'Фонд финансирования промышленности и предпринимательства', 'Поддержка инвесторов','Предоставление поручительств','Поддержка экспорта','Обучение','Мама – предприниматель','Консультации','Услуги центра инжиниринга и сертификации','Имущественная поддержка','Фонд развития']
+												a(href="").tags__item=title
+									.calendar
+										.calendar-top
+											.calendar__title Календарь мероприятий
+											.calendar-top__filter
+												.calendar-filter
+													.calendar-filter__select
+														select
+															option(value='1') Январь
+															option(value='2') Февраль
+															option(value='3', selected='') Март
+															option(value='4') Апрель
+															option(value='5') Май
+															option(value='6') Июнь
+															option(value='7') Июль
+															option(value='8') Август
+															option(value='9') Сентябрь
+															option(value='10') Октябрь
+															option(value='11') Ноябрь
+															option(value='12') Декабрь
+													.calendar-filter__select
+														select
+															option(value='13') 2017
+															option(value='14') 2018
+															option(value='15', selected='') 2019
+
+										.calendar-body-cont
+											.calendar-body
+												.calendar-row
+													span.calendar__cell.calendar__cell--another 25
+													span.calendar__cell.calendar__cell--another 26
+													span.calendar__cell.calendar__cell--another 27
+													span.calendar__cell.calendar__cell--another 28
+													a.calendar__cell.calendar__cell--link  1 
+													span.calendar__cell 2
+													span.calendar__cell 3
+												.calendar-row
+													a.calendar__cell.calendar__cell--link 4 
+													a.calendar__cell.calendar__cell--link 5 
+													a.calendar__cell.calendar__cell--link.active 6 
+													span.calendar__cell 7
+													span.calendar__cell 8
+													span.calendar__cell 9
+													span.calendar__cell 10
+												.calendar-row
+													a.calendar__cell.calendar__cell--link 11 
+													a.calendar__cell.calendar__cell--link 12 
+													a.calendar__cell.calendar__cell--link 13 
+													a.calendar__cell.calendar__cell--link 14 
+													a.calendar__cell.calendar__cell--link 15 
+													span.calendar__cell 16
+													span.calendar__cell 17
+												.calendar-row
+													a.calendar__cell.calendar__cell--link 18 
+													a.calendar__cell.calendar__cell--link 19 
+													a.calendar__cell.calendar__cell--link 20 
+													a.calendar__cell.calendar__cell--link 21 
+													a.calendar__cell.calendar__cell--link 22 
+													span.calendar__cell 23
+													span.calendar__cell 24
+												.calendar-row
+													a.calendar__cell.calendar__cell--link 25 
+													a.calendar__cell.calendar__cell--link 26 
+													a.calendar__cell.calendar__cell--link 27 
+													a.calendar__cell.calendar__cell--link 28 
+													span.calendar__cell 29
+													span.calendar__cell 30
+													span.calendar__cell 31
+											.lk-events
+
+									.lk-events
+										.lk-events__list
+											.lk-events__item
+												.lk-events__item-top
+													.lk-events__item-title Консультации по юридическим вопросам
+													.lk-events__item-date.active 06.02.2019
+												.lk-events__item-info
+													.lk-events__info-prev
+														.text-page
+															p Есть вопросы к юристу, но не знаешь к кому обратиться?<br> Сколько стоит консультация для предпринимателя?<br> Где найти юриста компетентного в вопросах бизнеса? 
+													.lk-events__item-next
+														.text-page
+															p Есть вопросы к юристу, но не знаешь к кому обратиться?<br> Сколько стоит консультация для предпринимателя?<br> Где найти юриста компетентного в вопросах бизнеса?
+															p Есть вопросы к юристу, но не знаешь к кому обратиться?<br> Сколько стоит консультация для предпринимателя?<br> Где найти юриста компетентного в вопросах бизнеса?
+															p Есть вопросы к юристу, но не знаешь к кому обратиться?<br> Сколько стоит консультация для предпринимателя?<br> Где найти юриста компетентного в вопросах бизнеса?
+															p Есть вопросы к юристу, но не знаешь к кому обратиться?<br> Сколько стоит консультация для предпринимателя?<br> Где найти юриста компетентного в вопросах бизнеса?
+													.lk-events__item-btn Развернуть
+											.lk-events__item
+												.lk-events__item-top
+													.lk-events__item-title Консультации по юридическим вопросам
+													.lk-events__item-date 06.02.2019
+												.lk-events__item-info
+													.lk-events__info-prev
+														.text-page
+															p Есть вопросы к юристу, но не знаешь к кому обратиться?<br> Сколько стоит консультация для предпринимателя?<br> Где найти юриста компетентного в вопросах бизнеса? 
+													.lk-events__item-next
+														.text-page
+															p Есть вопросы к юристу, но не знаешь к кому обратиться?<br> Сколько стоит консультация для предпринимателя?<br> Где найти юриста компетентного в вопросах бизнеса?
+															p Есть вопросы к юристу, но не знаешь к кому обратиться?<br> Сколько стоит консультация для предпринимателя?<br> Где найти юриста компетентного в вопросах бизнеса?
+															p Есть вопросы к юристу, но не знаешь к кому обратиться?<br> Сколько стоит консультация для предпринимателя?<br> Где найти юриста компетентного в вопросах бизнеса?
+															p Есть вопросы к юристу, но не знаешь к кому обратиться?<br> Сколько стоит консультация для предпринимателя?<br> Где найти юриста компетентного в вопросах бизнеса?
+													.lk-events__item-btn Развернуть
+								
+
+		include inc/footer.pug
+		include inc/scripts.pug
