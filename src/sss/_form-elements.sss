@@ -86,7 +86,6 @@
 	position: relative
 
 	&__input
-		// position: absolute 0 * * 0
 		position: absolute
 		left: 0
 		opacity: 0
@@ -111,8 +110,7 @@
 
 		&:before
 			flex: none
-			background: var(--secondColor)
-			border: 1px solid var(--secondColor)
+			background: var(--backgroundColor)
 			margin: 0 15px 0 0
 			size: 28px
 
@@ -130,11 +128,11 @@
 	display: flex
 	flex-wrap: wrap
 	align-items: flex-start
-	margin: 0 0 -35px -70px 
+	margin: 0 0 -25px -40px 
 
-	.forms__input-cont
-		width: calc((100% - 70px * 2) / 2)
-		margin: 0 0 35px 70px 
+	// .forms__input-cont
+	// 	width: calc((100% - 40px * 2) / 2)
+	// 	margin: 0 0 25px 40px 
 
 	&--column
 		flex-direction: column
@@ -155,25 +153,25 @@
 	&--middle
 		margin-top: 20px
 
+
 .forms
 
 
 	&__input
 		padding: 0 30px
-		min-height: 62px
+		min-height: 55px
 		border: 1px solid transparent
 		transition: border-color .3s ease
-		background: var(--secondColor)
+		background: var(--backgroundColor)
 		font-size: rem(16)
-		font-family: "GothamPro" !important
-		font-weight: 300 !important
 		color: #000
+		border-radius: 28px !important
 
 		&_error
 			border: 1px solid var(--mainColor)
 			transition: border-color .3s ease
 		&:focus
-			border-color: var(--mainColor)
+			border-color: var(--secondColor)
 
 
 		&--file
@@ -189,9 +187,6 @@
 			display: flex
 			flex-direction: column-reverse
 
-			&.js__input-full
-				.forms__label
-					top: -15px
 
 		&[required] ~ label
 

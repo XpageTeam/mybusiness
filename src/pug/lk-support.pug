@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Личны кабинет - Доступные виды поддержки
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.wrapper
+				.content
+					.title-block__cont
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									a.bread-crumbs__link(href="#") Личный кабинет
+									span.bread-crumbs__this Доступные виды поддержки
+							.title-block__title
+								h1 Личный кабинет
+					.content-main-cont
+						.content-main
+							.lk
+								aside.lk-aside
+									.lk-aside__links
+										a(href="").lk-aside__link Обращения
+										a(href="").lk-aside__link.active Доступные виды поддержки
+										a(href="").lk-aside__link Личные данные
+										a(href="").lk-aside__link Мероприятия
+								.lk-cont
+									.lk-cont-title Доступные виды поддержки
+									.lk-support
+										.support
+											.support-num 64.99
+											.support-info
+												.text-page
+													p Предоставление прочих финансовых услуг, кроме услуг по страхованию и пенсионному обеспечению, не включенных в другие группировки
+													p Эта группировка включает:
+													ul 
+														li прочие виды деятельности в сфере финансовых услуг, прежде всего связанные с распределением финансовых средств,  кроме предоставления займов, включая факторинговые услуги, заключение свопов, опционов и прочих срочных сделок;
+														li деятельность, связанную с частным инвестированием, например, деятельность инвестиционных фондов (кроме акционерных);
+														li деятельность компаний по венчурному инвестированию и пр.
+													p Эта группировка не включает:
+													ul 
+														li финансовый лизинг, см. 64.91;
+														li операционный лизинг, согласно типу лизинговых товаров, см. 77;
+														li страхование и деятельность по негосударственному пенсионному обеспечению, см. 65;
+														li обязательное социальное страхование и государственное пенсионное обеспечение, см. 84.30;
+														li поручительскую деятельность в членских организациях, см. 94.99;
+														li операции с ценными бумагами по поручению других лиц, см. 66.12;
+														li покупку, продажу и аренду недвижимости, см. 68;
+														li инкассацию векселей без долговой скупки, см. 82.91;
+														li деятельность по управлению холдинговыми компаниями, см. 64.20
+												.support-checkbox
+													.support-checkbox__title Cписок доступных программ для ОКВЭД 64.99 (выберите интересующие Вас)
+
+													form(action="")
+														.form-wrap
+															.forms-checkbox
+																input(type="checkbox" id="checkbox-1").checkbox__input
+																label(for="checkbox-1").checkbox__label Образовательные программы
+															.forms-checkbox
+																input(type="checkbox" id="checkbox-2").checkbox__input
+																label(for="checkbox-2").checkbox__label Поддержка экспорта
+															.forms-checkbox
+																input(type="checkbox" id="checkbox-3").checkbox__input
+																label(for="checkbox-3").checkbox__label Консультационные услуги
+
+										.support-form
+											.support-form__title Оставить заявку
+											form(action="")
+												.forms-wrap
+													.forms__input-cont
+														input(required="" placeholder="" type="text").forms__input
+														label.forms__label Имя
+														.forms__error-message
+															i.forms__error-message-icon
+													.forms__input-cont
+														input(required="" placeholder="" type="tel").forms__input
+														label.forms__label Телефон
+														.forms__error-message
+															i.forms__error-message-icon
+													.forms__input-cont
+														input(required="" placeholder="" type="tel").forms__input
+														label.forms__label E-mail
+														.forms__error-message
+															i.forms__error-message-icon
+													.forms__input-cont.forms__input-cont--textarea
+														textarea.forms__input.forms__input--textarea(required="")
+														label.forms__label Интересующие программы
+													.forms__input-cont.forms__input-cont--textarea
+														textarea.forms__input.forms__input--textarea(required="")
+														label.forms__label Комментарий
+												.forms__submit-cont
+													input(type="submit" value="Отправить заявку").forms__submit.btn
+										
+								
+
+		include inc/footer.pug
+		include inc/scripts.pug

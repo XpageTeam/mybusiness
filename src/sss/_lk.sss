@@ -1,0 +1,266 @@
+.lk
+	display: flex
+
+	&-aside
+		margin-right: 80px
+		flex: 1 1 auto
+
+
+		&__links
+			background: var(--backgroundColor)
+
+		&__link
+			display: block
+			padding: 22px 45px
+			transition: background .3s ease, color .3s ease
+
+
+			&.active, &:hover 
+				background: var(--mainColor)
+				color: #fff
+
+	&-cont
+		width: calc(100% - 480px) 
+
+		&-title
+			font-size: rem(22)
+			font-weight: 600
+			margin-bottom: 35px
+
+	&-treatment
+		&__list
+			margin-bottom: -40px
+
+		&__item
+			border: 1px solid var(--backgroundColor)
+			margin-bottom: 40px
+
+			&-top
+				display: flex 
+				justify-content: space-between
+				padding: 20px 50px
+				background: var(--backgroundColor)
+
+			&-title
+				font-size: rem(16)
+				font-weight: 600
+
+			&-info
+				&-cont
+					padding: 30px 50px
+
+			&-docs
+				a 
+					display: block
+
+					&:hover 
+						color: var(--secondColor)
+				> *
+					&:not(:first-child)
+						margin-top: 10px
+		&__info
+			display: flex 
+			justify-content: space-between
+			color: #9BAABB
+			font-size: rem(14)
+			margin-bottom: 10px
+
+	.status
+		position: relative
+		display: flex
+		align-items: center
+		line-height: 1
+
+		span
+			position: relative
+			size: 26px
+			border-radius: 50%
+			display: inline-block
+			margin-right: 13px
+
+
+		&--completed
+
+			span
+				background: #E1E7ED
+
+				&:after 
+					content: ''
+					position: absolute
+					size: 4px 10px
+					transform: rotate(45deg)
+					display: block
+					position: absolute
+					left: calc(50% - 2px)
+					top: calc(50% - 5px)
+					border-right: 1px solid #000 
+					border-bottom: 1px solid #000
+
+		&--expertiza-completed
+			span
+				background: #92CE83
+
+				&:after 
+					content: ''
+					position: absolute
+					size: 4px 10px
+					transform: rotate(45deg)
+					display: block
+					position: absolute
+					left: calc(50% - 2px)
+					top: calc(50% - 5px)
+					border-right: 1px solid #fff 
+					border-bottom: 1px solid #fff
+
+		&--support-no 
+			span
+				background-color: #EB4646
+				background-image: url('../img/ico-cross.svg')
+				background-position: center
+				background-repeat: no-repeat
+
+		&--await
+			span
+				background-color: #C39367
+				background-image: url('../img/ico-refresh.svg')
+				background-position: center
+				background-repeat: no-repeat
+
+
+	&-treatment-no
+		background: var(--backgroundColor)
+		padding: 65px 80px 80px
+
+
+		&__title 
+			font-size: rem(18)
+			font-weight: 600
+			margin-bottom: 25px
+
+		&__btn 
+			margin-top: 35px
+
+
+.support
+	border: 1px solid var(--backgroundColor)
+	margin-top: 38px
+	padding: 50px 65px
+
+
+	&-num
+		font-size: rem(16)
+		font-weight: 600
+		margin-bottom: 25px
+
+	&-checkbox
+		margin-top: 25px
+
+		.form-wrap
+			display: flex
+			flex-direction: column
+			justify-content: flex-start
+			align-items: flex-start
+
+		&__title
+			font-size: rem(16)
+			line-height: rem(20)
+			font-weight: 600
+			margin-bottom: 20px
+
+	.forms-checkbox
+		display: inline-block
+
+		&:not(:first-child)
+			margin-top: 15px
+
+	&-form
+		margin-top: 32px
+
+		.forms__input-cont
+			width: calc((100% - 40px * 3) / 3)
+			margin: 0 0 25px 40px 
+
+			&.forms__input-cont--textarea
+				width: calc((100% - 40px * 2) / 2) !important
+
+				textarea 
+					min-height: 130px
+					padding: 10px 30px
+
+
+
+	&-form
+		&__title
+			font-size: rem(22)
+			font-weight: 600
+			margin-bottom: 28px
+
+		.forms__submit-cont
+			margin-top: 50px
+
+.personal-data
+
+	.forms__input-cont
+		width: calc((100% - 40px * 3) / 3)
+		margin: 0 0 25px 40px 
+
+
+.personal-user
+	margin-top: 55px
+
+	&__top
+		margin-bottom: 45px
+
+	.title
+		font-size: rem(20)
+		line-height: rem(22)
+		font-weight: bold
+		color: var(--mainColor)
+		display: inline-block
+
+	.add-user__link
+		float: right
+		border-bottom: 1px solid var(--mainColor)
+
+	&__info
+		float: left
+
+
+	&__photo
+		float: left
+		margin-right: 32px
+
+	&__close
+		display: block
+		size: 16px
+		background: url('../img/ico-close.png') no-repeat center
+		background-size: contain !important
+		float: right
+		flex: none
+
+	&__item
+		display: flex
+
+
+		&:not(:first-child)
+			margin-top: 40px
+
+	.user-name
+		font-size: rem(20)
+		line-height: rem(22)
+		font-weight: 600
+
+	.label
+		font-size: rem(16)
+		line-height: rem(22)
+		color: red
+		margin-bottom: 10px
+
+	.item
+		float: left
+		margin-right: rem(80)
+
+		a, span
+			font-size: rem(16)
+		a
+			color: #5475ce

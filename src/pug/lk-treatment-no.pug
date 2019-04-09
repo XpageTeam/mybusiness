@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Личны кабинет - Обращения
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.wrapper
+				.content
+					.title-block__cont
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									a.bread-crumbs__link(href="#") Личный кабинет
+									span.bread-crumbs__this Обращения
+							.title-block__title
+								h1 Личный кабинет
+					.content-main-cont
+						.content-main
+							.lk
+								aside.lk-aside
+									.lk-aside__links
+										a(href="").lk-aside__link.active Обращения
+										a(href="").lk-aside__link Доступные виды поддержки
+										a(href="").lk-aside__link Личные данные
+										a(href="").lk-aside__link Мероприятия
+								.lk-cont
+									.lk-cont-title Обращения
+									.lk-treatment
+										.lk-treatment-no
+											.lk-treatment-no__title Нет обращений :(
+											.lk-treatment-no__text
+												.text-page
+													p Cписок заявок не может быть запрошен.
+													p Возможные причины:
+													ul
+														li Заявок не было
+														li В вашем профиле не указан номер телефона
+														li Не удалось получить данные с внешнего сервера (попробуйте позже)
+											.lk-treatment-no__btn
+												a(href="").btn Добавить новое обращение
+
+
+
+								
+
+		include inc/footer.pug
+		include inc/scripts.pug
