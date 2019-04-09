@@ -1,0 +1,168 @@
+.news
+	&-slider
+		position: relative
+		width: calc(100% - 480px)
+		margin-right: 40px
+
+		.swiper-button-next
+			margin-left: 20px
+
+
+		&__label
+			padding: 15px
+			border-radius: 25px
+			background: var(--backgroundColor)
+			line-height: 1
+			color: #000
+			margin: 55px 0 0 70px
+
+
+
+		&__title
+			font-size: rem(20)
+			font-weight: 500
+
+		&__date 
+			font-size: rem(14)
+			color: #CAB1A6
+			margin-top: 15px
+
+
+		&--right
+			display: flex 
+			flex-direction: column
+			margin-bottom: -40px
+
+			.news__item
+				margin-bottom: 40px
+
+		&-container
+			display: flex
+			margin-bottom: 40px
+
+		&__info
+			&-cont
+				display: flex
+				width: 100%
+				background-color: var(--mainColor)
+				background-image: url('../img/soti-bg.png')
+				background-position: center
+				background-repeat: no-repeat
+				color: #fff
+				padding: 25px 25px 40px 60px
+
+			&-img
+				width: 46px
+				height: 87px
+				margin-right: 40px
+
+				.ico
+					height: 100%
+
+				svg 
+					fill: #fff
+			
+
+		&__item
+			position: relative
+
+			img 
+				display: block
+
+			&-cont
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				display: flex 
+				flex-direction: column
+				justify-content: space-between
+				align-items: flex-start
+
+	&__item
+		position: relative
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: flex-start
+		background-color: var(--backgroundColor)
+		padding: 40px 50px
+		flex: 1 1 auto
+		overflow: hidden
+
+		&:hover
+			.news__item-logo
+				animation: start 2s forwards
+
+		// &:not(:hover)
+		// 	.news__item-logo
+		// 		animation: start 2s forwards
+
+
+		&-logo
+			position: absolute
+			top: 0
+			right: 20px
+			z-index: 1
+			width: 80px
+			height: 148px
+			transform: translateY(-30%)
+			z-index: 0
+
+
+
+
+			svg
+				fill: #E1E7ED
+
+
+
+		&-label 
+			border-radius: 25px
+			background: #E9EDF2
+			padding: 10px 16px
+			line-height: 1
+			margin-bottom: 20px
+
+		&-title 
+			font-size: rem(16)
+			font-weight: 500
+
+		&-date 
+			margin-top: 20px
+
+	&__list
+		display: flex 
+		flex-wrap: wrap
+		margin: 0 0 -40px -40px
+
+		&-btn
+			width: 100%
+			text-align: center
+
+
+		.news__item
+			width: calc((100% - 40px * 3) / 3)
+			margin: 0 0 40px 40px
+			flex: none
+
+
+	
+@keyframes start
+	0%
+		transform: translateY(-30%)
+	30%
+		transform: translateY(-100%)
+	31%
+		transform: translateY(170%)
+
+	100%
+		transform: translateY(-30%)
+
+
+
+
+
+		
+

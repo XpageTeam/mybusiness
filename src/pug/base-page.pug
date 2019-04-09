@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Типовая страница
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.wrapper
+				.content
+					.title-block__cont
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									span.bread-crumbs__this Типовая страница
+							.title-block__title
+								h1 Типовая страница
+					.content-main-cont
+						.content-main
+							.standart-page
+								.standart-slider
+									.swiper-container
+										.swiper-wrapper
+											a(href="#").standart-slider__item.swiper-slide
+												picture
+													source(srcset="img/photos/standart-slider-img.jpg" media="screen and (min-width: 481px)" data-main="data-main")
+													source(srcset="img/photos/standart-slider-img.jpg" media="screen and (max-width: 480px)")
+													img
+											a(href="#").standart-slider__item.swiper-slide
+												picture
+													source(srcset="img/photos/standart-slider-img.jpg" media="screen and (min-width: 481px)" data-main="data-main")
+													source(srcset="img/photos/standart-slider-img.jpg" media="screen and (max-width: 480px)")
+													img
+									.main-slider__nav
+										.swiper-arrow.swiper-button-prev
+										.swiper-arrow.swiper-button-next
+
+								.standart__text
+									.standart-img
+										fugure
+											img(src="img/photos/standart-page-img-1.jpg", alt="")
+											figcaption
+												span Рис 1. 
+												| В челябинске открылось 2 магазина
+
+									.text-page
+										h2 H2. В Челябинске открылись два новых фирменных магазина
+										p
+											i Лид — это первый абзац статьи, информативный отрывок позволяющий захватитьвнимание читателя на данном материале. Необязательный элемент.
+										p Эта страница создана для демонстрации блоков и элементов, которые используются на сайте, и служит руководством для всех, кто работает над ним. Дизайнеры и технологи отрабатывают здесь стили, чтобы добиться приемлемых результатов в различных сочетаниях блоков и элементов. Контент-менеджеры и редакторы используют страницу в качестве справочника по верстке типовых страниц. Здесь же рассказывается о некоторых общих правилах оформления контента.
+										h3 H3. Дополнительная колонка может быть снабжена заголовками
+										p Многострочный заголовок, длина которого иногда бывает так некстати Типовые элементы оформляются в системе администрирования через визуальный редактор «Реформатор». Чтобы контент-менеджеру было легче в них ориентироваться, их количество лучше свести к необходимому минимуму.
+										h4 H4. Дополнительная колонка может быть снабжена заголовками
+										p Имманентный подход подразумевает отношение к тексту как к автономной реальности, нацеленность на выявление его внутренней структуры. Репрезентативный — рассмотрение текста как особой формы представления знаний о внешней тексту действительности.
+										h5 H5. В первую очередь нас интересуют интерлиньяж и отступы, но не стоит забывать и про сам заголовок
+										p Текст состоит из некоторого количества предложений. Одно предложение, даже очень распространённое, сложное, текстом назвать нельзя, поскольку текст можно расчленить на самостоятельные предложения, а части предложения сочетаются по законам синтаксиса сложного предложения, но не текста.
+
+
+									.standart__text-slider 
+										.swiper-container
+											.swiper-wrapper
+												a(href="img/photos/standart-page-img-1.jpg").standart-slider-item.swiper-slide.fancybox
+													img(src="img/photos/standart-page-img-1.jpg", alt="")
+												a(href="img/photos/standart-page-img-1.jpg").standart-slider-item.swiper-slide.fancybox
+													img(src="img/photos/standart-page-img-1.jpg", alt="")
+												a(href="img/photos/standart-page-img-1.jpg").standart-slider-item.swiper-slide.fancybox
+													img(src="img/photos/standart-page-img-1.jpg", alt="")
+												a(href="img/photos/standart-page-img-1.jpg").standart-slider-item.swiper-slide.fancybox
+													img(src="img/photos/standart-page-img-1.jpg", alt="")
+												a(href="img/photos/standart-page-img-1.jpg").standart-slider-item.swiper-slide.fancybox
+													img(src="img/photos/standart-page-img-1.jpg", alt="")
+												a(href="img/photos/standart-page-img-1.jpg").standart-slider-item.swiper-slide.fancybox
+													img(src="img/photos/standart-page-img-1.jpg", alt="")
+												a(href="img/photos/standart-page-img-1.jpg").standart-slider-item.swiper-slide.fancybox
+													img(src="img/photos/standart-page-img-1.jpg", alt="")
+										.standart-slider__nav
+											.swiper-arrow.swiper-button-prev
+											.swiper-arrow.swiper-button-next
+									.text-page
+										h4 Списки
+										p Кроме того, существуют правила оформления списков:
+										ul
+											li Если пункты списка длинные и представляют собой развернутые предложения, они должны начинаться с прописной буквы и заканчиваться точкой.
+												ul
+													li Если пункты списка длинные и представляют собой развернутые предложения, они должны начинаться с прописной буквы и заканчиваться точкой.
+													li Если пункты списка короткие, не являются самостоятельной законченной конструкцией и грамматически тесно связаны с предшествующей списку вводной фразой, они должны начинаться 
+											li Если пункты списка короткие, не являются самостоятельной законченной конструкцией и грамматически тесно связаны с предшествующей списку вводной фразой, они должны начинаться со строчной буквы и заканчиваться точкой с запятой (в конце последнего пункта — точка).
+										ol 
+											li Если пункты списка длинные и представляют собой развернутые предложения, они должны начинаться с прописной буквы и заканчиваться точкой.
+											li Если пункты списка короткие, не являются самостоятельной законченной конструкцией и грамматически тесно связаны с предшествующей списку вводной фразой, они должны начинаться со строчной буквы и заканчиваться точкой с запятой (в конце последнего пункта — точка).
+										h4 Ссылки
+										p На сайте может встречаться несколько видов ссылок. Например, ссылка на 
+											a(href="#") Яндекс 
+											| является внешней. Внутренние ссылки могут открываться по умолчанию в текущем окне (например, переход на 
+											a(href="#") главную страницу
+											| ) или в 
+											a(href="#") новом окне
+											| (например, для показа изображений в оригинальном размере). 
+										table(border="1")
+											thead
+												tr
+													th Аутсорсинг
+													th Консалтинг
+													th Проектирование
+													th Аудит
+											tbody
+												each title in ["1", "2", "Потрясающий, невероятно насыщенный ", ]
+													tr
+														td=title
+														td 
+															p(style="text-align: center;") 5000 р.
+														td 
+															p(style="text-align: center;") 35 дней
+														td 
+															p(style="text-align: center;") 3,3 %
+
+
+
+									
+									
+
+
+
+							
+
+
+		include inc/footer.pug
+		include inc/scripts.pug

@@ -19595,6 +19595,60 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		}
 	});
 
+	var swiperNewsBanner = new _swiper2.default(".news-slider .swiper-container", {
+
+		effect: "fade",
+		slidesPerView: 1,
+		loop: true,
+		roundLengths: true,
+		autoplay: true,
+		pagination: {
+			el: ".swiper-pagination",
+			type: "fraction",
+			clickable: true
+		},
+		navigation: {
+			nextEl: '.news-slider .swiper-button-next',
+			prevEl: '.news-slider .swiper-button-prev'
+		}
+	});
+
+	var swiperStandartBanner = new _swiper2.default(".standart-slider .swiper-container", {
+
+		effect: "fade",
+		slidesPerView: 1,
+		loop: true,
+		roundLengths: true,
+		autoplay: true,
+		pagination: {
+			el: ".swiper-pagination",
+			type: "fraction",
+			clickable: true
+		},
+		navigation: {
+			nextEl: '.standart-slider .swiper-button-next',
+			prevEl: '.standart-slider .swiper-button-prev'
+		}
+	});
+
+	var swiperStandartTextSlider = new _swiper2.default(".standart__text-slider  .swiper-container", {
+
+		slidesPerView: 4,
+		loop: true,
+		roundLengths: true,
+		// autoplay: true,
+		spaceBetween: 40,
+		pagination: {
+			el: ".swiper-pagination",
+			type: "fraction",
+			clickable: true
+		},
+		navigation: {
+			nextEl: '.standart__text-slider .swiper-button-next',
+			prevEl: '.standart__text-slider .swiper-button-prev'
+		}
+	});
+
 	(0, _jquery2.default)('.story-success__btn').click(function () {
 		var $this = (0, _jquery2.default)(this);
 

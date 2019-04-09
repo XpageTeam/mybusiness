@@ -57,7 +57,7 @@ gulp.task("svg", e =>
 		}))
 		.pipe($.cheerio({
 			run($){
-				//$("[fill]").removeAttr("fill")
+				$("[fill]").removeAttr("fill")
 
 				//$("[stroke]").removeAttr("stroke")
 

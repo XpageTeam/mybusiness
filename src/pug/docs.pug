@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Типовая страница
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.wrapper
+				.content
+					.title-block__cont
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									span.bread-crumbs__this Типовая страница
+							.title-block__title
+								h1 Типовая страница
+					.content-main-cont
+						.content-main
+							.docs
+								.docs__list
+									each title, i in ["Программы поддержки предпринимательства", "Нормативно-правовые акты", "Получатели поддержки", "Налогоплательщикам","Закупки крупнейших заказчиков региона", "Паспорта региональных проектов", "Перечни государственного и муниципального имущества"]
+										a(href="").docs__item
+											.docs__item-title=title
+											.docs__item-img
+												span
+													svg.ico
+														use(xlink:href="#ico-logo")
+
+
+
+
+									
+									
+
+
+
+							
+
+
+		include inc/footer.pug
+		include inc/scripts.pug
