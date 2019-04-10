@@ -3,6 +3,8 @@
 		position: relative
 		width: calc(100% - 480px)
 		margin-right: 40px
+		display: flex
+
 
 		.swiper-button-next
 			margin-left: 20px
@@ -68,6 +70,10 @@
 
 			img 
 				display: block
+				width: 100%
+				height: 100%
+				object-fit: cover 
+				object-position: center
 
 			&-cont
 				position: absolute
@@ -161,8 +167,86 @@
 		transform: translateY(-30%)
 
 
+@media screen and (max-width: 1500px)
 
-
-
+	.news-slider
+		&__label
+			margin: 30px 0 0 30px
 		
+		&__info-cont
+			padding: 20px 20px 20px 30px
+
+@media screen and (max-width: 1200px)
+	
+	.news-slider
+		width: 100%
+		margin-bottom: 30px
+
+		&-container
+			flex-direction: column
+			margin-bottom: 30px
+
+		&--right
+			flex-direction: row
+			margin: 0 0 -30px -30px
+
+			.news__item
+				width: calc((100% - 30px * 2) / 2)
+				margin: 0 0 30px 30px
+
+	.news__list 
+		margin: 0 0 -30px -30px
+
+		.news__item
+			width: calc((100% - 30px * 2) / 2)
+			margin: 0 0 30px 30px
+
+@media screen and (max-width: 667px)
+
+	.news-slider
+
+		.main-slider__nav
+			top: -40px
+			right: 0
+		
+		&__label
+			padding: 9px 15px
+			margin: 20px 0 0 20px
+
+
+		&__info
+			&-img
+				display: none
+
+
+			&-cont
+				padding: 20px
+
+		&__title 
+			line-height: 1.4
+			font-size: 1rem
+
+
+
+		&--right
+			flex-wrap: wrap
+			.news__item
+				width: 100%
+				margin: 0 0 30px 30px
+				padding: 20px
+
+	.news__list
+		margin: 0
+
+		.news__item
+			width: 100%
+			margin: 0 0 30px 
+			padding: 20px
+
+	.news__item
+		&-logo
+			right: 0
+			width: 50px
+			transform: translateY(-37%)
+
 

@@ -20,12 +20,7 @@ html(lang="ru")
 								h1 Новости
 					.content-main-cont
 						.content-main
-							.tags
-								.tags__list
-									.tags__item Теги:
-									.tags__item.active Все
-									each title, i in ['МФЦ для бизнеса', 'Фонд финансирования промышленности и предпринимательства', 'Поддержка инвесторов','Предоставление поручительств','Поддержка экспорта','Обучение','Мама – предприниматель','Консультации','Услуги центра инжиниринга и сертификации','Имущественная поддержка','Фонд развития']
-										a(href="").tags__item=title
+							include inc/tags.pug
 							.news
 								.news-slider-container
 									.news-slider
@@ -53,7 +48,7 @@ html(lang="ru")
 											.swiper-arrow.swiper-button-next
 
 									.news-slider--right
-										a(href="#").news__item
+										a(href="#").news__item.animated
 											.news__item-logo
 												span
 													svg.ico
@@ -61,7 +56,7 @@ html(lang="ru")
 											.news__item-label Региональные новости
 											.news__item-title В г. Улан-Удэ откроется центр предпринимательства «Мой Бизнес»
 											.news__item-date 05.02.2019
-										a(href="#").news__item
+										a(href="#").news__item.animated
 											.news__item-logo
 												span
 													svg.ico

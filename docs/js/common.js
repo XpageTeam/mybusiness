@@ -19672,6 +19672,19 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		}, 300);
 	});
 
+	if ((0, _jquery2.default)(window).width() < 1000) {
+
+		(0, _jquery2.default)('.lk-aside__link').click(function (e) {
+			var $this = (0, _jquery2.default)(this);
+
+			if ($this.hasClass('active')) {
+				e.preventDefault();
+			}
+
+			$this.closest('.lk-aside__links').toggleClass('js__opened');
+		});
+	}
+
 	if ((0, _jquery2.default)(".support-stat__item-num").length) {
 		(0, _jquery2.default)(".support-stat__item-num").countTo();
 	}
@@ -19941,45 +19954,6 @@ window.selectizeInit = function () {
 		(0, _jquery2.default)(".scroll-top").fadeOut(300);
 		(0, _jquery2.default)(".scroll-top").removeClass('js__scrolled');
 	};
-
-	// if($(window).width() > 660 && $('body').hasClass('main')){
-
-	// 	if ($(window).scrollTop() >= 250){
-	// 		$(".head").addClass("js__scrolled");
-	// 		$("body").addClass("js__scroll");
-
-	// 		setTimeout(e => {
-	// 			$(".head").addClass("js__show")
-	// 		}, 200);
-
-	// 	} else {
-	// 		$(".head").removeClass("js__scrolled").removeClass("js__show");
-	// 		$("body").removeClass("js__scroll");
-
-	// 	}
-
-	// } else if($('body').hasClass('main')) {
-
-	// 	if($('body').hasClass('js__menu--open')){
-	// 		return false
-	// 	}
-
-	// 	if ($(window).scrollTop() <= 0){
-	// 		$(".head").removeClass("js__scrolled").removeClass("js__show");
-	// 		$("body").removeClass("js__scroll");
-
-	// 	} else {
-	// 		$(".head").addClass("js__scrolled");
-	// 		$("body").addClass("js__scroll");
-
-	// 		setTimeout(e => {
-	// 			$(".head").addClass("js__show")
-	// 		}, 200);
-
-	// 	}
-
-	// }
-
 });
 
 /***/ }),

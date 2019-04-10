@@ -464,3 +464,74 @@
 
 			a 
 				color: #C39367
+
+@media screen and (max-width: 1500px)
+
+	.lk
+		&-aside
+			margin-right: 40px
+
+
+@media screen and (max-width: 1200px)
+
+	.lk
+		&-aside
+			margin-right: 25px
+
+			&__link
+				padding: 20px 25px
+
+		&-cont
+			width: calc(100% - 300px)
+
+			&-title
+				margin-bottom: 15px
+
+
+	.lk-treatment
+		&__item
+			&-top
+				padding: 20px
+
+			&-info-cont
+				padding: 20px
+
+@media screen and (max-width: 1000px)
+
+	.lk
+		flex-direction: column
+
+		&-aside 
+			margin: 0 0 20px 0
+
+		&-cont
+			width: 100%
+
+	.lk-aside
+		&__links
+			flex-direction: column
+			width: 100%
+			height: 50px
+			overflow: hidden
+
+			&.js__opened 
+				overflow: visible
+				z-index: 10
+				background: #fff
+
+		&__link
+			background: #fff
+			position: relative
+			z-index: 10
+			padding: 13px 25px
+
+			&.active 
+				order: 1
+
+				&:after 
+					content: ''
+					position: absolute
+					right: 20px
+					
+
+

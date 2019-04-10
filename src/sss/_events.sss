@@ -38,4 +38,34 @@
 			+ .btn
 				margin-top: 30px 
 
+@media screen and (max-width: 1200px)
+	
+	.calendar+.events
+		margin-top: 40px
+
+	.events
+		&__item
+			margin-bottom: 30px
+
+			&-top
+				padding: 20px
+
+			&-bot
+				padding: 30px 20px
+	
+
+@media screen and (max-width: 660px)
+	
+	.events
+		&__item
+			&-top
+				flex-direction: column-reverse
+				align-items: flex-start
+
+			&-date
+				margin: 0 0 10px 0
+
+			&-title
+				font-size: 1rem
+
 
