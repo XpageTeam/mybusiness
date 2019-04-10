@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Личны кабинет - Регистрация
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.wrapper
+				.content
+					.title-block__cont
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									span.bread-crumbs__this Регистрация
+							.title-block__title
+								h1 Регистрация
+					.content-main-cont
+						.content-main
+							ul
+								li
+									a(href="#convert").fancybox Преобразовать в компанию
+
+
+					#convert.popup-form.convert
+						.popup-form__title Преобразовать в компанию
+						.popup-form__text  Введите ИНН юридического лица (10 цифр) или ИНН индивидуального предпринимателя (12 цифр)
+						form(action="")
+							.forms-wrap
+								.forms__input-cont
+									input(placeholder="" type="text").forms__input
+									label.forms__label Введите ИНН
+									.forms__error-message
+										i.forms__error-message-icon
+							.forms-submit-cont
+								input(type="submit" value="Преобразовать").forms__submit.btn
+
+
+
+								
+
+		include inc/footer.pug
+		include inc/scripts.pug

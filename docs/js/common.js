@@ -19649,6 +19649,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		}
 	});
 
+	(0, _jquery2.default)('.lk-events__item-btn').click(function () {
+		var $this = (0, _jquery2.default)(this);
+
+		$this.closest('.lk-events__item').toggleClass('js__open');
+		$this.closest('.lk-events__item-info').find('.lk-events__item-next').slideToggle();
+	});
+
 	(0, _jquery2.default)('.story-success__btn').click(function () {
 		var $this = (0, _jquery2.default)(this);
 

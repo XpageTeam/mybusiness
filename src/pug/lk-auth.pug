@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Личны кабинет - Авторизация
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.wrapper
+				.content
+					.title-block__cont
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									span.bread-crumbs__this Авторизация
+							.title-block__title
+								h1 Авторизация
+					.content-main-cont
+						.content-main
+							.auth-cont
+								form(action="")
+									.auth
+										.forms-wrap
+											.forms__input-cont
+												input(placeholder="" type="text").forms__input
+												label.forms__label Логин / E-mail
+												.forms__error-message
+													i.forms__error-message-icon
+											.forms__input-cont
+												input(placeholder="" type="text").forms__input
+												label.forms__label Пароль
+												.forms__error-message
+													i.forms__error-message-icon
+										.forms__submit-cont
+											input(type="submit" value="Войти").forms__submit.btn
+
+
+								
+
+		include inc/footer.pug
+		include inc/scripts.pug

@@ -374,6 +374,13 @@
 .lk-events
 	&__item
 		border: 1px solid var(--backgroundColor)
+		margin-top: 40px
+
+		&.js__open
+			.lk-events__item-btn:before
+				transform: rotate(180deg)
+
+
 		&-top
 			background: var(--backgroundColor)
 			padding: 20px 50px
@@ -404,13 +411,17 @@
 		&-info
 			padding: 30px 50px
 
+		&-bot
+			display: flex
+			align-items: flex-start
+			margin-top: 20px
+
 		&-btn
 			position: relative
 			display: flex 
 			align-items: center
 			line-height: 1
 			cursor: pointer
-			margin-top: 20px
 
 			&:before 
 				content: ''
@@ -423,3 +434,33 @@
 				background-image: url('../img/ico-arrow.svg')
 				background-repeat: no-repeat
 				background-position: center
+				transition: transform .3s ease
+
+
+.auth
+	.forms__input-cont
+		width: calc((100% - 40px * 4) / 4)
+		margin: 0 0 25px 40px
+
+	.forms__submit-cont
+		margin-top: 65px
+
+.registration
+	.forms
+		&-wrap 
+			&:not(:last-child)
+				margin-bottom: 40px
+				
+		&-radio
+			margin: 0 0 25px 40px
+
+		&__input-cont
+			margin: 0 0 25px 40px
+			width: calc((100% - 40px * 4) / 4)
+
+		&__info
+			max-width: 450px
+			margin-left: 40px
+
+			a 
+				color: #C39367
