@@ -8,6 +8,8 @@
 
 		&__links
 			background: var(--backgroundColor)
+			position: sticky
+			top: 10px
 
 		&__link
 			display: block
@@ -98,6 +100,7 @@
 			border-radius: 50%
 			display: inline-block
 			margin-right: 13px
+			flex: none
 
 
 		&--completed
@@ -339,6 +342,8 @@
 				margin-top: 50px
 
 		&__input
+			display: flex 
+
 			&-cont
 				position: relative
 				margin-top: 70px
@@ -471,6 +476,29 @@
 		&-aside
 			margin-right: 40px
 
+		&-treatment
+			&-no
+				padding: 45px 50px
+
+		&-cont-title
+			margin-bottom: 20px
+
+	.support-search
+		padding: 50px
+
+		&__title+.support-search__title
+			margin-top: 25px
+
+		&__input-cont
+			margin-top: 35px
+
+		.label
+			margin-bottom: 15px
+
+	.support
+		padding: 50px
+
+
 
 @media screen and (max-width: 1200px)
 
@@ -495,6 +523,12 @@
 
 			&-info-cont
 				padding: 20px
+
+	.support-search
+		padding: 30px
+
+		&__title
+			font-size: 1.3rem
 
 @media screen and (max-width: 1000px)
 
@@ -532,6 +566,28 @@
 					content: ''
 					position: absolute
 					right: 20px
+					top: calc(50% - 4px)
+					display: block
+					size: 8px
+					border-right: 1px solid #fff
+					border-bottom: 1px solid #fff
+					transform: rotate(45deg)
+
+	.lk-treatment
+		&__item
+			&-top
+				flex-direction: column
+
+		&-no
+			padding: 20px
+
+@media screen and (max-width: 660px)
+
+	.lk-cont-title 
+		span
+			font-size: 1.3rem
+
+
 					
 
 
