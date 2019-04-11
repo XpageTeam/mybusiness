@@ -463,29 +463,29 @@ document.addEventListener("DOMContentLoaded", e => {
 
 
 
-	selectizeInit();
+	// selectizeInit();
 
 });
 
-window.selectizeInit = function() {
-	// if (is.touchDevice()){
-		if($(window).width() > 1000){
-		    $('select').each(function(i,el){
-		        let $this = $(el);
+// window.selectizeInit = function() {
+// 	// if (is.touchDevice()){
+// 		if($(window).width() > 1000){
+// 		    $('select').each(function(i,el){
+// 		        let $this = $(el);
 
-		        $this.selectize({
-		            create: true,
-		            // sortField: 'text'
-		        });
+// 		        $this.selectize({
+// 		            create: true,
+// 		            // sortField: 'text'
+// 		        });
 
-		    })
+// 		    })
 			
-		}
+// 		}
 
 		
-	// }
+// 	// }
     
-}
+// }
 
 
 $(window).on("load scroll resize touchmove", e => {

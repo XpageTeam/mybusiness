@@ -205,7 +205,7 @@
 			margin: 0 0 25px 40px 
 
 			&.forms__input-cont--textarea
-				width: calc((100% - 40px * 2) / 2) !important
+				width: calc((100% - 40px * 2) / 2) 
 
 				textarea 
 					min-height: 130px
@@ -453,8 +453,8 @@
 .registration
 	.forms
 		&-wrap 
-			&:not(:last-child)
-				margin-bottom: 40px
+			&:not(:first-child)
+				margin-top: 40px
 				
 		&-radio
 			margin: 0 0 25px 40px
@@ -543,6 +543,7 @@
 
 	.lk-aside
 		&__links
+			display: flex
 			flex-direction: column
 			width: 100%
 			height: 50px
@@ -560,7 +561,7 @@
 			padding: 13px 25px
 
 			&.active 
-				order: 1
+				order: -1
 
 				&:after 
 					content: ''
@@ -581,11 +582,177 @@
 		&-no
 			padding: 20px
 
+	.support
+		padding: 35px
+
+	.lk-events
+		&__item
+			&-top
+				padding: 20px 30px
+
+			&-info
+				padding: 30px 30px
+
+	.auth
+		.forms__input-cont
+			width: calc((100% - 40px * 2) / 2)
+			margin: 0 0 25px 40px
+
+		.forms__submit-cont
+			margin-top: 35px
+
+	.registration
+		.forms
+			&-wrap 
+				&:not(:first-child)
+					margin-top: 20px
+					
+			&-radio
+				margin: 0 0 25px 40px
+
+			&__input-cont
+				margin: 0 0 25px 40px
+				width: calc((100% - 40px * 2) / 2)
+
+			&__info
+				max-width: 450px
+				margin-left: 30px
+
+				a 
+					color: #C39367
+
+
 @media screen and (max-width: 660px)
 
-	.lk-cont-title 
+	.lk-cont-title
+		flex-direction: column
+
 		span
 			font-size: 1.3rem
+
+	.support
+		padding: 20px
+
+		&-num
+			margin-bottom: 10px
+
+		&-search
+			padding: 20px
+			margin: 0 -20px
+			border: 0
+
+			&__title
+				font-size: 1.1rem
+
+			.label
+				font-size: 1rem
+
+			&__input
+				flex-direction: column
+				align-items: flex-start
+
+				.btn
+					margin-top: 20px
+
+		&-form 
+			.forms__input-cont
+				width: 100%
+				margin: 0 0 25px 40px
+
+				&.forms__input-cont--textarea
+					width: 100%
+
+	.personal-data 
+		.forms__input-cont
+			width: 100%
+			margin: 0 0 25px 40px
+
+		&-pass
+			margin-top: 30px
+
+			.forms__title
+				margin-bottom: 10px
+
+			.forms-submit-cont
+				margin-top: 30px
+
+	.personal-user
+		&__top
+			flex-direction: column
+			margin-bottom: 25px
+
+		&__photo
+			margin: 0 0 20px 0
+
+			img 
+				display: block
+
+		&__close
+			position: absolute
+			top: 0
+			right: 0
+
+
+		&__item
+			position: relative
+			flex-direction: column
+
+		.bot
+			flex-wrap: wrap
+			margin: 0 0 -20px -20px
+
+		.top
+			margin-bottom: 20px
+
+		.item
+			width: calc((100% - 20px * 2) / 2)
+			margin: 0 0 20px 20px
+
+			&:not(:last-child)
+				margin-right: 0
+
+	.lk-events
+		&__item
+			&-top
+				padding: 20px
+				flex-direction: column-reverse
+				align-items: flex-start
+
+			&-date
+				margin: 0 0 20px 0
+
+			&-info
+				padding: 20px
+
+	.auth
+		.forms__input-cont
+			width: 100%
+			margin: 0 0 25px 40px
+
+	.registration
+		.forms
+			&-wrap 
+				&:not(:first-child)
+					margin-top: 20px
+					
+			&-radio
+				margin: 0 0 25px 40px
+
+			&__input-cont
+				margin: 0 0 25px 40px
+				width: 100%
+
+			&__info
+				margin: 20px 0 0 0
+
+
+	.forms-wrap--bot
+		margin-top: 30px
+		flex-direction: column
+
+
+
+
 
 
 					
