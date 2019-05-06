@@ -41,18 +41,25 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 module.exports = [{
-	entry: [
-		"babel-polyfill",
-		"./src/js/common.js",
-	],
+	entry: {
+		polyfill: "babel-polyfill",
+		common: "./src/js/common.js",
+		"special-switcher": "./src/ts/special-switcher.ts",
+		// special: "./src/ts/special.ts"
+	},
 	output: {
-		filename: "common.js",
+		filename: "[name].js",
 		path: path.resolve(__dirname, "./docs/js/"),
 	},
 	watch: watch,
 	devtool: devtool,
 	module: {
 		rules: [
+			{
+				test: /\.ts$/,
+				loader: "ts-loader",
+				// exclude: /node_modules/,
+			},
 			{
 				test: /\.js$/,
 				loader: "babel-loader",

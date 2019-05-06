@@ -10,17 +10,17 @@ import "./mobile-menu.js";
 import "./standart-page.js"
 import Sticky from "./x-widgets.js";
 
+
 window.$ = $;
 window.jQuery = $;
 window.is = is;
 
-
 require("./countTo.js");
-require("./jquery.fancybox.js");
 require("../css/jquery.fancybox.css");
 
 document.addEventListener("DOMContentLoaded", e => {
 
+	require("./jquery.fancybox.js");
 	let swiperMainbanner = new Swiper(".main-slider .swiper-container", {
 
 		effect: "fade",
