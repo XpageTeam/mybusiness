@@ -20,6 +20,12 @@ require("../css/jquery.fancybox.css");
 
 document.addEventListener("DOMContentLoaded", e => {
 
+	$(".head-contacts__item.ico-special, .header-special__link").click(function(){
+		console.log(1)
+		Cookies.set("special", 1);
+		location.reload();
+	});
+
 	require("./jquery.fancybox.js");
 	let swiperMainbanner = new Swiper(".main-slider .swiper-container", {
 

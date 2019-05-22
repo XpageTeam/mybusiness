@@ -44,7 +44,8 @@ module.exports = [{
 	entry: {
 		polyfill: "babel-polyfill",
 		common: "./src/js/common.js",
-		"special-switcher": "./src/ts/special-switcher.ts",
+		special: "./src/js/special.js",
+		// "special-switcher": "./src/ts/special-switcher.ts",
 		// special: "./src/ts/special.ts"
 	},
 	output: {
