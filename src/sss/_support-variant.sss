@@ -29,9 +29,13 @@
 			margin-bottom: 20px
 
 		&__input
+
 			&-cont
 				position: relative
 				margin-top: 70px
+
+			.search
+				display: flex
 
 		.label
 			font-size: rem(18)
@@ -77,28 +81,28 @@
 				.support-stat
 					&__icon
 						background-image: url('../img/stat-1.svg')
-					&__item-num
-						width: 125px
+					// &__item-num
+					// 	width: 125px
 
 			&:nth-child(2)
 				.support-stat
 					&__icon
 						background-image: url('../img/stat-2.svg')
 
-					&__item-num
-						width: 157px
+					// &__item-num
+					// 	width: 157px
 			&:nth-child(3)
 				.support-stat
 					&__icon
 						background-image: url('../img/stat-3.svg')
-					&__item-num
-						width: 92px
+					// &__item-num
+					// 	width: 92px
 			&:nth-child(4)
 				.support-stat
 					&__icon
 						background-image: url('../img/stat-4.svg')
-					&__item-num
-						width: 92px
+					// &__item-num
+					// 	width: 92px
 
 			&-num
 				font-size: rem(50)
@@ -106,6 +110,12 @@
 				margin-right: 30px
 				line-height: 1
 				white-space: nowrap
+				opacity: 0
+				transition: opacity .3s ease
+
+				&[style*="width"]
+					opacity: 1
+
 		&__icon
 			size: 57px
 			background: var(--mainColor)
@@ -233,6 +243,9 @@
 			&__input-cont
 				margin-top: 25px
 
+	.support-variant__input 
 
+		.search
+			display: block
 
 

@@ -19,9 +19,12 @@ require("./countTo.js");
 require("../css/jquery.fancybox.css");
 
 document.addEventListener("DOMContentLoaded", e => {
+	if (is.ie())
+		$("picture").each(function(){
+			$(this).find("img").attr("src", $(this).find("source").attr("srcset"))
+		})
 
 	$(".head-contacts__item.ico-special, .header-special__link").click(function(){
-		console.log(1)
 		Cookies.set("special", 1);
 		location.reload();
 	});
@@ -30,6 +33,9 @@ document.addEventListener("DOMContentLoaded", e => {
 	let swiperMainbanner = new Swiper(".main-slider .swiper-container", {
 
 		effect: "fade",
+		a11y:{
+			enabled: document.body.classList.contains("special__body")
+		},
 		slidesPerView: 1,
 		loop: true,
 		roundLengths: true,
@@ -47,6 +53,9 @@ document.addEventListener("DOMContentLoaded", e => {
 
 	let swiperPartners = new Swiper(".partners .swiper-container", {
 		slidesPerView: 3,
+		a11y:{
+			enabled: document.body.classList.contains("special__body")
+		},
 		loop: true,
 		roundLengths: true,
 		autoplay: true,
@@ -70,6 +79,9 @@ document.addEventListener("DOMContentLoaded", e => {
 
 	let swiperStorySuccess = new Swiper(".story-success .swiper-container", {
 		slidesPerView: 1,
+		a11y:{
+			enabled: document.body.classList.contains("special__body")
+		},
 		loop: true,
 		roundLengths: true,
 		// autoplay: true,
@@ -83,6 +95,9 @@ document.addEventListener("DOMContentLoaded", e => {
 	let swiperNewsBanner = new Swiper(".news-slider .swiper-container", {
 
 		effect: "fade",
+		a11y:{
+			enabled: document.body.classList.contains("special__body")
+		},
 		slidesPerView: 1,
 		loop: true,
 		roundLengths: true,
@@ -101,6 +116,9 @@ document.addEventListener("DOMContentLoaded", e => {
 	let swiperStandartBanner = new Swiper(".standart-slider .swiper-container", {
 
 		effect: "fade",
+		a11y:{
+			enabled: document.body.classList.contains("special__body")
+		},
 		slidesPerView: 1,
 		loop: true,
 		roundLengths: true,
@@ -180,11 +198,16 @@ document.addEventListener("DOMContentLoaded", e => {
 
 
 
-	if ($(".support-stat__item-num").length){
-		$(".support-stat__item-num").countTo();
-	}
+	// if ($(".support-stat__item-num").length){
+	// 	$(".support-stat__item-num").width($(".support-stat__item-num").width())
+	// 	$(".support-stat__item-num").countTo({
+	// 		onComplete(){
+	// 			$(".support-stat__item-num").width("auto")
+	// 		}
+	// 	})
+	// }
 
-	$(window).on('scroll', function(){
+	$(window).on('scroll load', function(){
 		if ($(".support-stat__item-num").length)
 			if ($(".support-stat__item-num").offset().top + 50 <=
 				$(window).scrollTop() + $(window).height()){
@@ -204,8 +227,13 @@ document.addEventListener("DOMContentLoaded", e => {
 								speed = 3000;
 						}
 
+						$this.width($this.width())
+
 						$this.countTo({
 							speed: speed,
+							onComplete(){
+								$this.width("auto")
+							}
 						});
 
 						$this.addClass("countered");
@@ -467,7 +495,16 @@ document.addEventListener("DOMContentLoaded", e => {
         $("html, body").animate({"scrollTop": 0}, "slow")
     });
 
+	if (!is.touchDevice())
+		$('select').each(function(i,el){
+			let $this = $(el);
 
+			$this.selectize({
+				create: true,
+				// sortField: 'text'
+			});
+
+		})
 
 	// selectizeInit();
 

@@ -1,6 +1,25 @@
 .main
 	.head
 		margin-bottom: 65px
+
+.bx-ie
+
+	.head
+
+		.submenu
+			display: none
+
+		.head-menu__item:hover
+
+			.submenu
+				display: block
+
+				&__list
+
+					> .submenu__item-link
+						width: calc((100% - 20px * 2) / 2)
+						margin: 0 0 20px 20px
+
 .head
 	position: relative
 	z-index: 10
@@ -72,6 +91,8 @@
 				&-special
 					color: var(--mainColor)
 					text-decoration: underline
+					cursor: pointer
+					
 					svg 
 						size: 16px
 
@@ -139,7 +160,7 @@
 		background: #fff
 
 		display: grid
-		grid-template-columns: repeat(3,1fr)
+		grid-template-columns: repeat(2,1fr)
 		grid-gap: 10px
 
 
