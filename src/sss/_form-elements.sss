@@ -3,9 +3,18 @@
 		.fancybox-bg
 			opacity: 0.98 !important
 
+#forms--find-62
+	max-width: 700px
+
+	.forms__input-cont
+		width: calc((100% - 25px * 2) / 2)
+		margin: 0 0 40px 25px 
+
+		&.forms__input-cont--textarea
+			width: 100%
+
 
 .popup-form
-	display: none
 
 	&.fancybox-content
 		padding: rem(38) rem(47) rem(44)
@@ -310,6 +319,15 @@
 
 
 @media screen and (max-width: 660px)
+
+		
+	.forms-wrap
+		margin: 0 0 -20px 0 !important
+
+
+	.forms__input-cont
+		width: 100% !important
+		margin: 0 0 20px 0 !important
 
 	.fancybox-slide--html .fancybox-content
 		margin-bottom: 0
