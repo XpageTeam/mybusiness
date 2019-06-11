@@ -25,6 +25,11 @@
 @import "_docs.sss"
 @import "_lk.sss"
 
+
+#content
+	> .support-banner:first-child
+		margin-top: 0
+		
 .inner
 
 	.calendar-filter__select
@@ -264,6 +269,8 @@
 			opacity: 1
 			visibility: visible
 
+
+
 .head, .footer, #content
 	&:before
 		content: ''
@@ -309,7 +316,18 @@
 	.content-main--left
 		width: calc(100% - 330px)
 
+	.content-aside+.content-main
+		width: calc(100% - 330px)
+
+
 @media screen and (max-width: 1000px)
+
+	.content-main-cont
+		flex-direction: column-reverse
+
+	.content-aside+.content-main
+		width: 100%
+
 	.scroll-top
 		right: 20px
 		width: 55px
@@ -336,6 +354,10 @@
 				margin-bottom: 0
 
 @media screen and (max-width: 667px)
+
+	.inner 
+		.footer
+			margin-top: 30px
 	
 	.swiper-arrow
 		width: 35px

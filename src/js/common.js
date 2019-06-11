@@ -228,6 +228,13 @@ document.addEventListener("DOMContentLoaded", e => {
 		})
 	}
 
+	$('.contacts-filials__one-title').click(function(){
+
+		var $this = $(this);
+
+		$this.siblings('.contacts-filials__one-info').slideToggle();
+	})
+
 
 
 

@@ -10761,6 +10761,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		});
 	}
 
+	(0, _jquery2.default)('.contacts-filials__one-title').click(function () {
+
+		var $this = (0, _jquery2.default)(this);
+
+		$this.siblings('.contacts-filials__one-info').slideToggle();
+	});
+
 	// if ($(".support-stat__item-num").length){
 	// 	$(".support-stat__item-num").width($(".support-stat__item-num").width())
 	// 	$(".support-stat__item-num").countTo({
