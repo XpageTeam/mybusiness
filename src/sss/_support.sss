@@ -1,4 +1,11 @@
+@media screen and (min-width: 1000px)
+	
+	.support-banner
+		min-height: 35vh
+
+
 .support-banner
+	display: flex
 	position: relative
 	margin-top: 40px
 
@@ -27,24 +34,31 @@
 		display: flex
 		flex-direction: column
 		justify-content: center
+		padding: 40px 0 65px
 
 		> *
 			max-width: 640px
 
 		&-cont
 			display: flex
-			padding: 40px 0
+			flex-direction: column
+			flex: 1 1 auto
+			
 
 			.wrapper
 				width: 100%
+				height: 100%
 
 		&-btn
 			margin-top: 40px
 
 	&__links
+		position: absolute
+		bottom: 0
+		right: 0
 		background: var(--backgroundColor)
 		display: flex
-		flex-direction: column
+		max-width: 100%
 
 	&__link
 		position: relative
@@ -56,7 +70,7 @@
 		font-size: rem(16)
 		
 		&:not(:first-child)
-			border-top: 1px solid #E7EBEF
+			border-left: 1px solid #E7EBEF
 
 		&:hover 
 			background: #d5d8da
@@ -450,6 +464,12 @@
 		margin-bottom: 15px
 
 @media screen and (max-width: 660px)
+
+	.support-banner__links
+		overflow: auto
+
+	.support-title
+		margin-bottom: 25px
 	
 	.support-banner
 

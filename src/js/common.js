@@ -54,6 +54,8 @@ require("../css/jquery.fancybox.css");
 
 document.addEventListener("DOMContentLoaded", e => {
 	if (is.ie())
+		$('body').addClass('ie-fix');
+	
 		$("picture").each(function(){
 			$(this).find("img").attr("src", $(this).find("source").attr("srcset"))
 		})
@@ -445,10 +447,6 @@ document.addEventListener("DOMContentLoaded", e => {
 	};
 
 
-
-
-
-
 	$('.submenu').each((i,el) => {
 		let $this = $(el);
 
@@ -456,21 +454,10 @@ document.addEventListener("DOMContentLoaded", e => {
 	})
 
 
-
-
-
-
-
-
 	$("body").on("click change", ".btn-clear", function(){
 		$(this).prevAll('input[type="text"]').val("");
 		
 	});
-
-
-	
-
-
 
 
 	$(".fancybox").fancybox({
@@ -603,4 +590,19 @@ $(window).on("load scroll resize touchmove", e => {
 	};
 
 	
+});
+
+$(window).on("load", e => {
+	var $video = $('video');
+
+	if(!$video.length){
+		return
+	}
+
+	var dataSrc = $video.attr('data-src');
+	$video.attr('src', dataSrc);
+	
+	$video[0].play();
+		
+
 });

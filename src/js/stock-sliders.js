@@ -58,6 +58,7 @@ $(_ => {
 				prevEl: sliderObject.querySelector(".slick-prev"),
 				nextEl: sliderObject.querySelector(".slick-next")
 			},
+			autoHeight: true,
 			watchOverflow: true,
 			autoplay: sliderObject.classList.contains("active"),
 			breakpoints: {

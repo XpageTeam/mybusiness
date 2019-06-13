@@ -10593,7 +10593,9 @@ __webpack_require__(344);
 })();
 
 document.addEventListener("DOMContentLoaded", function (e) {
-	if (_is_js2.default.ie()) (0, _jquery2.default)("picture").each(function () {
+	if (_is_js2.default.ie()) (0, _jquery2.default)('body').addClass('ie-fix');
+
+	(0, _jquery2.default)("picture").each(function () {
 		(0, _jquery2.default)(this).find("img").attr("src", (0, _jquery2.default)(this).find("source").attr("srcset"));
 	});
 
@@ -11061,6 +11063,19 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		(0, _jquery2.default)(".scroll-top").fadeOut(300);
 		(0, _jquery2.default)(".scroll-top").removeClass('js__scrolled');
 	};
+});
+
+(0, _jquery2.default)(window).on("load", function (e) {
+	var $video = (0, _jquery2.default)('video');
+
+	if (!$video.length) {
+		return;
+	}
+
+	var dataSrc = $video.attr('data-src');
+	$video.attr('src', dataSrc);
+
+	$video[0].play();
 });
 
 /***/ }),
@@ -20616,6 +20631,7 @@ var autoplayToggle = function autoplayToggle(_) {
 				prevEl: sliderObject.querySelector(".slick-prev"),
 				nextEl: sliderObject.querySelector(".slick-next")
 			},
+			autoHeight: true,
 			watchOverflow: true,
 			autoplay: sliderObject.classList.contains("active"),
 			breakpoints: {

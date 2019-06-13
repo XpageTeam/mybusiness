@@ -10,10 +10,12 @@
 		margin-bottom: 40px
 
 	&-cont
+
 		position: relative
 		background: url('../img/photos/scope-bg.jpg') no-repeat center
 		background-size: cover
 		margin-top: 75px
+		overflow: hidden
 
 		&:before 
 			content: ''
@@ -26,6 +28,29 @@
 			background: #623B2A
 			opacity: 0.9
 
+		.video-bg
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				background: rgba(98, 59, 42, 0.6)
+
+			video
+				width: 100%
+				height: 100%
+				object-fit: cover
+
+
 	&__list
 		display: flex 
 		flex-wrap: wrap
@@ -36,6 +61,7 @@
 		align-items: center
 		width: calc((100% - 80px * 3) / 3)
 		margin: 0 0 55px 80px
+		color: #fff
 
 		&-img
 			width: 55px
@@ -81,6 +107,11 @@
 			margin: 0 0 30px 50px
 			width: calc((100% - 50px * 2) / 2)
 
+@media screen and (max-width: 667px)
+	
+	.video-bg
+		display: none
+		
 @media screen and (max-width: 660px)
 
 	.scope

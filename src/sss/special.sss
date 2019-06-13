@@ -130,6 +130,54 @@ a.a-fontsize
 		&:hover, a.a-fontsize-small 
 			background-position: -46px -31px
 
+html 
+	&.fontsize-small
+		font-size: 100%
+
+		a.a-fontsize-small
+			background-position: 0 -31px
+
+
+	&.fontsize-normal
+		font-size: 115%
+
+		a.a-fontsize-normal
+			background-position: -20px -31px
+
+	&.fontsize-big
+		font-size: 129%
+
+		a.a-fontsize-big
+			background-position: -46px -31px
+
+body
+	&.color1
+		color: #000
+
+		a
+			color: #000
+
+		.a-color1
+			background-position: 0px 31px
+
+
+	&.color2
+		background: #000
+		color: #fff !important
+
+		.a-color2
+			background-position: -26px 31px
+
+
+	&.color3
+		background: #9dd1ff
+
+		.a-color3
+			background-position: -52px 31px
+
+		input, textarea, select
+			background: #9dd1ff
+
 .a-colors
 	margin-left: 13px
 	display: flex
