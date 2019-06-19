@@ -10847,7 +10847,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 				mutations.forEach(function (mutation) {
 					var input = mutation.addedNodes[0].querySelector(".forms-input-cont--file:first-child:nth-last-child(2) .forms__input--file");
 
-					console.log(mutation, input);
+					// console.log(mutation, input)
 
 					if (input) input.addEventListener("change", InputFileChange);
 				});
@@ -10908,7 +10908,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 				var fr = new FileReader(),
 				    $shopBlock = (0, _jquery2.default)(this).closest("div[data-id]");
 
-				console.log($shopBlock);
+				// console.log($shopBlock)
 
 				fr.addEventListener("load", function (e) {
 					var $photos = $shopBlock.find('.filial-load-photo');
@@ -10927,8 +10927,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
 			    $cont = (0, _jquery2.default)(this).closest(".filial__item-el--photo"),
 			    index = $this.index();
 
-			console.log(index, $this);
-			console.log($cont);
+			// console.log(index, $this)
+			// console.log($cont)
 
 			$cont.nextAll(".filial-load-photo").find("img:eq(" + index + ")").remove();
 		});
@@ -10958,31 +10958,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		},
 		transitionEffect: "slide"
 	});
-
-	if ((0, _jquery2.default)(window).width() <= 1000) {
-
-		(0, _jquery2.default)('.head-menu__item.js__has-submenu').each(function (i, el) {
-			var $this = (0, _jquery2.default)(el),
-			    setCloneLink = $this.find('ul').prev('a').clone();
-
-			console.log(setCloneLink);
-
-			$this.find('ul').prepend('<li class="head-menu__item js__link-parent"></li>');
-			$this.find('.js__link-parent').prepend(setCloneLink);
-			$this.find('ul').prepend('<div class="head-menu__item js__back">Назад</div>');
-		});
-
-		(0, _jquery2.default)('.head-menu__item.js__has-submenu > a').removeAttr('href');
-		(0, _jquery2.default)('.head-menu__item.js__has-submenu > a').click(function () {
-			var $this = (0, _jquery2.default)(this);
-			$this.closest('body').addClass('js__submenu--open');
-		});
-
-		(0, _jquery2.default)('.js__back').click(function () {
-			var $this = (0, _jquery2.default)(this);
-			$this.closest('body').removeClass('js__submenu--open');
-		});
-	}
 
 	if ((0, _jquery2.default)(window).width() <= 667) {
 
@@ -11015,6 +10990,35 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	});
 
 	// selectizeInit();
+
+
+	// if($(window).width() < 1000) {
+
+	//     $('.head-menu__item.js__has-submenu').each(function(i,el){
+	//         var $this = $(el),
+	//         	setCloneLink = $this.find('ul').prev('a').clone();
+
+	//         console.log(setCloneLink)
+
+	//         $this.find('ul').prepend('<li class="head-menu__item js__link-parent"></li>');
+	//         $this.find('.js__link-parent').prepend(setCloneLink);
+	//         $this.find('ul').prepend('<div class="head-menu__item js__back">Назад</div>');
+
+	//     })
+
+	//     $('.head-menu__item.js__has-submenu > a').removeAttr('href');
+	//     $('.head-menu__item.js__has-submenu > a').click(function(){
+	//         var $this = $(this);
+	//         console.log(1);
+	//         $this.closest('.js__has-submenu').addClass('js__submenu--open');
+	//     })
+
+	//     $('.js__back').click(function(){
+	//         var $this = $(this);
+	//         $this.closest('.js__has-submenu').removeClass('js__submenu--open');
+	//     })
+
+	// }
 });
 
 // window.selectizeInit = function() {
@@ -30286,7 +30290,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		$this.closest('li').addClass('js__has-submenu');
 	});
 
-	if ((0, _jquery2.default)(window).width() <= 1000) {
+	if ((0, _jquery2.default)(window).width() <= 1200) {
 
 		(0, _jquery2.default)('li.js__has-submenu').each(function (i, el) {
 			var $this = (0, _jquery2.default)(el),
@@ -30302,12 +30306,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		(0, _jquery2.default)('li.js__has-submenu > a').removeAttr('href');
 		(0, _jquery2.default)('li.js__has-submenu > a').click(function () {
 			var $this = (0, _jquery2.default)(this);
-			$this.closest('body').addClass('js__submenu--open');
+			$this.closest('.js__has-submenu').addClass('js__submenu--open');
 		});
 
 		(0, _jquery2.default)('.js__back').click(function () {
 			var $this = (0, _jquery2.default)(this);
-			$this.closest('body').removeClass('js__submenu--open');
+			$this.closest('.js__has-submenu').removeClass('js__submenu--open');
 		});
 	}
 });

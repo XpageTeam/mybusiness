@@ -247,22 +247,27 @@
 
 	footer 
 		transform: translate3d(-250px, 0, 0)
+
 	.menu-mobile
-		// overflow-y: scroll
 		overflow-x: hidden
+
 	.submenu
 		display: block
 		height: 100vh !important
+
 	.burger>span
 		background: 0 0
+
 	.burger>span::before
 		transform: rotate3d(0,0,1,45deg)
 		top: 0
 		transition: top .3s,transform .3s .5s
+
 	.burger>span::after 
 		transform: rotate3d(0,0,1,-45deg)
 		top: 0
 		transition: top .3s,transform .3s .5s
+
 	.menu
 		transform: translate3d(0,0,0)
 
@@ -300,6 +305,11 @@
 
 	.burger
 		display: flex
+
+	.submenu__item
+		width: 100%
+
+
 
 @media screen and (max-width: 660px)
 

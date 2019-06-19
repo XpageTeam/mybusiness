@@ -31,7 +31,7 @@ $(_ => {
 		$this.closest('li').addClass('js__has-submenu');
 	})
 
-	if($(window).width() <= 1000) {
+	if($(window).width() <= 1200) {
 
 
         $('li.js__has-submenu').each(function(i,el){
@@ -49,13 +49,13 @@ $(_ => {
         $('li.js__has-submenu > a').removeAttr('href');
         $('li.js__has-submenu > a').click(function(){
             var $this = $(this);
-            $this.closest('body').addClass('js__submenu--open');
+            $this.closest('.js__has-submenu').addClass('js__submenu--open');
 
 	        })
 
 	        $('.js__back').click(function(){
 	            var $this = $(this);
-	            $this.closest('body').removeClass('js__submenu--open');
+	            $this.closest('.js__has-submenu').removeClass('js__submenu--open');
 	        })
 
 	    }
