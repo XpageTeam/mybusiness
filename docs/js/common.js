@@ -30325,50 +30325,53 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 
 document.addEventListener("DOMContentLoaded", function (e) {
-	$(".text-page table").wrap('<div class="table-wrap"><div class="table-wrap__track"></div></div>');
 
-	$(".table-wrap").prepend('<div class="table-wrap__shadow table-wrap__shadow--left"></div>').append('<div class="table-wrap__shadow table-wrap__shadow--right"></div>');
+	if ($(window).width() < 1000) {
+		$(".text-page table").wrap('<div class="table-wrap"><div class="table-wrap__track"></div></div>');
 
-	var tableWrapTracks = document.querySelectorAll(".table-wrap__track");
+		$(".table-wrap").prepend('<div class="table-wrap__shadow table-wrap__shadow--left"></div>').append('<div class="table-wrap__shadow table-wrap__shadow--right"></div>');
 
-	if (!tableWrapTracks.length) return;
+		var tableWrapTracks = document.querySelectorAll(".table-wrap__track");
 
-	for (var _iterator = tableWrapTracks, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
-		var _ref;
+		if (!tableWrapTracks.length) return;
 
-		if (_isArray) {
-			if (_i >= _iterator.length) break;
-			_ref = _iterator[_i++];
-		} else {
-			_i = _iterator.next();
-			if (_i.done) break;
-			_ref = _i.value;
+		for (var _iterator = tableWrapTracks, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
+			var _ref;
+
+			if (_isArray) {
+				if (_i >= _iterator.length) break;
+				_ref = _iterator[_i++];
+			} else {
+				_i = _iterator.next();
+				if (_i.done) break;
+				_ref = _i.value;
+			}
+
+			var track = _ref;
+
+
+			if (track.scrollWidth > track.clientWidth) {
+				var wrap = track.closest(".table-wrap");
+
+				var shadows = {
+					right: wrap.querySelector(".table-wrap__shadow--right")
+				};
+
+				setShadowOpacity(shadows.right, track.scrollWidth - track.clientWidth);
+			}
+
+			track.addEventListener("scroll", function (e) {
+				var wrap = this.closest(".table-wrap");
+
+				var shadows = {
+					left: wrap.querySelector(".table-wrap__shadow--left"),
+					right: wrap.querySelector(".table-wrap__shadow--right")
+				};
+
+				setShadowOpacity(shadows.right, this.scrollWidth - this.clientWidth - this.scrollLeft);
+				setShadowOpacity(shadows.left, this.scrollLeft);
+			});
 		}
-
-		var track = _ref;
-
-
-		if (track.scrollWidth > track.clientWidth) {
-			var wrap = track.closest(".table-wrap");
-
-			var shadows = {
-				right: wrap.querySelector(".table-wrap__shadow--right")
-			};
-
-			setShadowOpacity(shadows.right, track.scrollWidth - track.clientWidth);
-		}
-
-		track.addEventListener("scroll", function (e) {
-			var wrap = this.closest(".table-wrap");
-
-			var shadows = {
-				left: wrap.querySelector(".table-wrap__shadow--left"),
-				right: wrap.querySelector(".table-wrap__shadow--right")
-			};
-
-			setShadowOpacity(shadows.right, this.scrollWidth - this.clientWidth - this.scrollLeft);
-			setShadowOpacity(shadows.left, this.scrollLeft);
-		});
 	}
 });
 

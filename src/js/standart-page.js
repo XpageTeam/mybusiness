@@ -1,39 +1,44 @@
 document.addEventListener("DOMContentLoaded", e => {
-	$(".text-page table").wrap('<div class="table-wrap"><div class="table-wrap__track"></div></div>')
 
-	$(".table-wrap")
-		.prepend('<div class="table-wrap__shadow table-wrap__shadow--left"></div>')
-		.append('<div class="table-wrap__shadow table-wrap__shadow--right"></div>')
+	if($(window).width() < 1000){
+		$(".text-page table").wrap('<div class="table-wrap"><div class="table-wrap__track"></div></div>')
 
-	let tableWrapTracks = document.querySelectorAll(".table-wrap__track");
+		$(".table-wrap")
+			.prepend('<div class="table-wrap__shadow table-wrap__shadow--left"></div>')
+			.append('<div class="table-wrap__shadow table-wrap__shadow--right"></div>')
 
-	if (!tableWrapTracks.length)
-		return
+		let tableWrapTracks = document.querySelectorAll(".table-wrap__track");
 
-	for (var track of tableWrapTracks){
-		
-		if (track.scrollWidth > track.clientWidth){
-			let wrap = track.closest(".table-wrap");
+		if (!tableWrapTracks.length)
+			return
 
-			let shadows = {
-				right: wrap.querySelector(".table-wrap__shadow--right")
-			};
+		for (var track of tableWrapTracks){
+			
+			if (track.scrollWidth > track.clientWidth){
+				let wrap = track.closest(".table-wrap");
 
-			setShadowOpacity(shadows.right, track.scrollWidth - track.clientWidth)
+				let shadows = {
+					right: wrap.querySelector(".table-wrap__shadow--right")
+				};
+
+				setShadowOpacity(shadows.right, track.scrollWidth - track.clientWidth)
+			}
+
+			track.addEventListener("scroll", function(e){
+				let wrap = this.closest(".table-wrap");
+
+				let shadows = {
+					left: wrap.querySelector(".table-wrap__shadow--left"),
+					right: wrap.querySelector(".table-wrap__shadow--right")
+				};
+
+				setShadowOpacity(shadows.right, this.scrollWidth - this.clientWidth - this.scrollLeft)
+				setShadowOpacity(shadows.left, this.scrollLeft)
+			})
 		}
-
-		track.addEventListener("scroll", function(e){
-			let wrap = this.closest(".table-wrap");
-
-			let shadows = {
-				left: wrap.querySelector(".table-wrap__shadow--left"),
-				right: wrap.querySelector(".table-wrap__shadow--right")
-			};
-
-			setShadowOpacity(shadows.right, this.scrollWidth - this.clientWidth - this.scrollLeft)
-			setShadowOpacity(shadows.left, this.scrollLeft)
-		})
+		
 	}
+
 })
 
 const setShadowOpacity = (element, scrollWidth, offsetWidth = 30) => {
