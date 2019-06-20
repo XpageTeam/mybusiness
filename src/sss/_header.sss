@@ -311,14 +311,31 @@
 
 
 
+@media screen and (max-width: 667px)
+	.submenu
+		-webkit-overflow-scrolling: touch
+
+	.head-menu__list
+		position: static
+		flex: none
+
+	.mobile-menu .submenu__list
+		height: auto !important
+
+	.js__menu--open .submenu
+		height: auto !important
+
+
 @media screen and (max-width: 660px)
 
-	.main 
+	.main
 		.head
 			margin-bottom: 0
 
 	.head-top
 		align-items: flex-start
+
+
 
 
 
