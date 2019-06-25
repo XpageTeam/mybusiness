@@ -76,6 +76,13 @@
 		&:hover 
 			background: #d5d8da
 
+.support-banner
+	+ .wrapper
+		.content-main
+
+			> *
+				&:not(:first-child)
+					margin-top: 40px
 
 .support-for-whom
 	background-color: var(--mainColor)
@@ -106,9 +113,9 @@
 	// 				size: 5px 1px 
 	// 				background: #fff
 
-.support-for-whom
-	+ .support-text
-		margin-top: 55px
+// .support-for-whom
+// 	+ .support-text
+// 		margin-top: 55px
 
 .support-text
 
@@ -192,7 +199,7 @@
 	color: #fff
 	padding: 60px 205px 70px 85px
 	margin-bottom: 70px
-	margin-top: 30px
+	// margin-top: 30px
 
 	&:after
 		content: ''
@@ -217,7 +224,7 @@
 		margin-top: 35px
 
 .story-success
-	margin-top: 30px
+	// margin-top: 30px
 
 	.swiper
 		&-arrow
@@ -301,7 +308,7 @@
 
 
 .faq
-	margin: 70px 0
+	// margin: 70px 0
 
 	&-title 
 		font-size: rem(26)
@@ -311,7 +318,7 @@
 .contacts-one
 	padding: 45px 50px
 	background: var(--backgroundColor)
-	margin-top: 30px
+	// margin-top: 30px
 
 	&__top
 		display: flex
@@ -341,6 +348,12 @@
 
 	&__label
 		margin-bottom: 5px
+
+	&__address
+		flex: 1
+
+		&:not(:last-child)
+			margin-right: 20px
 	
 
 .search-support
