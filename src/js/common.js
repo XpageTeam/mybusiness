@@ -53,6 +53,16 @@ require("../css/jquery.fancybox.css");
 })();
 
 document.addEventListener("DOMContentLoaded", e => {
+
+	$('.search-btn, .search-btn--close').click(function(){
+		var $this = $(this);
+		$('body').toggleClass('js__search-open');
+	})
+
+	// if($(window).width() < 1200){
+	// 	var searchBtn = $('.search-btn').clone();
+	// }
+
 	if (is.ie())
 		$('body').addClass('ie-fix');
 	

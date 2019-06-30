@@ -10593,6 +10593,16 @@ __webpack_require__(344);
 })();
 
 document.addEventListener("DOMContentLoaded", function (e) {
+
+	(0, _jquery2.default)('.search-btn, .search-btn--close').click(function () {
+		var $this = (0, _jquery2.default)(this);
+		(0, _jquery2.default)('body').toggleClass('js__search-open');
+	});
+
+	// if($(window).width() < 1200){
+	// 	var searchBtn = $('.search-btn').clone();
+	// }
+
 	if (_is_js2.default.ie()) (0, _jquery2.default)('body').addClass('ie-fix');
 
 	(0, _jquery2.default)("picture").each(function () {

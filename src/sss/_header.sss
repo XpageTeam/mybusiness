@@ -49,10 +49,16 @@
 		justify-content: space-between
 		align-items: center
 
+		.search-btn
+			display: none
+
+
 		&-cont 
 			padding: 20px 0
 
 	&-bot
+		display: flex
+
 		&-cont
 			background-image: url('../img/soti-bg.png')
 			background-repeat: no-repeat
@@ -102,6 +108,7 @@
 	&-menu
 		display: flex 
 		flex: 1 1 auto
+		width: calc(100% - 50px)
 
 		&__list
 			position: relative
@@ -138,7 +145,7 @@
 			white-space: nowrap
 			color: currentColor
 			display: inline-block
-			padding: 27px 48px
+			padding: 27px 43px
 
 .submenu
 	position: absolute
@@ -202,7 +209,7 @@
 	border: 0
 	user-select: none
 	margin: -15px
-	margin-left: auto
+	margin-left: 20px
 	cursor: pointer
 	pointer-events: auto
 	
@@ -303,6 +310,17 @@
 		.btn 
 			display: none
 
+		&-top
+			.search-btn
+				display: block
+				margin-left: auto
+				height: 30px
+				filter: invert(1)
+
+			&-cont
+				background: #f3f6f9
+
+
 	.burger
 		display: flex
 
@@ -325,6 +343,10 @@
 	.js__menu--open .submenu
 		height: auto !important
 
+	.logo
+		img
+			width: 100px
+
 
 @media screen and (max-width: 660px)
 
@@ -333,7 +355,10 @@
 			margin-bottom: 0
 
 	.head-top
-		align-items: flex-start
+		align-items: center
+
+	.burger
+		margin-left: 0
 
 
 

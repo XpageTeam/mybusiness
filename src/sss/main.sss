@@ -27,6 +27,87 @@
 @import "_video.sss"
 
 
+.search
+	&-btn
+		opacity: 1
+		pointer-events: all
+
+.search
+	&-cont
+		position: fixed
+		top: 0
+		left: 0
+		width: 100vw
+		height: 100vh
+		pointer-events: none
+		opacity: 0
+		background: #f2f5f9
+		z-index: 999
+		display: flex
+		justify-content: center
+		align-items: center
+		padding: 1.4rem
+
+
+		input[type="text"]
+			width: 100%
+			height: 58px
+			border-radius: 10px
+			border: 0
+			font-size: rem(14)
+			padding: 0 25px
+			padding-right: 60px
+
+		input[type="submit"]
+			position: absolute
+			top: 0
+			right: 0
+			height: 58px
+			width: 58px
+			background: url('../img/ico-zoom.svg') no-repeat center
+			font-size: 0
+			border: 0
+			display: block
+			filter: invert(.5)
+
+		form
+			max-width: 640px
+			width: 100%
+
+	&-wrapper
+		position: relative
+
+	&-btn
+		display: block
+		width: 57px
+		height: auto
+		background: url('../img/ico-zoom.svg') no-repeat center
+		cursor: pointer
+
+		&--close
+			size: 50px
+			position: absolute
+			top: 0
+			right: 0
+			display: block
+			cursor: pointer
+			filter: inver(.5)
+
+			svg
+				fill: transparent
+				opacity: .8
+				stroke: currentColor
+				stroke-width: 1.5
+				transition: stroke .1s
+
+.js__search-open
+	overflow: hidden !important
+
+	.search
+		&-cont
+			opacity: 1
+			pointer-events: all
+
 .story-success__btn
 	display: none
 	
