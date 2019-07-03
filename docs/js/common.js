@@ -10990,7 +10990,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		(0, _jquery2.default)("html, body").animate({ "scrollTop": 0 }, "slow");
 	});
 
-	if (!_is_js2.default.touchDevice()) (0, _jquery2.default)('select').each(function (i, el) {
+	if (!_is_js2.default.touchDevice()) (0, _jquery2.default)('select:not(.no-selectize)').each(function (i, el) {
 		var $this = (0, _jquery2.default)(el);
 
 		$this.selectize({

@@ -38,7 +38,10 @@
 // 	src: url('../fonts/Montserrat/montserrat-bold.woff2') format("woff")
 // 	font-display: swap
 
-
+body
+	position: relative
+// 	display: flex
+// 	flex-direction: column
 
 img
 	max-width: 100%
@@ -67,8 +70,84 @@ body
 	font-size: rem(16)
 	margin: 0
 
+input
+	&[type="text"]
+		height: 55px
+		border: 1px solid #000
+		padding: 0 20px
 
-.wrapper, .access
+.lk-aside__links
+	margin-bottom: 20px
+	padding-bottom: 20px
+	border-bottom: 1px solid #000
+
+.lk-cont-title
+	margin: 20px 0
+	display: flex
+	justify-content: space-between
+
+
+	span
+		font-size: rem(25)
+		font-weight: bold
+
+	.convert
+		margin-left: 20px
+		display: inline-block
+		padding: 10px
+		border: 1px solid #000
+
+.lk-aside__link
+	display: inline-block
+	padding: 10px 25px
+	border: 1px solid #000
+	margin-right: 20px
+
+.head-special
+	margin-bottom: 100px
+
+.head-menu__item 
+	&:nth-child(2)
+		display: none
+.search_form
+	input
+		&[type="text"]
+			height: 55px
+			border: 1px solid #000
+			padding: 0 20px
+			width: calc(100% - 100px)
+
+		&[type="submit"]
+			width: 95px
+			background: #fff
+			height: 55px
+			border: 1px solid #000
+
+.search-cont
+	position: absolute
+	top: 185px
+	left: 0
+	right: 0
+	z-index: 100
+
+	input
+		&[type="text"]
+			height: 55px
+			border: 1px solid #000
+			padding: 0 20px
+			width: calc(100% - 100px)
+
+		&[type="submit"]
+			width: 95px
+			background: #fff
+			height: 55px
+			border: 1px solid #000
+			cursor: pointer
+
+
+
+
+.wrapper, .access, .search-cont
 	position: relative
 	max-width: 930px
 	box-sizing: content-box
@@ -224,7 +303,8 @@ body
 		text-align: right
 		color: #fff
 
-
+.search-btn--close
+	display: none
 .main-slider__item, .task__item-top
 	img 
 		display: none
@@ -375,6 +455,12 @@ body
 
 	&__title
 		line-height: 1.4
+table
+	border-collapse: collapse
+
+	td, th
+		border: 1px solid #000
+		padding: 5px
 
 .calendar
 	margin-top: 60px

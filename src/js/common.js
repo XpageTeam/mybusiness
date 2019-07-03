@@ -504,7 +504,7 @@ document.addEventListener("DOMContentLoaded", e => {
     });
 
 	if (!is.touchDevice())
-		$('select').each(function(i,el){
+		$('select:not(.no-selectize)').each(function(i,el){
 			let $this = $(el);
 
 			$this.selectize({
