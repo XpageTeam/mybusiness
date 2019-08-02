@@ -15,12 +15,103 @@ html(lang="ru")
 							.title-block__crumbs
 								.bread-crumbs
 									a.bread-crumbs__link(href="#") Главная
-									span.bread-crumbs__this Документы
+									span.bread-crumbs__this Конкурсы
 							.title-block__title
-								h1 Документы
+								h1 Конкурсы
 					.content-main-cont
 						.content-main
 							.concourse
+								.search-row-cont
+									form(action="")
+										.search-row
+											input(type="text" paaceholder="Введите текст для поиска").forms__input
+											input(type="submit" value="Найти").btn
+								.concourse-form
+									.forms-wrap
+										.forms__input-cont.forms__input-cont--calendar
+											input(placeholder="" type="text").forms__input
+											label.forms__label Срок подачи заявок
+												.forms__error-message
+													i.forms__error-message-icon
+										.forms__input-cont.forms__input-cont--calendar
+											input(placeholder="" type="text").forms__input
+											label.forms__label 
+												.forms__error-message
+													i.forms__error-message-icon
+										.forms__input-cont
+											select.forms__input.forms__input--select.no-selectize
+												option(value="1") 1
+												option(value="2") 2
+												option(value="3") 3
+											label.forms__label Выберите направление
+												.forms__error-message
+													i.forms__error-message-icon
+										.forms__input-cont
+											input(placeholder="ИП Иванов" type="text").forms__input
+											label.forms__label Получатель услуги
+												.forms__error-message
+													i.forms__error-message-icon
+										.forms__input-cont
+											select.forms__input.forms__input--select.no-selectize
+												option(value="1") 1
+												option(value="2") 2
+												option(value="3") 3
+											label.forms__label Статус конкурса
+												.forms__error-message
+													i.forms__error-message-ico
+									.forms-bot
+										input(type="submit" value="Показать").btn
+										input(type="submit" value="Очистить").btn
+
+								.concourse-filter
+									.sort
+										.sort-cout
+											.sort-cout__text Выводить по:
+											.sort-cout__links
+												a(href="").sort-cout__link 5
+												a(href="").sort-cout__link 10
+												a(href="").btn Все
+
+									include inc/paginator.pug
+
+
+								.concourse-info
+									.concourse-info__preview
+										.concourse__preview-top
+											.concourse__preview-company Центр инжиринга
+											.concourse__preview-status Ознакомиться с документацией
+										.concourse__preview-text Содействие в разработке программ модернизации, технического перевооружения и (или) развития производства (Создание проектно - сметной документации на постройку кондитерский цеха)
+										.concourse__preview-bot
+											.concourse__preview-date Обновлено: 15.06.2019
+											.concourse__preview-date--old Размещено: 14.06.2019
+
+									.concourse-info__table
+										table
+											thead
+												tr
+													th Получатель услуги
+													th Макс. цена (тыс. руб)
+													th Сроки подачи заявок
+													th Статус конкурса
+													th Номер извещения
+													th Победитель
+											tbody
+												tr
+													td(data-title="Получатель услуги") ИП Иванов
+													td(data-title="Макс. цена (тыс. руб)") 400 тыс. руб.
+													td(data-title="Сроки подачи заявок") до 12:00 30.07.2019
+													td(data-title="Статус конкурса") Подача заявок
+													td(data-title="Номер извещения") абв-123
+													td(data-title="Победитель") Не определен
+
+
+
+
+
+
+
+
+
 								
 
 
