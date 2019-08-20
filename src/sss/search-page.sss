@@ -1,0 +1,88 @@
+.search
+
+	&_form
+		margin: 0 0 60px
+
+		input[type="text"]
+			padding: 0 30px
+			min-height: 55px
+			width: 100%
+			border: 1px solid transparent
+			transition: border-color .3s ease
+			background: var(--backgroundColor)
+			font-size: rem(16)
+			color: #000
+			border-radius: 28px !important
+
+		form
+			position: relative
+
+		button
+			position: absolute
+			size: 55px
+			background: url("../img/ico-zoom.svg") center no-repeat
+			background-color: var(--mainColor)
+			border-radius: 50%
+			border: none
+			top: 0
+			right: 0
+
+	&_page
+
+		.found
+			margin: 30px 0
+
+		.item
+			padding-bottom: 30px
+			border-bottom: 1px solid var(--borderColor)
+			max-width: 900px
+
+			&:not(:first-child)
+				margin: 30px 0 0
+
+.panel_page
+	display: flex
+	width: 100%
+	margin: 30px 0
+
+	li
+		display: block
+		background-position: center
+		background-repeat: no-repeat
+		color: #000
+		margin-right: 4px
+
+		a, span
+			transition: background-color .5s ease, color .5s ease
+			size: 31px
+			color: inherit
+			background-color: inherit
+			border-radius: inherit
+			display: block
+			text-align: center
+			padding: 4px 0
+
+		&:hover, &.active
+			background-color: #e9eff4
+			color: var(--main-color)
+
+		&.left, &.right
+			// background-image: url("../img/icon-paginator-right.png")
+			background-color: transparent !important
+
+		&.left
+			transform: rotate(180deg)
+
+	.prev
+		transform: rotateZ(180deg)
+
+	.next, .prev
+		position: relative
+
+		&:after
+			content: ""
+			position: absolute calc(50% - 3px) calc(50% - 2px) * *
+			border-top: 1px solid #000
+			border-right: 1px solid #000
+			transform: rotateZ(45deg)
+			size: 6px

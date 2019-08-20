@@ -26,6 +26,7 @@
 @import "_lk.sss"
 @import "_video.sss"
 @import "konkurs.sss"
+@import "search-page.sss"
 
 .event-form
 	margin-top: 50px
@@ -412,6 +413,187 @@
 	border: 1px solid var(--border-color) !important
 	border-top: 0
 	box-shadow: none !important
+
+
+
+.news-page
+	margin-top: 51px
+	margin-bottom: 20px
+
+	.one-news
+		margin-top: 57px
+
+		.text
+			max-width: 750px
+			margin-top: 38px
+			line-height: 28px
+
+			p, ol, h2, h3,h4, h5 ,h6, ul
+				margin-bottom: 22px
+
+			h2
+				font-size: 26px
+
+			h3
+				font-size: 20px
+
+			a
+				border-bottom: 1px solid #5f86f2
+				color: #5f86f2
+
+			img[align="right"]
+				float: right
+				margin-left: 20px
+
+			img[align="left"]
+				float: left
+				margin-right: 20px
+
+			table
+				width: 100%
+				table-layout: fixed
+				color: #000
+
+				td, th
+					padding: 15px 23px
+					font-weight: 300
+					vertical-align: middle
+
+			table[border="1"]
+
+				td, th
+					border: 1px solid var(--border-color)
+
+			li
+				padding-left: 20px
+				position: relative
+
+				&:not(:first-child)
+					//margin-top: 21px
+
+				ul, ol
+					margin-bottom: 23px
+
+				li
+					padding-left: 10px
+
+					&:not(:first-child)
+						margin-top: 0
+
+			ul
+
+				li
+
+					&:before
+						content: ""
+						position: absolute
+						top: 10px
+						left: 0
+						background: #6b6b6b
+						size: 15px 1px
+
+				ul
+
+					li
+
+						&:before
+							width: 4px
+							left: 2px
+
+			ol
+				counter-reset: i
+
+				li
+					counter-increment: i
+
+					&:before
+						content: counter(i) "."
+						position: absolute
+						top: 0
+						left: 0
+
+		.top-block
+			margin-left: persent(-48)
+			padding-left: persent(48)
+			background-position: right center
+			background-repeat: no-repeat
+			display: table
+			size: 100% 419px
+
+			&:not([style^="background"])
+				height: auto
+
+				.text-block
+					width: 100%
+					max-width: 750px
+
+			> div
+				display: table-cell
+				vertical-align: middle
+
+
+			.text-block
+				width: 35.8%
+				box-sizing: border-box
+
+				a
+					border-bottom: 1px solid var(--main-color)
+
+				.date, span
+					background: var(--secon-color)
+					width: 10%
+					min-width: 125px
+					margin-right: 85%
+					display: inline-block
+					//margin-right: 240px
+
+				.date
+					font-size: 25px
+
+				h2
+					font-size: 35px
+					font-weight: 500
+					text-transform: uppercase
+					line-height: 50px
+					display: none
+
+	.decorated-title
+
+		.title
+			position: relative
+			margin-bottom: 38px
+
+			&:before
+				position: absolute
+				top: 32px
+				left: 0
+				size: 100% 3px
+				content: ""
+
+			&:before, span
+				background: var(--main-color)
+
+			span
+				color: #fff
+				font-size: 26px
+				font-weight: 500
+				padding: 19px 29px 15px 25px
+				display: block
+				letter-spacing: -0.5px
+				float: left
+				text-transform: uppercase
+				position: relative
+
+				&:after
+					content: ""
+					position: absolute
+					top: 24px
+					right: -9px
+					z-index: 1
+					border-radius: 50%
+					background: #fff
+					size: 13px
+					border: 3px solid var(--main-color)
 
 
 @media screen and (max-width: 1500px)
