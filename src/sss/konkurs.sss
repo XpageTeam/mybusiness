@@ -73,7 +73,8 @@
 			.forms-wrap
 				display: grid
 				// grid-template-columns: repeat(6, 1fr)
-				grid-template-columns: .5fr .5fr 1fr 240px 240px
+				// grid-template-columns: .5fr .5fr 1fr 240px 240px
+				grid-template-columns: repeat(4, 1fr)
 				grid-gap: 40px
 				margin: 0
 
@@ -109,6 +110,10 @@
 			text-decoration: none
 			text-align: center
 			line-height: 46px
+
+			&.active
+				background: var(--secondColor)
+				color: #fff
 
 		.btn
 			background-color: var(--mainColor)
