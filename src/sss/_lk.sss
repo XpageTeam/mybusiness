@@ -1,3 +1,8 @@
+.support-num
+
+	&:not(:first-child)
+		margin: 25px 0 0
+
 .lk
 	display: flex
 
@@ -22,7 +27,12 @@
 				color: #fff
 
 	&-cont
-		width: calc(100% - 480px) 
+
+		&.inn_support_b24
+			margin: 50px 0 0
+
+		&:not(.inn_support_b24)
+			width: calc(100% - 480px)
 
 		&-title
 			display: flex
@@ -73,16 +83,16 @@
 					padding: 30px 50px
 
 			&-docs
-				a 
+				a
 					display: block
 
-					&:hover 
+					&:hover
 						color: var(--secondColor)
 				> *
 					&:not(:first-child)
 						margin-top: 10px
 		&__info
-			display: flex 
+			display: flex
 			justify-content: space-between
 			color: #9BAABB
 			font-size: rem(14)
@@ -539,7 +549,7 @@
 			margin: 0 0 20px 0
 
 		&-cont
-			width: 100%
+			width: 100% !important
 
 	.lk-aside
 		&__links
@@ -751,10 +761,122 @@
 		flex-direction: column
 
 
+	.forms-input-cont
+		width: 100% !important
+		margin-left: 0 !important
 
 
 
 
-					
 
 
+
+
+.forms
+
+	&-input-cont
+		display: flex
+		flex-direction: column-reverse
+		box-sizing: border-box
+		min-width: 10px
+		position: relative
+		margin-bottom: vh(30)
+		width: calc((100% - 40px * 3) / 3)
+		margin-left: 40px
+
+		&--req
+			justify-content: space-between
+			align-items: flex-start
+
+
+		&--file, &--textarea
+			width: 100%
+			padding: 0 !important
+
+		&--file
+			position: relative
+			width: calc((100% - 14px) / 1.53)
+
+	&__label
+		margin-bottom: vh(16)
+		font-size: rem(16)
+		color: var(--mainColor)
+
+.forms-wrap--middle
+	margin-bottom: 20px
+
+	.checkbox
+
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			size: 19px
+			border: 1px solid #e3e3e3
+			border-radius: 1px
+
+.forms
+
+	&-checkbox
+		position: relative
+
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			size: 19px
+			border: 1px solid #e3e3e3
+			border-radius: 1px
+
+	&__checkbox
+		opacity: 0
+		position: absolute
+
+		&:checked + label
+
+			&:before, &:after
+				opacity: 1
+
+		&-label
+			position: relative
+			z-index: 2
+			font-size: rem(16)
+			line-height: rem(20)
+			padding-left: 32px
+			cursor: pointer
+			user-select: none
+
+			span
+				align-self: center
+
+			a
+				color: var(--mainColor)
+				text-decoration: underline
+
+				&:hover
+					text-decoration: none
+
+			&:before, &:after
+				content: ""
+				position: absolute
+				background: var(--mainColor)
+				transition: opacity .5s ease
+				opacity: 0
+
+			&:before
+				height: 2px
+				width: 8px
+				top: 7px
+				left: 4px
+				transform-origin: left
+				transform: rotate(45deg)
+
+			&:after
+				height: 2px
+				width: 11px
+				top: 4px
+				left: 6px
+				transform-origin: right
+				transform: rotate(-45deg)
