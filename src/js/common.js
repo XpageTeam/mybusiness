@@ -106,6 +106,9 @@ document.addEventListener("DOMContentLoaded", e => {
 		roundLengths: true,
 		autoplay: true,
 		spaceBetween: 40,
+		fadeEffect: {
+		    crossFade: true
+		  },
 		navigation: {
 	        nextEl: '.partners .swiper-button-next',
 	        prevEl: '.partners .swiper-button-prev',
@@ -148,6 +151,9 @@ document.addEventListener("DOMContentLoaded", e => {
 		loop: true,
 		roundLengths: true,
 		autoplay: true,
+		fadeEffect: {
+		    crossFade: true
+		  },
 		pagination: {
 			el: ".swiper-pagination",
 			type: "fraction",
@@ -169,6 +175,9 @@ document.addEventListener("DOMContentLoaded", e => {
 		loop: true,
 		roundLengths: true,
 		autoplay: true,
+		fadeEffect: {
+		    crossFade: true
+		  },
 		pagination: {
 			el: ".swiper-pagination",
 			type: "fraction",
@@ -187,6 +196,9 @@ document.addEventListener("DOMContentLoaded", e => {
 		roundLengths: true,
 		// autoplay: true,
 		spaceBetween: 40,
+		fadeEffect: {
+		    crossFade: true
+		  },
 		pagination: {
 			el: ".swiper-pagination",
 			type: "fraction",

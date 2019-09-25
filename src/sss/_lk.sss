@@ -1,3 +1,26 @@
+.acved
+	.inn-form
+		.input-inn
+			max-width: 490px
+			width: 100%
+			border-radius: 50px
+			height: 45px
+			border: 0
+			padding: 0 25px
+			margin-right: 43px
+			border: 1px solid var(--mainColor)
+
+		input[type=submit]
+			display: inline-block
+			padding: 15px 25px
+			line-height: 1!important
+			background: var(--secondColor)
+			border-radius: 25px!important
+			border: 0!important
+			color: #fff
+			transition: background .3s ease
+
+
 .support-num
 
 	&:not(:first-child)
@@ -633,6 +656,13 @@
 
 
 @media screen and (max-width: 660px)
+
+	.acved
+		.inn-form
+			.input-inn
+				width: calc(100% - 160px)
+				margin-right: 20px
+
 
 	.lk-cont-title
 		flex-direction: column
