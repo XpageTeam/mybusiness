@@ -29,6 +29,39 @@
 @import "search-page.sss"
 @import "_paginator.sss"
 
+
+
+#form_message
+	padding: 45px !important
+
+	
+
+#okvad-list
+	margin-top: 30px
+
+	.accordion__item
+		&-top
+			position: relative
+
+			&:after
+				content: ''
+				position: absolute
+				right: 20px
+				top: calc(50% - 4px)
+				size: 8px
+				border-bottom: 1px solid #000
+				border-right: 1px solid #000
+				transform: rotate(45deg)
+				transition: transform .3s ease
+
+		&.js__open
+			.accordion__item
+				&-top
+					&:after
+						transform: rotate(225deg)
+
+
+
 .event-form
 	margin-top: 50px
 
@@ -677,3 +710,15 @@
 
 	.no-bread__crumbs
 		margin-top: 0
+
+	#form_message
+		padding: 25px !important
+
+	.lk-cont-title
+		.convert
+			display: flex !important
+			flex-direction: column !important
+			align-items: flex-start
+
+			> *
+				margin-bottom: 10px
