@@ -57,10 +57,16 @@
 		&:not(.inn_support_b24)
 			width: calc(100% - 480px)
 
+		&-name
+			display: flex
+			flex-direction: column
+			align-items: flex-end
+
 		&-title
 			display: flex
 			justify-content: space-between
 			margin-bottom: 35px
+
 
 			span
 				font-size: rem(22)
@@ -198,10 +204,11 @@
 			margin-top: 35px
 
 
+//Валера епта
 .support
-	border: 1px solid var(--backgroundColor)
+	// border: 1px solid var(--backgroundColor)
 	margin-top: 38px
-	padding: 50px 65px
+	// padding: 50px 65px
 
 
 	&-num
@@ -531,6 +538,10 @@
 	.support
 		padding: 50px
 
+		&.okvad
+			padding: 0
+
+
 
 
 @media screen and (max-width: 1200px)
@@ -542,7 +553,7 @@
 			&__link
 				padding: 20px 25px
 
-		&-cont
+		&-cont:not(.inn_support_b24)
 			width: calc(100% - 300px)
 
 			&-title
@@ -618,6 +629,11 @@
 	.support
 		padding: 35px
 
+		&.okvad
+			padding: 0
+
+
+
 	.lk-events
 		&__item
 			&-top
@@ -654,6 +670,9 @@
 				a 
 					color: #C39367
 
+	.lk-cont:not(.inn_support_b24)
+		width: calc(100% - 290px)
+
 
 @media screen and (max-width: 660px)
 
@@ -664,14 +683,25 @@
 				margin-right: 20px
 
 
-	.lk-cont-title
-		flex-direction: column
+	.lk-cont
+		&-title
+			flex-direction: column
 
-		span
-			font-size: 1.3rem
+			span
+				font-size: 1.3rem
 
+		&-name
+			align-items: flex-start
+
+
+			.name
+				margin-top: 10px
+	
 	.support
 		padding: 20px
+
+		&.okvad
+			padding: 0
 
 		&-num
 			margin-bottom: 10px
