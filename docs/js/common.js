@@ -30265,10 +30265,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _jquery2.default)(function (_) {
 	(0, _jquery2.default)(".accordion__item-top").click(function () {
 		var $this = (0, _jquery2.default)(this);
-
 		$this.closest('.accordion__item').toggleClass('js__open');
 		$this.nextAll('.accordion__item-bot').slideToggle();
 	});
+
+	(0, _jquery2.default)(".accordion__item:first-child").addClass('js__open');
+
+	if ((0, _jquery2.default)(".accordion__item:first-child").length) {
+		(0, _jquery2.default)('.accordion__item:first-child').find('.accordion__item-bot').slideToggle();
+	}
 });
 
 /***/ }),
