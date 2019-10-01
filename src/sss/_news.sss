@@ -1,5 +1,5 @@
 @supports (display: grid)
-	.news(:not(.stock-slider))
+	.news
 		display: grid
 		grid-gap: 2rem 1.875rem
 		grid-template-columns: repeat(3,1fr)
@@ -12,6 +12,9 @@
 			grid-row: span 2
 			margin-bottom: 0 !important
 
+.main
+	.news
+		display: block
 
 .ie-fix
 	.news
@@ -253,6 +256,10 @@
 		padding: 20px
 
 @media screen and (max-width: 667px)
+
+	.tags-mobile
+		display: none
+
 
 	.contests_menu1
 		flex-direction: column
