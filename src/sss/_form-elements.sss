@@ -204,6 +204,7 @@
 		&_error
 			border: 1px solid var(--mainColor)
 			transition: border-color .3s ease
+
 		&:focus
 			border-color: var(--secondColor)
 
@@ -267,7 +268,11 @@
 		right: 0
 		background-color: #fff
 		padding: 5px
+		opacity: 0
 
+.error
+	~ .forms__error-message
+		opacity: 1
 
 .forms-bot
 	margin: 40px 0 0
