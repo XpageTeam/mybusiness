@@ -34,6 +34,7 @@ require("../css/jquery.fancybox.css");
 })();
 
 (function() {
+	
 
   // проверяем поддержку
   if (!Element.prototype.closest) {
