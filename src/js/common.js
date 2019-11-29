@@ -4,6 +4,8 @@ import Swiper from "swiper/dist/js/swiper.js";
 import "./stock-sliders.js";
 import "selectize/dist/js/selectize.min.js";
 
+import "./calculator/calc.js";
+
 import "./tabs.js";
 import "./accordion.js";
 import "./mobile-menu.js";

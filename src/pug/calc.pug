@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Калькулятор
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.wrapper
+				.content
+					.title-block__cont
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Главная
+									span.bread-crumbs__this Калькулятор
+							.title-block__title
+								h1 Калькулятор
+					.content-main-cont
+						aside.content-aside
+							.support-banner__links
+								a(href="#").support-banner__link Документы
+								a(href="#").support-banner__link Конкурсы
+							.search-support-cont
+								form(action="")
+									.search-support
+										.search-support__title Введите ИНН и узнайте о вариантах поддержки Вашего бизнеса:
+										.search-support__input
+											input(type="text" placeholder="Введите Ваш ИНН")
+										.search-support__submit
+											input(type="submit" value="Найти").btn
+							include inc/calendar.pug
+						.content-main
+							.calculator#calc(v-cloack="")
+								calc(:type="[{id: 0, min: 10000, max: 5000000, 'default': 500000, step: 5000, percent: 10, srok: {min: 1, max: 18, 'default': 18, step: 1}, otsrok: {default: 0, min: 0, max: 5}}]" inline-template="")
+									include inc/calc.html
+		include inc/footer.pug
+		//- script(src="/js/vue.min.js")
+		include inc/scripts.pug

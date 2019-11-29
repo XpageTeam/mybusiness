@@ -1,0 +1,106 @@
+<form>
+    <div>
+        <div class="calc__select" v-if="selected != 'default'">
+            <label class="forms__label">Форма погашения кредита:</label>
+            <select class="forms__input calc__input no-selectize" v-model="curTimetableID">
+                <option :value="timetable.id" v-for="timetable in timetables">{{ timetable.name }}</option>
+            </select>
+        </div>
+        <div class="calc__title calc__title--left" v-if="selected != 'default' &amp;&amp; curTimetableID != 'default'">{{ curType.name }}</div>
+
+        <div class="calc" v-show="selected != 'default'">
+            <div class="calc__title">Расчёт графика платежей</div>
+            <div class="calc-body-cont">
+                <div class="calc-body">
+                    <form>
+                        <div class="calc__wrap-top">
+                            <div class="calc__wrap">
+                                <div class="calc__input-cont">
+                                    <div class="calc__input-top">
+                                        <label class="forms__label">Срок(мес.)</label>
+                                        <input class="forms__input" required="" type="text" v-model.number="curSrok"/>
+                                    </div>
+                                    <div class="calc__input-slider">
+                                        <vue-slider v-model.number="curSrok" :min="curType.srok.min" :max="curType.srok.max" :interval="curType.srok.step"></vue-slider>
+                                    </div>
+                                </div>
+                                <div class="calc__input-cont">
+                                    <div class="calc__input-top">
+                                        <label class="forms__label">Сумма(руб.)</label>
+                                        <input class="forms__input" required="" type="text" v-model.number="summ"/>
+                                    </div>
+                                    <div class="calc__input-slider">
+                                        <vue-slider v-model.number="summ" :min="curType.min" :max="curType.max" :interval="curType.step"></vue-slider>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calc__wrap-bot">
+                            <div class="calc__wrap">
+                                <div class="calc__input-cont">
+                                    <label class="forms__label">Всего</label>
+                                    <input class="forms__input" disabled="" type="text" v-model="vsego"/>
+                                </div>
+                                <div class="calc__input-cont">
+                                    <label class="forms__label">Переплата</label>
+                                    <input class="forms__input" disabled="" type="text" v-model="pereplata"/>
+                                </div>
+                                <div class="calc__input-cont">
+                                    <label class="forms__label">Отсрочка(мес)</label>
+                                    <select class="forms__input calc__input no-selectize" type="text" v-model.number="curOtsrok">
+                                        <option :value="0">Нет</option>
+                                        <option :value="i" v-for="i in maxOtsrok">{{ i }}</option>
+                                    </select>
+                                </div>
+                                <div class="calc__input-cont">
+                                    <label class="forms__label">Дата погашения</label>
+                                    <input disabled="" class="forms__input" type="text" v-model="nextDate"/>
+                                </div>
+                                <div class="calc__input-cont">
+                                    <label class="forms__label">Дата выдачи</label>
+                                    <vuejs-datepicker :language="ru" :format="'dd.MM.yyyy'" :calendar-button="false" :monday-first="true" :input-class="'forms__input'" v-model="curDate" :value="curDate"></vuejs-datepicker>
+                                </div>
+                                <div class="calc__input-cont calc__input-cont--button">
+                                    <div class="btn" @click="print()">Печать графика платежей</div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="calc__table">
+                <table class="calc-table">
+                    <thead>
+                        <tr>
+                            <th>Номер платежа</th>
+                            <th>Дата платежа</th>
+                            <th>Всего</th>
+                            <th>В погашение долга</th>
+                            <th>В погашение процентов</th>
+                            <th>Остаток долга после платежа</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">Всего</td>
+                            <td>{{ vsego }}</td>
+                            <td>{{ itog }}</td>
+                            <td>{{ pereplata }}</td>
+                            <td> </td>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr v-for="(row, i) in tableArr">
+                            <td>{{ i+1 }}</td>
+                            <td>{{ row.date }}</td>
+                            <td>{{ partitionNumber(row.itog) }}</td>
+                            <td>{{ partitionNumber(row.forDolg) }}</td>
+                            <td>{{ partitionNumber(row.forPersents) }}</td>
+                            <td>{{ partitionNumber(row.ostatok) }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</form>
