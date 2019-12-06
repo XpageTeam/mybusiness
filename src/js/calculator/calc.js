@@ -177,7 +177,7 @@ Vue.component("calc", {
 		tableArr: [],
 		maxOtsrok: 0,
 		curName: "",
-		selected: 0,
+		selected: 1,
 		persent: 10,
         payInLastMonths: 0,
         ru: ru,
@@ -197,7 +197,7 @@ Vue.component("calc", {
 				name: "Дифференцированный"
 			}
 		],
-		curTimetableID: 0
+		curTimetableID: 1
 	}),
 	beforeMount(){
 
@@ -209,7 +209,7 @@ Vue.component("calc", {
 	mounted(){
         this.init()
         
-        console.log(this.curDate);
+        // console.log(this.curDate);
 
 		$(".open-calc").click(function(){
 			$("#calc").slideDown(300)

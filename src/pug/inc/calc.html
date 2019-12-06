@@ -1,6 +1,6 @@
 <form>
     <div>
-        <div class="calc__select" v-if="selected != 'default'">
+        <div class="calc__select credit-type" v-if="selected != 'default'">
             <label class="forms__label">Форма погашения кредита:</label>
             <select class="forms__input calc__input no-selectize" v-model="curTimetableID">
                 <option :value="timetable.id" v-for="timetable in timetables">{{ timetable.name }}</option>
