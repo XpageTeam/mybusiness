@@ -112,8 +112,8 @@
 			flex-direction: column
 
 		&-cont
-			width: calc((100% - 55px * 2) / 2)
-			margin: 0 0 30px 55px
+			width: calc((100% - 25px * 3) / 3)
+			margin: 0 0 30px 25px
 			position: relative
 
 			&--button
@@ -122,7 +122,9 @@
 
 				.btn
 					font-size: rem(16)
-					padding: 19px 48px
+					padding: 19px 10px
+					width: 100%
+					text-align: center
 
 	&__label
 		font-size: rem(14)
@@ -172,7 +174,7 @@
 		flex-wrap: wrap
 
 		&-top
-			margin: 0 0 -30px -55px
+			margin: 0 0 -30px -25px
 			
 			.calc__wrap
 				margin-bottom: 15px
@@ -180,12 +182,12 @@
 
 		&-bot
 			background-color: var(--background-color)
-			padding: 55px 50px
+			padding: 30px 25px
 			border: 1px solid #DEE0E3
 			border-radius: 5px
 			
 			.calc__wrap
-				margin: 0 0 -30px -55px
+				margin: 0 0 -30px -25px
 
 		&:first-child
 			
@@ -503,3 +505,16 @@ select.calc__input
 // нужно было оставить только дифференцированный 
 .credit-type
 	display: none
+
+
+@media print
+	.head, .footer, .mobile-menu,
+	.title-block__cont, .content-aside,
+	.calc__title, .calc-body-cont
+		display: none !important
+
+	.content-main
+		width: 100% !important
+
+	.calc-table td, .calc-table th
+		border: 1px solid #000 !important

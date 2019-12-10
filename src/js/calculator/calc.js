@@ -243,6 +243,14 @@ Vue.component("calc", {
 			this.calc()
 		},
 
+		persent(val, oldVal){
+			if (isNaN(val)){
+				this.summ = oldVal
+				return
+			}
+			this.calc()
+		},
+
 		selected(val, oldVal){
 			this.curSrok = this.curType.srok.default
 			this.summ = parseInt(this.curType.default)

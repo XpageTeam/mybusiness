@@ -33,6 +33,15 @@
                                         <vue-slider v-model.number="summ" :min="curType.min" :max="curType.max" :interval="curType.step"></vue-slider>
                                     </div>
                                 </div>
+                                <div class="calc__input-cont">
+                                    <div class="calc__input-top">
+                                        <label class="forms__label">Процентная ставка</label>
+                                        <input class="forms__input" required="" type="text" v-model.number="persent"/>
+                                    </div>
+                                    <div class="calc__input-slider">
+                                        <vue-slider v-model.number="persent" :min="1" :max="99" :interval="1"></vue-slider>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="calc__wrap-bot">
