@@ -423,6 +423,8 @@ Vue.component("calc", {
 					break
 			}
 		},
+
+		//Дифференцированный
 		makeSecondTable(){
 			let mes = 12 - this.curOtsrok;
 
@@ -445,6 +447,7 @@ Vue.component("calc", {
 				const table = this.tableArr[i];
 
 				tmpDate.setMonth(tmpDate.getMonth() + i+1);
+				tmpDate.setDate(10);
 
 				table.date = getNormalDate(tmpDate)
 
@@ -481,12 +484,14 @@ Vue.component("calc", {
 				table.forPersents = parseFloat(table.forPersents).toFixed(2);
 				table.forDolg = parseFloat(table.forDolg).toFixed(2);
 
-				i++
 
 				if (parseFloat(table.ostatok) <= 0){
 					table.ostatok = 0
+					table.date = this.nextDate
 					break
 				}
+
+				i++
 			}
 		},
 		print(){
