@@ -42560,10 +42560,20 @@ Date.prototype.format = function (mask, utc) {
  * Калькулятор
  * 
  * ! Нужно обратиться к Данилу пержжде чем 
- * ! менято что-либо
+ * ! менять что-либо
  * 
  */
 /*****/
+
+Date.prototype.daysInMonth = function () {
+	return 32 - new Date(this.getFullYear(), this.getMonth(), 32).getDate();
+};
+
+Date.prototype.daysInYear = function (year) {
+	if (!year) year = this.getFullYear();
+
+	return (new Date(year, 11, 31) - new Date(year, 0, 0)) / 86400000;
+};
 
 /**
 	data-list="[{'id':0,'name':'Микрозайм «Фермер»','otsrok':{'min':0,'max':5,'default':0},'srok':{'min':3,'max':24,'default':24,'step':1},'summa':{'min':100000,'max':3000000,'default':500000,'step':5000},'persent':10}]", 
@@ -42855,8 +42865,6 @@ _vue2.default.component("calc", {
 
 		//Дифференцированный
 		makeSecondTable: function makeSecondTable() {
-			var mes = 12 - this.curOtsrok;
-
 			this.tableArr = [];
 
 			var getDate = function getDate(date) {
@@ -42875,19 +42883,40 @@ _vue2.default.component("calc", {
 
 				var table = this.tableArr[i];
 
+				var tmpDateDays = tmpDate.daysInMonth() - tmpDate.getDate();
+
+				var pastDate = new Date(tmpDate);
+
+				pastDate.setMonth(pastDate.getMonth() + i);
+
 				tmpDate.setMonth(tmpDate.getMonth() + i + 1);
 				tmpDate.setDate(10);
+
+				var nextDateDays = tmpDate.daysInMonth() - tmpDate.getDate();
 
 				table.date = getNormalDate(tmpDate);
 
 				if (i == 0) {
-					table.forPersents = this.summ * this.persent / 12 / 100;
+					if (pastDate.daysInYear() == tmpDate.daysInYear()) table.forPersents = this.summ * (this.persent / 100) / pastDate.daysInYear() * (tmpDateDays + 10);else {
+						table.forPersents = this.summ * (this.persent / 100) / pastDate.daysInYear() * tmpDateDays + this.summ * (this.persent / 100) / tmpDate.daysInYear() * 10;
+					}
 
-					table.forDolg = Math.ceil(this.summ / (!this.payInLastMonths ? this.curSrok : this.curSrok - this.curOtsrok));
+					table.forDolg = this.summ / (!this.payInLastMonths ? this.curSrok : this.curSrok - this.curOtsrok);
 				} else {
-					table.forPersents = this.tableArr[i - 1].ostatok * this.persent / 12 / 100;
 
-					if (this.summ / this.curSrok < this.tableArr[i - 1].ostatok) table.forDolg = Math.ceil(this.summ / (!this.payInLastMonths ? this.curSrok : this.curSrok - this.curOtsrok));else table.forDolg = Math.ceil(this.tableArr[i - 1].ostatok);
+					var days = void 0;
+
+					if (i + 1 == this.curSrok) {
+						days = (new Date(getDate(this.nextDate)) - new Date(tmpDate).setDate(10)) / 86400000;
+
+						days = days + tmpDate.daysInMonth() - 10;
+					} else days = (new Date(tmpDate) - new Date(pastDate).setDate(10)) / 86400000;
+
+					table.forPersents = this.tableArr[i - 1].ostatok * this.persent / 100 / tmpDate.daysInYear() * days;
+
+					// console.log(nextDateDays + 10)
+
+					if (this.summ / this.curSrok < this.tableArr[i - 1].ostatok) table.forDolg = this.summ / (!this.payInLastMonths ? this.curSrok : this.curSrok - this.curOtsrok);else table.forDolg = this.tableArr[i - 1].ostatok;
 				}
 
 				if (i + 1 <= this.curOtsrok) {
