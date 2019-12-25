@@ -218,9 +218,8 @@ Vue.component("calc", {
 		this.summ = parseInt(this.curType.default)
 	},
 	mounted(){
-        this.init()
-        
-        // console.log(this.curDate);
+		this.init()
+	
 
 		$(".open-calc").click(function(){
 			$("#calc").slideDown(300)
@@ -263,13 +262,13 @@ Vue.component("calc", {
 		},
 
 		selected(val, oldVal){
-			this.curSrok = this.curType.srok.default
+			this.curSrok = +this.curType.srok.default
 			this.summ = parseInt(this.curType.default)
 
-			this.curOtsrok = this.curType.otsrok.default
-			this.maxOtsrok = this.curType.otsrok.max
+			this.curOtsrok = +this.curType.otsrok.default
+			this.maxOtsrok = +this.curType.otsrok.max
 
-			this.percent = this.curType.percent
+			this.percent = +this.curType.percent
 
 			this.setNextDate()
 			this.calc()
@@ -337,15 +336,15 @@ Vue.component("calc", {
 			for (let i in this.tableArr){
 				let row = this.tableArr[i];
 
-				this.pereplata += parseInt(row.forPersents)
+				this.pereplata += parseFloat(row.forPersents)
 			}
 
-			this.pereplata = +this.pereplata.toFixed(2);
+			this.pereplata = parseFloat(this.pereplata.toFixed(2));
 
 			this.itog = this.summ;
 
-			this.vsego = this.pereplata + this.itog + " руб.";
-			this.vsego = this.pereplata + this.itog + " руб.";
+			this.vsego = parseFloat(this.pereplata) + parseFloat(this.itog) + " руб.";
+			this.vsego = parseFloat(this.pereplata) + parseFloat(this.itog) + " руб.";
 
 			this.vsego = this.partitionNumber(this.vsego);
 
@@ -359,10 +358,6 @@ Vue.component("calc", {
         },
         /** Аннуитетный */
 		makeTable(){
-            
-			let mes = 12 - this.curOtsrok;
-			// let mes = this.curSrok - this.curOtsrok;
-
 			this.tableArr = [];
 
 			const getDate = date => {
@@ -487,14 +482,18 @@ Vue.component("calc", {
 					if (i + 1 == this.curSrok){
 						days = (new Date(getDate(this.nextDate)) - new Date(tmpDate).setDate(10)) / 86400000;
 
-						days = days + tmpDate.daysInMonth() - 10;
-					}else
+						days = days + tmpDate.daysInMonth() - 1;
+					}else{
 						days = (new Date(tmpDate) - new Date(pastDate).setDate(10)) / 86400000;
-
+					}
 					
-						table.forPersents = this.tableArr[i-1].ostatok * this.persent / 100 / tmpDate.daysInYear() * days
-
-					// console.log(nextDateDays + 10)
+					if (pastDate.daysInYear() == tmpDate.daysInYear())
+						table.forPersents = parseFloat(this.tableArr[i-1].ostatok) * this.persent / 100 / tmpDate.daysInYear() * days
+					else
+						table.forPersents = 
+							parseFloat(this.tableArr[i-1].ostatok * this.persent) / 100 / pastDate.daysInYear() * (pastDate.daysInMonth() - 10)
+						+ 
+							parseFloat(this.tableArr[i-1].ostatok) * this.persent / 100 / tmpDate.daysInYear() * 10
 
 					if (this.summ / this.curSrok < this.tableArr[i-1].ostatok)
 						table.forDolg = this.summ / (!this.payInLastMonths ? this.curSrok : this.curSrok - this.curOtsrok)
@@ -502,13 +501,9 @@ Vue.component("calc", {
 						table.forDolg = this.tableArr[i-1].ostatok
 				}
 
-				if (i+1 <= this.curOtsrok){
-					table.forDolg = 0;
-					table.itog = 0;
-				}
-				else
-					// table.forDolg = table.itog - table.forPersents;
-					table.itog = table.forDolg + table.forPersents
+				table.itog = parseFloat(table.forDolg) + parseFloat(table.forPersents)
+
+				// console.log(i+1, table.itog)
 
 				if (i == 0){
 					table.ostatok = this.summ - table.forDolg;
