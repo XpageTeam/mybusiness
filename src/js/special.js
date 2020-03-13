@@ -1,5 +1,7 @@
 import $ from "jquery";
 
+import "./calculator/calc.js";
+
 window.$ = $;
 window.jQuery = $;
 

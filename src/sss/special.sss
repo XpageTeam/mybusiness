@@ -1,47 +1,5 @@
-// @font-face 
-
-// 	font-family: Montserrat
-// 	font-style: normal
-// 	font-weight: 300
-// 	src: url('../fonts/Montserrat/montserrat-light.woff2') format("woff")
-// 	font-display: swap
-
-// @font-face 
-
-// 	font-family: Montserrat
-// 	font-style: normal
-// 	font-weight: 400
-// 	src: url('../fonts/Montserrat/montserrat-regular.woff2') format("woff")
-// 	font-display: swap
-
-// @font-face 
-
-// 	font-family: Montserrat
-// 	font-style: normal
-// 	font-weight: 500
-// 	src: url('../fonts/Montserrat/montserrat-medium.woff2') format("woff")
-// 	font-display: swap
-
-// @font-face 
-
-// 	font-family: Montserrat
-// 	font-style: normal
-// 	font-weight: 600
-// 	src: url('../fonts/Montserrat/montserrat-semibold.woff2') format("woff")
-// 	font-display: swap
-
-// @font-face 
-
-// 	font-family: Montserrat
-// 	font-style: normal
-// 	font-weight: 700
-// 	src: url('../fonts/Montserrat/montserrat-bold.woff2') format("woff")
-// 	font-display: swap
-
 body
 	position: relative
-// 	display: flex
-// 	flex-direction: column
 
 img
 	max-width: 100%
@@ -123,6 +81,9 @@ input
 			height: 55px
 			border: 1px solid #000
 
+.wrapper
+	padding: 0
+	
 .search-cont
 	position: absolute
 	top: 185px
@@ -964,6 +925,13 @@ table
 
 .calendar
 	margin-bottom: 30px
+
+	&__cell
+		cursor: pointer
+
+		&.active
+			background-color: #000
+			color: #fff
 
 .support-banner__img
 	display: none
